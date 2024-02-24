@@ -13,7 +13,7 @@ const Header = () => {
             <Link href={"/"}>Linkvertex.io</Link>
           </h1>
         </div>
-        <div>
+        <div className={'hover:!bg-[#00000000]'}>
           <Sun className={'text-white w-[1rem] h-[1rem]'} />
         </div>
       </div>
