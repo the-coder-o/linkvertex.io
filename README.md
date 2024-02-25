@@ -31,7 +31,7 @@ I am passionate about technology and innovation. Creating and learning new thing
 
 ---
 
-# Project Name
+# Linkvertex.io
 
 Describe your project briefly here. Explain that it's built with Next.js 14, TypeScript, Firebase, MongoDB, and Firebase Auth.
 
