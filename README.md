@@ -39,9 +39,9 @@ Describe your project briefly here. Explain that it's built with Next.js 14, Typ
 
 Before you begin, ensure you have met the following requirements:
 
-- Node.js 14.x or later
-- A Firebase account and project
-- MongoDB database access
+- Node.js 14.x or later [Next.js 14](https://nextjs.org/docs/getting-started/installation)
+- A Firebase account and project [Firebase](https://console.firebase.google.com/)
+- MongoDB database access [MongoDb Atlas](https://account.mongodb.com/account/login?n=https%3A%2F%2Fcloud.mongodb.com%2Fv2%2F63e0fbfa1122620700906904&nextHash=%23overview&signedOut=true)
 
 ## Installation
 
@@ -52,4 +52,4 @@ npm install
 # or
 yarn install
 
-© 2024 - [szmn.dev](https://www.a-bd.me)
+© 2024 - [www.a-bd.me](https://www.a-bd.me)
