@@ -53,7 +53,9 @@ const SignUp = () => {
               Forgot Password?
             </Link>
           </form>
-          <Link href={'/sign-in'}  className={'mt-[20px] justify-center py-2 flex items-center gap-2 rounded-[20px] px-[16px] text-[16px] font-[500] bg-[#90CDF4] hover:bg-[#90CDF4]/90 text-black w-full'}>Sign In</Link>
+          <Link href={'/sign-in'} className={'mt-[20px] justify-center py-2 flex items-center gap-2 rounded-[20px] px-[16px] text-[16px] font-[500] bg-[#90CDF4] hover:bg-[#90CDF4]/90 text-black w-full'}>
+            Sign In
+          </Link>
         </div>
       </div>
     </div>
