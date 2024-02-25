@@ -51,5 +51,6 @@ To install the dependencies, run:
 npm install
 # or
 yarn install
+```
 
 © 2024 - [www.a-bd.me](https://www.a-bd.me)
