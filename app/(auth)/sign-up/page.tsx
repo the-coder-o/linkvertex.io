@@ -18,7 +18,7 @@ const SignUp = () => {
 
   return (
     <div className={'container'}>
-      <div className={'flex flex-col items-center justify-center gap-[20px] my-[130px] max-sm:my-[90px] max-sm:gap-[10px]'}>
+      <div className={'flex flex-col items-center justify-center gap-[20px] my-[180px] max-sm:my-[90px] max-sm:gap-[10px]'}>
         <div className={'flex items-center flex-col justify-center gap-2.5'}>
           <p className={'text-white text-[0.875rem]'}>Sign Up with:</p>
           <div className={'flex items-center justify-between w-[440px] max-sm:w-full gap-2'}>

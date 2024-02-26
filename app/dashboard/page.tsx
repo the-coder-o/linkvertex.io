@@ -8,7 +8,7 @@ import { Copy } from 'lucide-react'
 const Dashboard = () => {
   return (
     <div className={'container'}>
-      <div className={'mt-[100px] flex flex-col gap-9'}>
+      <div className={'mt-[150px] flex flex-col gap-9'}>
         <span className={'main-text-animation text-4xl font-bold max-[450px]:text-[30px]'}>Welcome, I&apos;m Hacker</span>
         <div className={'grid grid-cols-2 gap-4 max-[450px]:grid-cols-1'}>
           <Link href={'/'}>
@@ -21,7 +21,7 @@ const Dashboard = () => {
             </div>
           </Link>
           <div className={'border border-[#ffffff29] rounded-[24px] p-[20px] max-[450px]:p-[15px] ease duration-200 hover:scale-105'}>
-            <Link href={'/'} className={'max-[450px]:flex max-[450px]:items-center max-[450px]:justify-between'}>
+            <Link href={'/dashboard/edit'} className={'max-[450px]:flex max-[450px]:items-center max-[450px]:justify-between'}>
               <h2 className={'text-[#A9A9A9] text-xl font-bold max-[450px]:text-[20px]'}>Edit Link</h2>
               <div className={'mt-[40px] max-[450px]:mt-0'}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" color={'#A9A9A9'} stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-link">
@@ -32,7 +32,7 @@ const Dashboard = () => {
             </Link>
           </div>
           <div className={'border border-[#ffffff29] rounded-[24px] p-[20px] max-[450px]:p-[15px] ease duration-200 hover:scale-105'}>
-            <Link href={'/'} className={'max-[450px]:flex max-[450px]:items-center max-[450px]:justify-between'}>
+            <Link href={'/dashboard/profile'} className={'max-[450px]:flex max-[450px]:items-center max-[450px]:justify-between'}>
               <h2 className={'text-[#A9A9A9] text-xl font-bold max-[450px]:text-[20px]'}>Social Links</h2>
               <div className={'mt-[35px] max-[450px]:mt-0'}>
                 <svg stroke="currentColor" fill="currentColor" width="30" height="30" color={'#A9A9A9'} stroke-width="0" viewBox="0 0 24 24" focusable="false" className="chakra-icon css-2z0lkw" xmlns="http://www.w3.org/2000/svg">
