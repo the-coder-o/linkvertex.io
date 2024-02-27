@@ -8,17 +8,7 @@ import { ChevronLeft } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
-const validateWhatsApp = (input: string) => /^\+\d{1,3}-\d{3}-\d{4}-\d{3,4}$/.test(input)
-const validateEmail = (input: string) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(input)
-const validateSpotify = (input: string) => /^https:\/\/open\.spotify\.com\/.*/.test(input)
-const validateAppleMusic = (input: string) => /^https:\/\/apple\.music\.com\/.*/.test(input)
-const validateSnapchat = (input: string) => /^https:\/\/www\.snapchat\.com\/add\/[a-zA-Z0-9_]+$/.test(input)
-const validateAppStore = (input: string) => /^https:\/\/apps\.apple\.com\/.*/.test(input)
-const validateGooglePlay = (input: string) => /^https:\/\/play\.google\.com\/store\/apps\/details\?id=.*/.test(input)
-const validateFacebook = (input: string) => /^https:\/\/facebook\.com\/[a-zA-Z0-9._%+-]+$/.test(input)
-const validateYoutube = (input: string) => /https?:\/\/(www\.)?youtube\.com\/channel\/([^/]+)/.test(input)
-const validateTwitch = (input: string) => /https?:\/\/(www\.)?twitch\.tv\/([^/]+)/.test(input)
-const validateLinkedin = (input: string) => /https?:\/\/(www\.)?linkedin\.com\/in\/([^/]+)/.test(input)
+import { validateAppleMusic, validateAppStore, validateEmail, validateFacebook, validateGooglePlay, validateLinkedin, validateSnapchat, validateSpotify, validateTwitch, validateWhatsApp, validateYoutube } from '@/app/dashboard/profile/lib/validation-inputs'
 
 const Profile = () => {
   const [input, setInput] = useState({
