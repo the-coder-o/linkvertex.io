@@ -1,10 +1,19 @@
-import React from 'react'
+'use client'
 
-import { Sun } from 'lucide-react'
+import React, { useState } from 'react'
+
+import { Sun, Moon } from 'lucide-react'
 
 import Link from 'next/link'
 
 const Header = () => {
+  const [theme, setTheme] = useState('light')
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+  }
+
   return (
     <div className={'w-full fixed left-0 right-0 bg-[#0a0c0ccc] h-[4rem] flex items-center justify-center z-10 top-0'} style={{ backdropFilter: 'blur(6px)' }}>
       <header className={'container'}>
@@ -14,9 +23,9 @@ const Header = () => {
               <Link href={'/'}>Linkvertex.io</Link>
             </h1>
           </div>
-          <div className={'hover:!bg-[#00000000]'}>
-            <Sun className={'text-white w-[1rem] h-[1rem]'} />
-          </div>
+          <button onClick={toggleTheme} aria-label="Toggle theme">
+            <div className={'hover:bg-[#1D1F1F] transition-all flex items-center justify-center p-3 rounded-full'}>{theme === 'light' ? <Sun className={'text-white w-[1rem] h-[1rem]'} /> : <Moon className={'text-white w-[1rem] h-[1rem]'} />}</div>
+          </button>
         </div>
       </header>
     </div>
