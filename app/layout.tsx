@@ -2,8 +2,10 @@
 
 import React from 'react'
 
-import { Inter } from 'next/font/google'
 import './globals.css'
+import { Inter } from 'next/font/google'
+
+import { RocketIcon } from 'lucide-react'
 
 import Header from '@/components/ui/header/header'
 import Footer from '@/components/ui/footer/footer'
@@ -11,6 +13,7 @@ import Footer from '@/components/ui/footer/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 import { Analytics } from '@vercel/analytics/react'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 export default function RootLayout({
   children,
@@ -32,6 +35,11 @@ export default function RootLayout({
         <div className="main"></div>
         {/*<Footer />*/}
         <Analytics />
+        <Alert className={'absolute w-[350px] right-2 bottom-2  bg-transparent max-md:w-full max-md:left-0'}>
+          <RocketIcon className="h-4 w-4 !text-white !main-text-animation" />
+          <AlertTitle className={'text-white main-text-animation'}>Thank you for understanding!</AlertTitle>
+          <AlertDescription className={'text-[12px] text-white'}>This site is currently unavailable as we work on this project. You will only be able to use this site 3 months after the UI and backend work is completed!</AlertDescription>
+        </Alert>
       </body>
     </html>
   )

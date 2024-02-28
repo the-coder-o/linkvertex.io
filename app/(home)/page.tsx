@@ -28,11 +28,6 @@ export default function Home() {
             Get Started
           </Link>
         </div>
-        <Alert className={'absolute w-[350px] right-2 bottom-2  bg-transparent max-md:w-full max-md:left-0'}>
-          <RocketIcon className="h-4 w-4 !text-white !main-text-animation" />
-          <AlertTitle className={'text-white main-text-animation'}>Thank you for understanding!</AlertTitle>
-          <AlertDescription className={'text-[12px] text-white'}>This site is currently unavailable as we work on this project. You will only be able to use this site 3 months after the UI and backend work is completed!</AlertDescription>
-        </Alert>
       </main>
     </>
   )
