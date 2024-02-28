@@ -3,12 +3,12 @@ import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 
-import { Copy } from 'lucide-react'
+import { Copy, LogOut, LogOutIcon } from 'lucide-react'
 
 const Dashboard = () => {
   return (
     <div className={'container'}>
-      <div className={'mt-[150px] flex flex-col gap-9'}>
+      <div className={'mt-[150px] mb-[220px] flex flex-col gap-9'}>
         <span className={'main-text-animation text-4xl font-bold max-[450px]:text-[30px]'}>Welcome, I&apos;m Hacker</span>
         <div className={'grid grid-cols-2 gap-4 max-[450px]:grid-cols-1'}>
           <Link href={'/'}>
@@ -42,6 +42,10 @@ const Dashboard = () => {
             </Link>
           </div>
         </div>
+        <Button className={'flex items-center gap-2 text-[16px] font-medium rounded-[20px] bg-transparent hover:bg-[#1D1F1F]'}>
+          <LogOutIcon className={'rotate-180 w-4 h-4'} />
+          Logout
+        </Button>
       </div>
     </div>
   )
