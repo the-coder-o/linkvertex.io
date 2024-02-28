@@ -1,6 +1,8 @@
 import Link from 'next/link'
 
 import { Metadata } from 'next'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { RocketIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Home | Linkvertex',
@@ -19,13 +21,18 @@ export default function Home() {
   return (
     <>
       <main className={'container'}>
-        <div className={'py-[14.5rem] max-md:py-[14rem] flex items-center flex-col justify-center gap-[3.5rem] max-md:gap-[2rem]'}>
+        <div className={'mt-[14.5rem] max-md:mt-[14rem] flex items-center flex-col justify-center gap-[3.5rem] max-md:gap-[2rem]'}>
           <h1 className={'main-text-animation w-[410px] text-[3.80rem] text-center leading-[110%] font-[800] max-md:text-[48px] max-md:w-[508px] max-sm:w-[450px] max-[530px]:w-full'}>One Place for All Your Links</h1>
           <p className={'w-[410px] font-[600] text-white leading-[1.5rem] text-center max-sm:w-[85%]'}>One link to rule them all. Easily place your links in a beautiful single page.</p>
           <Link href={'/sign-up'} className={'px-[24px] py-[12px] rounded-[20px] font-[600] text-[18px] bg-[#FCD28D] hover:bg-[#EBB064] transition-all'}>
             Get Started
           </Link>
         </div>
+        <Alert className={'absolute w-[350px] right-2 bottom-2  bg-transparent max-md:w-full max-md:left-0'}>
+          <RocketIcon className="h-4 w-4 !text-white !main-text-animation" />
+          <AlertTitle className={'text-white main-text-animation'}>Thank you for understanding!</AlertTitle>
+          <AlertDescription className={'text-[12px] text-white'}>This site is currently unavailable as we work on this project. You will only be able to use this site 3 months after the UI and backend work is completed!</AlertDescription>
+        </Alert>
       </main>
     </>
   )

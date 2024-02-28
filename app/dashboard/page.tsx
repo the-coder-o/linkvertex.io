@@ -6,8 +6,8 @@ import DashboardLink from '@/app/dashboard/components/DashboardPageLink'
 const Dashboard = () => {
   return (
     <div className="container">
-      <div className="mt-[150px] mb-[220px] flex flex-col gap-9">
-        <span className="main-text-animation text-4xl font-bold max-[450px]:text-[30px]">Welcome, I'm Hacker</span>
+      <div className="mt-[150px] max-sm:mt-[100px] flex flex-col gap-9">
+        <span className="main-text-animation text-4xl font-bold max-[450px]:text-[30px]">Welcome, I&apos;m Hacker</span>
         <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <DashboardLink
             href="/"
