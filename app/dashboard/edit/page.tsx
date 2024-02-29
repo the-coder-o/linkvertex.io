@@ -137,7 +137,7 @@ const Edit = ({ url, id, enabled, title }: LinkItem, { onEdit, onDelete, link, o
                 </Button>
               </div>
             </div>
-            <Button className={'justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#90CDF4]/90 text-black w-full'}>Save</Button>
+            <Button className={'justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full'}>Save</Button>
           </div>
           <div></div>
         </div>
