@@ -14,7 +14,7 @@ const regexForPageTitle: RegExp = /^[A-Za-z-]+$/
 
 interface LinkItem {
   id: string
-  title: string // Added title property
+  title: string
   url: string
   enabled: boolean
 }
