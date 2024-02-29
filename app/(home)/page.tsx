@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { RocketIcon } from 'lucide-react'
+import Footer from '@/components/ui/footer/footer'
+import React from 'react'
 
 export const metadata: Metadata = {
   title: 'Home | Linkvertex',
@@ -29,6 +31,7 @@ export default function Home() {
           </Link>
         </div>
       </main>
+      <Footer />
     </>
   )
 }

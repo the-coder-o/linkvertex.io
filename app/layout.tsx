@@ -8,7 +8,6 @@ import { Inter } from 'next/font/google'
 import { RocketIcon } from 'lucide-react'
 
 import Header from '@/components/ui/header/header'
-import Footer from '@/components/ui/footer/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,8 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
-        <div className="main"></div>
-        {/*<Footer />*/}
+
         <Analytics />
         <Alert className={'absolute w-[350px] right-2 bottom-2  bg-transparent max-md:w-full max-md:left-0 fixed'}>
           <RocketIcon className="h-4 w-4 !text-white !main-text-animation" />

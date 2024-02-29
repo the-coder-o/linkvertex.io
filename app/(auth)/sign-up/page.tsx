@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button'
 import GoogleIcons from '@/assets/auth/google.png'
 import GithubIcons from '@/assets/auth/github.png'
 import { Eye, EyeOff } from 'lucide-react'
+import Footer from '@/components/ui/footer/footer'
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
@@ -58,6 +59,7 @@ const SignUp = () => {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

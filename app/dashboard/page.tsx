@@ -2,6 +2,8 @@ import { Copy, LogOutIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import DashboardLink from '@/app/dashboard/components/DashboardPageLink'
+import Footer from '@/components/ui/footer/footer'
+import React from 'react'
 
 const Dashboard = () => {
   return (
@@ -44,6 +46,7 @@ const Dashboard = () => {
           Logout
         </Button>
       </div>
+      <Footer />
     </div>
   )
 }
