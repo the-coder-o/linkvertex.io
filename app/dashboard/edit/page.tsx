@@ -103,7 +103,7 @@ const Edit = ({ url, id, enabled, title }: LinkItem, { onEdit, onDelete, link, o
             </Alert>
             <div className={'border-2 border-[#ffffff29] rounded-[24px] p-[0.5rem]'}>
               {links?.map((link: any, index: number) => (
-                <div className={'grid grid-cols-1 border-1 border-[#ffffff29] bg-[#1a202c99] p-[1rem] rounded-[24px] mb-[15px]'}>
+                <div key={index} className={'grid grid-cols-1 border-1 border-[#ffffff29] bg-[#1a202c99] p-[1rem] rounded-[24px] mb-[15px]'}>
                   <h2 className={'text-md uppercase font-bold text-white'}>URL {index}</h2>
                   <div className={'relative'}>
                     <Input
