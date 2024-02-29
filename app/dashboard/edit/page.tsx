@@ -146,5 +146,3 @@ const Edit: React.FC<LinkItemProps> = ({ onEdit, onDelete, onToggle, link }) => 
     </div>
   )
 }
-
-export default Edit
