@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react'
 
-import { ChevronLeft, Link, ShieldAlert, Tags } from 'lucide-react'
+import { ChevronLeft, Link2, ShieldAlert, Tags } from 'lucide-react'
 
 import { Input } from '@/components/ui/input'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
+import Link from 'next/link'
 
 const regexForPageTitle: RegExp = /^[A-Za-z-]+$/
 
@@ -83,7 +84,7 @@ const Edit = () => {
                     type={'text'}
                     className={'mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'}
                   />
-                  <Link className={'text-white absolute top-[18px] left-3 w-5 h-5'} />
+                  <Link2 className={'text-white absolute top-[18px] left-3 w-5 h-5'} />
                 </div>
                 <div>
                   <div className="flex items-center space-x-2 mt-[15px]">
