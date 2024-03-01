@@ -3,20 +3,15 @@
 import React, { useCallback, useState } from 'react'
 import Link from 'next/link'
 import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
-import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
+import { LinkItem, LinkItemProps } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 import { Input } from '@/components/ui/input'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Switch } from '@/components/ui/switch'
-import { Button } from '@/components/ui/button' // Adjust import paths as necessary
+import { Button } from '@/components/ui/button'
 
-// Assuming the regex is to validate page titles for alphabets and hyphens only.
 const regexForPageTitle = /^[A-Za-z-]+$/
 
-interface LinkItemProps {
-  onEdit: (id: string, title: string, url: string) => void
-}
-
-const EditPage: React.FC<LinkItemProps> = ({ onEdit }) => {
+const EditPage: React.FC<LinkItemProps> = () => {
   const [inputValue, setInputValue] = useState('')
   const [isValid, setIsValid] = useState(true)
   const [links, setLinks] = useState<LinkItem[]>([])
