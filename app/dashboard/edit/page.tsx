@@ -1,22 +1,18 @@
 'use client'
 
 import React, { useCallback, useState } from 'react'
+import Link from 'next/link'
+
 import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
+
 import { Input } from '@/components/ui/input'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
-import Link from 'next/link'
-import { LinkItemProps } from '@/app/dashboard/edit/interfaces/LinkItemProps'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+
+import { LinkItem, LinkItemProps } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
 const regexForPageTitle: RegExp = /^[A-Za-z-]+$/
-
-interface LinkItem {
-  id: string
-  title: string
-  url: string
-  enabled: boolean
-}
 
 const EditPage: React.FC<LinkItemProps> = ({ onEdit }) => {
   // Initial states for the input values and validation
