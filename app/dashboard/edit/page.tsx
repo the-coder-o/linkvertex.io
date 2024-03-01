@@ -16,11 +16,11 @@ import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 const regexForPageTitle = /^[A-Za-z-]+$/
 
 const EditPage: React.FC = () => {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('your-page-url')
   const [isValid, setIsValid] = useState(true)
   const [links, setLinks] = useState<LinkItem[]>([])
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState('My Page')
+  const [description, setDescription] = useState('One Place for All Your Links. One link to rule them all. Easily place your links in a beautiful single page.')
   const [error, setError] = useState('')
   const [error2, setError2] = useState('')
 
@@ -58,7 +58,6 @@ const EditPage: React.FC = () => {
       enabled: true,
     }
     setLinks((prevLinks) => [...prevLinks, newLink])
-    console.log(newLink)
   }, [])
 
   const toggleLinkEnabled = useCallback((id: string) => {
@@ -156,7 +155,7 @@ const EditPage: React.FC = () => {
                     <Link2 className="text-white absolute top-[18px] left-3 w-5 h-5" />
                   </div>
                   <div className="flex items-center justify-between mt-[15px]">
-                    <Switch id={`switch-${link.id}`} checked={link.enabled} onChange={() => toggleLinkEnabled(link.id)} />
+                    <Switch id={`switch-${link.id}`} checked={link.enabled} onClick={() => toggleLinkEnabled(link.id)} />
                     <Trash onClick={() => deleteLink(link.id)} className="text-red-500 w-5 h-5 cursor-pointer" />
                   </div>
                 </div>
@@ -175,11 +174,15 @@ const EditPage: React.FC = () => {
                     <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>
                     <p className={'text-white text-sm w-full flex items-center justify-center text-ellipsis whitespace-break-spaces text-center mt-2 text-style'}>{description}</p>
                   </div>
-                  {links?.map((links: LinkItem, index: number) => (
-                    <Link key={index} href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg border-2 border-[#ffffff29] bg-[#0e1312] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[20px] hover:scale-105 transition-all shadow-style'}>
-                      {links?.title}
-                    </Link>
-                  ))}
+                  <div className={'grid gap-y-4 justify-center items-center'}>
+                    {links?.map((links: LinkItem, index: number) => (
+                      <div className={cn(links.enabled ? 'block' : 'hidden')}>
+                        <Link key={index} href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg border-2 border-[#ffffff29] bg-[#0e1312] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[20px] hover:scale-105 transition-all shadow-style'}>
+                          {links?.title}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
