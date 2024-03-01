@@ -314,3 +314,9 @@ body {
     transform: scale(1.5);
   }
 }
+
+.shadow-style {
+  box-shadow:
+    0 2px 4px rgba(104, 104, 104, 0.1),
+    0 3px 6px rgba(68, 68, 68, 0.06);
+}
