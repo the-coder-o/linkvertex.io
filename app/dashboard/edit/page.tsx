@@ -46,7 +46,7 @@ const EditPage: React.FC = () => {
       setDescription(value)
       setError2('')
     } else {
-      setError2('Dexription cannot exceed 150 characters.')
+      setError2('Description cannot exceed 150 characters.')
     }
   }
 
@@ -176,8 +176,8 @@ const EditPage: React.FC = () => {
                   </div>
                   <div className={'grid gap-y-4 justify-center items-center'}>
                     {links?.map((links: LinkItem, index: number) => (
-                      <div className={cn(links.enabled ? 'block' : 'hidden')}>
-                        <Link key={index} href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg border-2 border-[#ffffff29] bg-[#0e1312] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[20px] hover:scale-105 transition-all shadow-style'}>
+                      <div key={index} className={cn(links.enabled ? 'block' : 'hidden')}>
+                        <Link target={'_blank'} href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg border-2 border-[#ffffff29] bg-[#0e1312] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[20px] hover:scale-105 transition-all shadow-style'}>
                           {links?.title}
                         </Link>
                       </div>
