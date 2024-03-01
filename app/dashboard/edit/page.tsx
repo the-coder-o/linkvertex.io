@@ -1,10 +1,12 @@
 'use client'
 
 import React, { useCallback, useState } from 'react'
+
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
-import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
+import { ChevronLeft, Link2, Moon, ShieldAlert, Tags, Trash } from 'lucide-react'
 
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
@@ -12,6 +14,8 @@ import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
+
+import EmojiIcon from '@/assets/dashboard/smile.png'
 
 const regexForPageTitle = /^[A-Za-z-]+$/
 
@@ -23,6 +27,7 @@ const EditPage: React.FC = () => {
   const [description, setDescription] = useState('One Place for All Your Links. One link to rule them all. Easily place your links in a beautiful single page.')
   const [error, setError] = useState('')
   const [error2, setError2] = useState('')
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false) // State to toggle emoji picker visibility
 
   const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
@@ -70,7 +75,6 @@ const EditPage: React.FC = () => {
 
   const handleLinkEdit = useCallback((id: string, title: string, url: string) => {
     setLinks((prevLinks) => prevLinks.map((link) => (link.id === id ? { ...link, title, url } : link)))
-    console.log(links)
   }, [])
 
   return (
@@ -87,7 +91,7 @@ const EditPage: React.FC = () => {
         <div className={'flex justify-between gap-[30px]'}>
           <div className="grid grid-cols-1 gap-y-12">
             <div className={'grid grid-cols-1 gap-y-12'}>
-              <div>
+              <div className={'relative'}>
                 <label className={'text-start text-white text-md font-medium'}>title</label>
                 <Input
                   value={title}
@@ -95,6 +99,7 @@ const EditPage: React.FC = () => {
                   type={'text'}
                   className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'}
                 />
+                <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute top-[42.8px] cursor-pointer right-3'} />
                 {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
               </div>
               <div>
