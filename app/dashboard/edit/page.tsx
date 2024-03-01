@@ -14,7 +14,7 @@ import { LinkItem, LinkItemProps } from '@/app/dashboard/edit/interfaces/LinkIte
 
 const regexForPageTitle: RegExp = /^[A-Za-z-]+$/
 
-const EditPage: React.FC<LinkItemProps> = ({ onEdit }) => {
+const EditPage = ({ onEdit }: LinkItemProps) => {
   // Initial states for the input values and validation
   const [inputValue, setInputValue] = useState('')
   const [isValid, setIsValid] = useState(true)
