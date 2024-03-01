@@ -2,13 +2,16 @@
 
 import React, { useCallback, useState } from 'react'
 import Link from 'next/link'
+
+import { cn } from '@/lib/utils'
 import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
-import { LinkItem, LinkItemProps } from '@/app/dashboard/edit/interfaces/LinkItemProps'
+
 import { Input } from '@/components/ui/input'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Switch } from '@/components/ui/switch'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+
+import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
 const regexForPageTitle = /^[A-Za-z-]+$/
 
@@ -16,12 +19,36 @@ const EditPage: React.FC = () => {
   const [inputValue, setInputValue] = useState('')
   const [isValid, setIsValid] = useState(true)
   const [links, setLinks] = useState<LinkItem[]>([])
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [error, setError] = useState('')
+  const [error2, setError2] = useState('')
 
   const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
     setInputValue(value)
     setIsValid(regexForPageTitle.test(value))
   }, [])
+
+  const handleInputChangeValidation = (e: any) => {
+    const { value } = e.target
+    if (value.length <= 50) {
+      setTitle(value)
+      setError('')
+    } else {
+      setError('Title cannot exceed 50 characters.')
+    }
+  }
+
+  const handleInputChangeDescription = (e: any) => {
+    const { value } = e.target
+    if (value.length <= 150) {
+      setDescription(value)
+      setError2('')
+    } else {
+      setError2('Dexription cannot exceed 150 characters.')
+    }
+  }
 
   const addLink = useCallback(() => {
     const newLink: LinkItem = {
@@ -64,16 +91,22 @@ const EditPage: React.FC = () => {
               <div>
                 <label className={'text-start text-white text-md font-medium'}>title</label>
                 <Input
+                  value={title}
+                  onChange={handleInputChangeValidation}
                   type={'text'}
                   className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'}
                 />
+                {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
               </div>
               <div>
                 <label className={'text-start text-white text-md font-medium'}>description</label>
                 <Input
+                  value={description}
+                  onChange={handleInputChangeDescription}
                   type={'text'}
                   className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'}
                 />
+                {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
               </div>
               <div>
                 <label className={'text-start text-white text-md font-medium'}>page title</label>
@@ -135,12 +168,12 @@ const EditPage: React.FC = () => {
             <Button className="justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
           </div>
           <div>
-            <div className={'p-[1rem] border-8 rounded-[32px] border-[#ffffff29] sticky top-[10%]'}>
-              <div className={'w-[300px] h-[680px] flex items-center justify-center'}>
+            <div className={'p-[1rem] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden overflow-hidden'}>
+              <div className={'w-[300px] h-[680px] flex items-center justify-center p-[1rem]'}>
                 <div className={'grid grid-cols-1 gap-y-4'}>
                   <div className={'flex items-center justify-center flex-col'}>
-                    <h1 className={'text-4xl font-bold text-white'}>Abdul Basit</h1>
-                    <p className={'text-white text-sm w-full text-center'}>Im looking for sponsorships for the featured repos below. This sponsorship will go towards maintaining some open-source applications with ongoing development.</p>
+                    <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>
+                    <p className={'text-white text-sm w-full flex items-center justify-center text-ellipsis whitespace-break-spaces text-center mt-2 text-style'}>{description}</p>
                   </div>
                   {links?.map((links: LinkItem, index: number) => (
                     <Link key={index} href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg border-2 border-[#ffffff29] bg-[#0e1312] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[20px] hover:scale-105 transition-all shadow-style'}>

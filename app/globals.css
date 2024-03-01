@@ -320,3 +320,7 @@ body {
     0 2px 4px rgba(104, 104, 104, 0.1),
     0 3px 6px rgba(68, 68, 68, 0.06);
 }
+
+.text-style {
+  word-break: break-word !important;
+}
