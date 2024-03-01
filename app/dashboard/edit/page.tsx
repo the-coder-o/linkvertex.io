@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 
 const regexForPageTitle = /^[A-Za-z-]+$/
 
-const EditPage: React.FC<LinkItemProps> = () => {
+const EditPage: React.FC = () => {
   const [inputValue, setInputValue] = useState('')
   const [isValid, setIsValid] = useState(true)
   const [links, setLinks] = useState<LinkItem[]>([])
