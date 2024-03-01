@@ -20,15 +20,13 @@ interface LinkItem {
 }
 
 interface LinkItemProps {
-  link?: LinkItem // Changed to optional
+  link?: LinkItem
   onToggle: (id: string) => void
   onEdit: (id: string, title: string, url: string) => void
   onDelete: (id: string) => void
 }
 
-const EditPage: React.FC<LinkItemProps> = ({ onEdit, onDelete, onToggle, link }) => {
-  const { id, enabled, title, url } = link || { id: '', enabled: false, title: '', url: '' }
-
+const EditPage = ({ onEdit }: LinkItemProps) => {
   const [inputValue, setInputValue] = useState('')
   const [isValid, setIsValid] = useState(true)
 
