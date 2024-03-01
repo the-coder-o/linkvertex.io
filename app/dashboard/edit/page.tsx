@@ -7,6 +7,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
 import Link from 'next/link'
+import { LinkItemProps } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
 const regexForPageTitle: RegExp = /^[A-Za-z-]+$/
 
@@ -17,14 +18,7 @@ interface LinkItem {
   enabled: boolean
 }
 
-interface LinkItemProps {
-  link?: LinkItem
-  onToggle: (id: string) => void
-  onEdit: (id: string, title: string, url: string) => void
-  onDelete: (id: string) => void
-}
-
-const EditPage: React.FC<LinkItemProps> = ({ onEdit, onDelete, onToggle }) => {
+const EditPage: React.FC<LinkItemProps> = ({ onEdit }) => {
   // Initial states for the input values and validation
   const [inputValue, setInputValue] = useState('')
   const [isValid, setIsValid] = useState(true)
