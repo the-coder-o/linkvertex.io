@@ -26,7 +26,7 @@ interface LinkItemProps {
   onDelete: (id: string) => void
 }
 
-const Edit: React.FC<LinkItemProps> = ({ onEdit, onDelete, onToggle, link }) => {
+const EditPage: React.FC<LinkItemProps> = ({ onEdit, onDelete, onToggle, link }) => {
   const { id, enabled, title, url } = link || { id: '', enabled: false, title: '', url: '' }
 
   const [inputValue, setInputValue] = useState('')
@@ -148,4 +148,4 @@ const Edit: React.FC<LinkItemProps> = ({ onEdit, onDelete, onToggle, link }) => 
   )
 }
 
-export default Edit
+export default EditPage
