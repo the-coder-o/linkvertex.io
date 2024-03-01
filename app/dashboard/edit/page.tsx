@@ -142,8 +142,8 @@ const EditPage: React.FC = () => {
                     <h1 className={'text-4xl font-bold text-white'}>Abdul Basit</h1>
                     <p className={'text-white text-sm w-full text-center'}>Im looking for sponsorships for the featured repos below. This sponsorship will go towards maintaining some open-source applications with ongoing development.</p>
                   </div>
-                  {links?.map((links: LinkItem) => (
-                    <Link href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg border-2 border-[#ffffff29] bg-[#0e1312] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[20px] hover:scale-105 transition-all shadow-style'}>
+                  {links?.map((links: LinkItem, index: number) => (
+                    <Link key={index} href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg border-2 border-[#ffffff29] bg-[#0e1312] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[20px] hover:scale-105 transition-all shadow-style'}>
                       {links?.title}
                     </Link>
                   ))}
