@@ -2,35 +2,27 @@
 
 import React, { useCallback, useState } from 'react'
 import Link from 'next/link'
-
 import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
-
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-
 import { LinkItem, LinkItemProps } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
 const regexForPageTitle: RegExp = /^[A-Za-z-]+$/
 
-const EditPage = ({ onEdit }: LinkItemProps) => {
-  // Initial states for the input values and validation
+const EditPage: React.FC<LinkItemProps> = ({ onEdit }) => {
   const [inputValue, setInputValue] = useState('')
   const [isValid, setIsValid] = useState(true)
-
-  // State to manage the array of links
   const [links, setLinks] = useState<LinkItem[]>([])
 
-  // Function to handle input changes
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
     setInputValue(value)
     setIsValid(regexForPageTitle.test(value))
-  }
+  }, [])
 
-  // Function to add a new link
-  const addLink = () => {
+  const addLink = useCallback(() => {
     const newLink: LinkItem = {
       id: Date.now().toString(),
       title: '',
@@ -38,19 +30,20 @@ const EditPage = ({ onEdit }: LinkItemProps) => {
       enabled: true,
     }
     setLinks((prevLinks) => [...prevLinks, newLink])
-  }
+  }, [])
 
-  // Function to toggle the enabled state of a link
-  const toggleLink = useCallback((id: string) => {
+  const toggleLinkEnabled = useCallback((id: string) => {
     setLinks((prevLinks) => prevLinks.map((link) => (link.id === id ? { ...link, enabled: !link.enabled } : link)))
   }, [])
 
-  // Function to delete a link
   const deleteLink = useCallback((id: string) => {
     setLinks((prevLinks) => prevLinks.filter((link) => link.id !== id))
   }, [])
 
-  // JSX for the EditPage component
+  const handleLinkEdit = useCallback((id: string, title: string, url: string) => {
+    setLinks((prevLinks) => prevLinks.map((link) => (link.id === id ? { ...link, title, url } : link)))
+  }, [])
+
   return (
     <div className={'container'}>
       <div className={'mt-[100px] mb-[100px]'}>
