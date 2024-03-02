@@ -6,9 +6,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
 
 import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
-import { motion } from 'framer-motion'
 
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
