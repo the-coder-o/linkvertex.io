@@ -324,3 +324,8 @@ body {
 .text-style {
   word-break: break-word !important;
 }
+
+.border-style {
+  border: none !important;
+  outline: none !important;
+}

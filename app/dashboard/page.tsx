@@ -1,16 +1,23 @@
+'use client'
+
+import React from 'react'
+
 import { Copy, LogOutIcon } from 'lucide-react'
 
+import { motion } from 'framer-motion'
+
 import { Button } from '@/components/ui/button'
-import DashboardLink from '@/app/dashboard/components/DashboardPageLink'
 import Footer from '@/components/ui/footer/footer'
-import React from 'react'
+import DashboardLink from '@/app/dashboard/components/DashboardPageLink'
 
 const Dashboard = () => {
   return (
     <div className="container">
       <div className="mt-[150px] max-sm:mt-[100px] flex flex-col gap-9">
-        <span className="main-text-animation text-4xl font-bold max-[450px]:text-[30px]">Welcome, I&apos;m Hacker</span>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+        <motion.span initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="main-text-animation text-4xl font-bold max-[450px]:text-[30px]">
+          Welcome, I&apos;m Hacker
+        </motion.span>
+        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <DashboardLink
             href="/"
             label="Your Page"
@@ -40,10 +47,12 @@ const Dashboard = () => {
               </svg>
             }
           />
-        </div>
+        </motion.div>
         <Button className="flex items-center gap-2 text-[16px] font-medium rounded-[20px] bg-transparent hover:bg-[#1D1F1F]">
-          <LogOutIcon className="rotate-180 w-4 h-4" />
-          Logout
+          <motion.div className={'flex items-center gap-2 text-[16px] font-medium'} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }}>
+            <LogOutIcon className="rotate-180 w-4 h-4" />
+            Logout
+          </motion.div>
         </Button>
       </div>
       <Footer />

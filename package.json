@@ -11,6 +11,7 @@
   "dependencies": {
     "@firebase/auth": "^1.6.0",
     "@prisma/client": "^5.10.2",
+    "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@reduxjs/toolkit": "^2.2.1",
@@ -21,6 +22,7 @@
     "express-session": "^1.18.0",
     "firebase": "^10.8.0",
     "firebase-tools": "^13.3.1",
+    "framer-motion": "^11.0.8",
     "lucide-react": "^0.338.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.2.0",
@@ -29,6 +31,7 @@
     "passport-google-oauth20": "^2.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-flags-select": "^2.2.3",
     "react-redux": "^9.1.0",
     "sharp": "^0.33.2",
     "tailwind-merge": "^2.2.1",

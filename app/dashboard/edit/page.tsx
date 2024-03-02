@@ -6,7 +6,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
-import { ChevronLeft, Link2, Moon, ShieldAlert, Tags, Trash } from 'lucide-react'
+
+import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
@@ -16,6 +18,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
 import EmojiIcon from '@/assets/dashboard/smile.png'
+import { Textarea } from '@/components/ui/textarea'
 
 const regexForPageTitle = /^[A-Za-z-]+$/
 
@@ -80,17 +83,17 @@ const EditPage: React.FC = () => {
   return (
     <div className="container">
       <div className="mt-[100px] mb-[100px]">
-        <div>
-          <Link href="/dashboard" className="bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]">
+        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }}>
+          <Link href={'/dashboard'} className="bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]">
             <ChevronLeft className="w-5 h-5 font-bold" /> back
           </Link>
-        </div>
-        <div className="mb-[3rem]">
+        </motion.div>
+        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className="mb-[3rem]">
           <h2 className="text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]">Edit Links</h2>
-        </div>
+        </motion.div>
         <div className={'flex justify-between gap-[30px]'}>
-          <div className="grid grid-cols-1 gap-y-12">
-            <div className={'grid grid-cols-1 gap-y-12'}>
+          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className="grid grid-cols-1 gap-y-12">
+            <div className={'grid grid-cols-1 gap-y-6'}>
               <div className={'relative'}>
                 <label className={'text-start text-white text-md font-medium'}>title</label>
                 <Input
@@ -101,16 +104,6 @@ const EditPage: React.FC = () => {
                 />
                 <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute top-[42.8px] cursor-pointer right-3'} />
                 {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
-              </div>
-              <div>
-                <label className={'text-start text-white text-md font-medium'}>description</label>
-                <Input
-                  value={description}
-                  onChange={handleInputChangeDescription}
-                  type={'text'}
-                  className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'}
-                />
-                {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
               </div>
               <div>
                 <label className={'text-start text-white text-md font-medium'}>page title</label>
@@ -128,6 +121,17 @@ const EditPage: React.FC = () => {
                   </div>
                 </div>
                 {!isValid && <p className="text-red-500 text-sm">Please write a correct your page url title.</p>}{' '}
+              </div>
+              <div>
+                <label className={'text-start text-white text-md font-medium'}>description</label>
+                <Textarea
+                  value={description}
+                  onChange={handleInputChangeDescription}
+                  className={
+                    'mt-[0.5rem] h-[150px] !bg-[#141616] !pt-[16px] border-transparent !outline-none focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'
+                  }
+                />
+                {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
               </div>
             </div>
             <Alert className="!bg-[#1E2B32] border-transparent rounded-[24px]">
@@ -170,8 +174,8 @@ const EditPage: React.FC = () => {
               </Button>
             </div>
             <Button className="justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
             <div className={'p-[1rem] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden overflow-hidden'}>
               <div className={'w-[300px] h-[680px] flex items-center justify-center p-[1rem]'}>
                 <div className={'grid grid-cols-1 gap-y-4'}>
@@ -191,7 +195,7 @@ const EditPage: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
