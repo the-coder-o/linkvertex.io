@@ -39,9 +39,35 @@ const Header = () => {
       <header className={'container'}>
         <div className={'flex items-center justify-between'}>
           <div>
-            <h1 className={'text-white text-[1.25rem] font-bold'}>
+            <h1 className={'text-white text-[1.25rem] font-bold main-text-animation'}>
               <Link href={'/'}>linkvertex.io</Link>
             </h1>
+          </div>
+          <div className={'flex items-center gap-3'}>
+            <nav>
+              <ul className={'flex gap-10'}>
+                <li>
+                  <Link href={'/about'} className={'text-white'}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href={'/faq'} className={'text-white'}>
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link href={'/contact'} className={'text-white'}>
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href={'/blog'} className={'text-white'}>
+                    Blog
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className={'flex items-center gap-2'}>
             <button onClick={toggleTheme} aria-label="Toggle theme">
