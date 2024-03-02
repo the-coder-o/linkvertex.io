@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react'
 
+import { motion } from 'framer-motion'
+
 interface CountdownProps {
   targetDate: Date
 }
@@ -34,7 +36,7 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
   })
 
   return (
-    <div className={'flex items-center justify-center gap-5'}>
+    <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className={'flex items-center justify-center gap-5'}>
       <span className={'text-5xl text-red-500 font-bold flex items-center justify-center flex-col rounded-[15px] p-3 !py-[20px] bg-[#fff]/10 w-[100px]'}>
         {timeLeft?.days} <p className={'text-sm'}>Days</p>
       </span>
@@ -47,7 +49,7 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
       <span className={'text-5xl text-blue-500 font-bold flex items-center justify-center flex-col rounded-[15px] p-3 !py-[20px] bg-[#fff]/10 w-[100px]'}>
         {timeLeft?.seconds} <p className={'text-sm'}>Seconds</p>
       </span>
-    </div>
+    </motion.div>
   )
 }
 

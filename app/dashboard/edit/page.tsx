@@ -13,12 +13,13 @@ import { motion } from 'framer-motion'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
 import EmojiIcon from '@/assets/dashboard/smile.png'
-import { Textarea } from '@/components/ui/textarea'
+import LinkvertexIoIcon from '@/assets/images/link-logo.png'
 
 const regexForPageTitle = /^[A-Za-z-]+$/
 
@@ -30,7 +31,6 @@ const EditPage: React.FC = () => {
   const [description, setDescription] = useState('One Place for All Your Links. One link to rule them all. Easily place your links in a beautiful single page.')
   const [error, setError] = useState('')
   const [error2, setError2] = useState('')
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false) // State to toggle emoji picker visibility
 
   const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
@@ -177,7 +177,7 @@ const EditPage: React.FC = () => {
           </motion.div>
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
             <div className={'p-[1rem] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden overflow-hidden'}>
-              <div className={'w-[300px] h-[680px] flex items-center justify-center p-[1rem]'}>
+              <div className={'relative w-[300px] h-[680px] flex items-center justify-center p-[1rem]'}>
                 <div className={'grid grid-cols-1 gap-y-4'}>
                   <div className={'flex items-center justify-center flex-col'}>
                     <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>
@@ -191,6 +191,12 @@ const EditPage: React.FC = () => {
                         </Link>
                       </div>
                     ))}
+                    <div className={'flex items-center justify-center'}>
+                      <p className={'absolute text-xl text-white flex main-text-animation items-center justify-center gap-1 bottom-0'}>
+                        linkvertex.io
+                        <Image src={LinkvertexIoIcon} alt={'LinkvertexIoIcon'} width={15} height={15} />
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
