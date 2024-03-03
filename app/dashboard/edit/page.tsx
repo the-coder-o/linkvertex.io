@@ -2,6 +2,13 @@
 
 import React, { useCallback, useState } from 'react'
 
+import dynamic from 'next/dynamic'
+import { DropResult } from 'react-beautiful-dnd'
+
+const DragDropContext = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.DragDropContext), { ssr: false })
+const Droppable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Droppable), { ssr: false })
+const Draggable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Draggable), { ssr: false })
+
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -80,6 +87,21 @@ const EditPage: React.FC = () => {
     setLinks((prevLinks) => prevLinks.map((link) => (link.id === id ? { ...link, title, url } : link)))
   }, [])
 
+  const onDragEnd = useCallback(
+    (result: DropResult) => {
+      if (!result.destination) {
+        return
+      }
+
+      const items = Array.from(links)
+      const [reorderedItem] = items.splice(result.source.index, 1)
+      items.splice(result.destination.index, 0, reorderedItem)
+
+      setLinks(items)
+    },
+    [links],
+  )
+
   return (
     <div className="container">
       <div className="mt-[100px] mb-[100px]">
@@ -139,40 +161,51 @@ const EditPage: React.FC = () => {
               <AlertTitle className="text-white ml-2">Remember!</AlertTitle>
               <AlertDescription className="text-white ml-2 text-[16px] font-medium">To edit social links, go to Profile Settings. You can also use drag and drop to arrange the links sequence.</AlertDescription>
             </Alert>
-            <div className="border-2 border-[#ffffff29] grid grid-cols-1 items-center rounded-[24px] p-[0.5rem]">
-              {links.map((link, index) => (
-                <div key={link.id} className={cn(link ? 'grid grid-cols-1 border-1 border-[#ffffff29] bg-[#1a202c99] p-[1rem] rounded-[24px] mb-[15px]' : 'hidden')}>
-                  <h2 className="text-md uppercase font-bold text-white">URL {index + 1}</h2>
-                  <div className="relative">
-                    <Input
-                      placeholder="Label"
-                      value={link.title}
-                      onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)}
-                      type="text"
-                      className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]"
-                    />
-                    <Tags className="text-white absolute top-[18px] left-3 w-5 h-5" />
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="droppable-links">
+                {(provided) => (
+                  <div {...provided.droppableProps} ref={provided.innerRef} className="border-2 border-[#ffffff29] grid grid-cols-1 items-center rounded-[24px] p-[0.5rem]">
+                    {links.map((link, index) => (
+                      <Draggable key={link.id} draggableId={link.id} index={index}>
+                        {(provided) => (
+                          <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={'grid grid-cols-1 border-1 border-[#ffffff29] bg-[#1a202c99] p-[1rem] rounded-[24px] mb-[15px]'}>
+                            <h2 className="text-md uppercase font-bold text-white">URL {index + 1}</h2>
+                            <div className="relative">
+                              <Input
+                                placeholder="Label"
+                                value={link.title}
+                                onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)}
+                                type="text"
+                                className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]"
+                              />
+                              <Tags className="text-white absolute top-[18px] left-3 w-5 h-5" />
+                            </div>
+                            <div className="relative">
+                              <Input
+                                placeholder="Link URL"
+                                value={link.url}
+                                onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)}
+                                type="text"
+                                className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]"
+                              />
+                              <Link2 className="text-white absolute top-[18px] left-3 w-5 h-5" />
+                            </div>
+                            <div className="flex items-center justify-between mt-[15px]">
+                              <Switch id={`switch-${link.id}`} checked={link.enabled} onClick={() => toggleLinkEnabled(link.id)} />
+                              <Trash onClick={() => deleteLink(link.id)} className="text-red-500 w-5 h-5 cursor-pointer" />
+                            </div>
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                    <Button onClick={addLink} className="!font-bold flex items-center justify-center rounded-[20px] px-[16px] text-[16px] bg-[#90CDF4] hover:bg-[#90CDF4]/90 text-black w-full">
+                      Add Link
+                    </Button>
                   </div>
-                  <div className="relative">
-                    <Input
-                      placeholder="Link URL"
-                      value={link.url}
-                      onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)}
-                      type="text"
-                      className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]"
-                    />
-                    <Link2 className="text-white absolute top-[18px] left-3 w-5 h-5" />
-                  </div>
-                  <div className="flex items-center justify-between mt-[15px]">
-                    <Switch id={`switch-${link.id}`} checked={link.enabled} onClick={() => toggleLinkEnabled(link.id)} />
-                    <Trash onClick={() => deleteLink(link.id)} className="text-red-500 w-5 h-5 cursor-pointer" />
-                  </div>
-                </div>
-              ))}
-              <Button onClick={addLink} className="!font-bold flex items-center justify-center rounded-[20px] px-[16px] text-[16px] bg-[#90CDF4] hover:bg-[#90CDF4]/90 text-black w-full">
-                Add Link
-              </Button>
-            </div>
+                )}
+              </Droppable>
+            </DragDropContext>
             <Button className="justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
           </motion.div>
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
