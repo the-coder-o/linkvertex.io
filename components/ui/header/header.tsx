@@ -47,7 +47,7 @@ const Header = () => {
           <div className={'flex items-center gap-3'}>
             <nav>
               {UrlPages?.map((item: { linkTitle: string; linkPath: string }, index) => (
-                <Link key={index} href={item.linkPath} className={cn('hover:text-white/80 text-[#b4b4b4] transition-all text-sm px-4 py-1.5 rounded-lg', item.linkPath === pathName && 'transition-all text-white underline pb-1')}>
+                <Link key={index} href={item.linkPath} className={cn('hover:text-white/80 text-[#b4b4b4] transition-all text-[16px] font-bold px-4 py-1.5 rounded-lg', item.linkPath === pathName && 'transition-all text-white')}>
                   {item.linkTitle}
                 </Link>
               ))}
@@ -55,7 +55,7 @@ const Header = () => {
           </div>
           <div className={'flex items-center gap-2'}>
             <button onClick={handleLanguageChange}>
-              <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={35} height={35} className={'!bg-cover'} />
+              <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={30} height={30} className={'!bg-cover !w-[100%]'} />
             </button>
           </div>
         </div>
