@@ -1,4 +1,6 @@
-# Welcome to My Linkvertex.io website
+![linkvertex.io](https://i.ibb.co/30YssQg/Screenshot-2024-03-01-193027.png)
+
+# Welcome to My Linkvertex.io website 
 
 I'm a developer and creator sharing my work and updates on various platforms. Below you'll find the links to all my social profiles and projects. Feel free to connect with me!
 
