@@ -2,19 +2,18 @@
 
 import React, { useState } from 'react'
 
-import { Sun, Moon } from 'lucide-react'
-
 import { cn } from '@/lib/utils'
 
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
+import { UrlPages } from '@/components/ui/header/lib/url-pages'
+
 import UsaIcon from '@/assets/languages/usa.png'
 import RusIcon from '@/assets/languages/russia.png'
 import GerIcon from '@/assets/languages/german.png'
 import UzbIcon from '@/assets/languages/uzbekistan.png'
-import { UrlPages } from '@/components/ui/header/lib/url-pages'
 
 const languages = [
   { code: 'us', name: 'English', image: UsaIcon },
@@ -40,7 +39,9 @@ const Header = () => {
         <div className={'flex items-center justify-between'}>
           <div>
             <h1 className={'text-white text-[1.25rem] font-bold main-text-animation'}>
-              <Link href={'/'}>linkvertex.io</Link>
+              <Link href={'/'} className={'flex items-center gap-1'}>
+                linkvertex.io
+              </Link>
             </h1>
           </div>
           <div className={'flex items-center gap-3'}>
