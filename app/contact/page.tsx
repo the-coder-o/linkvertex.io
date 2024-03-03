@@ -12,7 +12,7 @@ const Page = () => {
     <div className={'container'}>
       <div className={'flex items-center justify-center flex-col mt-[250px] gap-[15px]'}>
         <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className={'text-white text-6xl w-[500px] text-center font-bold leading-tight'}>
-          This Contact page Coming Soon
+          This <span className={'text-yellow-400'}>Contact</span> page Coming Soon
         </motion.h1>
         <CountdownTimer targetDate={launchDate} />
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={'text-white w-[70%] text-center'}>

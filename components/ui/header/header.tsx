@@ -4,13 +4,17 @@ import React, { useState } from 'react'
 
 import { Sun, Moon } from 'lucide-react'
 
+import { cn } from '@/lib/utils'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 import UsaIcon from '@/assets/languages/usa.png'
 import RusIcon from '@/assets/languages/russia.png'
 import GerIcon from '@/assets/languages/german.png'
 import UzbIcon from '@/assets/languages/uzbekistan.png'
+import { UrlPages } from '@/components/ui/header/lib/url-pages'
 
 const languages = [
   { code: 'us', name: 'English', image: UsaIcon },
@@ -20,18 +24,14 @@ const languages = [
 ]
 
 const Header = () => {
-  const [theme, setTheme] = useState('light')
+  const pathName = usePathname()
+
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0])
 
   const handleLanguageChange = () => {
     const currentIndex = languages.findIndex((lang) => lang.code === selectedLanguage.code)
     const nextIndex = (currentIndex + 1) % languages.length
     setSelectedLanguage(languages[nextIndex])
-  }
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
   }
 
   return (
@@ -45,34 +45,14 @@ const Header = () => {
           </div>
           <div className={'flex items-center gap-3'}>
             <nav>
-              <ul className={'flex gap-10'}>
-                <li>
-                  <Link href={'/about'} className={'text-white'}>
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href={'/faq'} className={'text-white'}>
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href={'/contact'} className={'text-white'}>
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href={'/blog'} className={'text-white'}>
-                    Blog
-                  </Link>
-                </li>
-              </ul>
+              {UrlPages?.map((item: { linkTitle: string; linkPath: string }, index) => (
+                <Link key={index} href={item.linkPath} className={cn('hover:text-white/80 text-[#b4b4b4] transition-all text-sm px-4 py-1.5 rounded-lg', item.linkPath === pathName && 'transition-all text-white underline pb-1')}>
+                  {item.linkTitle}
+                </Link>
+              ))}
             </nav>
           </div>
           <div className={'flex items-center gap-2'}>
-            <button onClick={toggleTheme} aria-label="Toggle theme">
-              <div className={'hover:bg-[#1D1F1F] transition-all flex items-center justify-center p-3 rounded-full'}>{theme === 'light' ? <Sun className={'text-white w-[1rem] h-[1rem]'} /> : <Moon className={'text-white w-[1rem] h-[1rem]'} />}</div>
-            </button>
             <button onClick={handleLanguageChange}>
               <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={35} height={35} className={'!bg-cover'} />
             </button>

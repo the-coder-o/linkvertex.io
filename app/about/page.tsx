@@ -6,13 +6,14 @@ import Footer from '@/components/ui/footer/footer'
 import CountdownTimer from '@/components/soon/count-down-time'
 
 const Page = () => {
+
   const launchDate = new Date('2024-03-11T00:00:00')
 
   return (
     <div className={'container'}>
       <div className={'flex items-center justify-center flex-col mt-[250px] gap-[15px]'}>
         <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className={'text-white text-6xl w-[500px] text-center font-bold leading-tight'}>
-          This About page Coming Soon
+          This <span className={'text-green-400'}>About</span> page Coming Soon
         </motion.h1>
         <CountdownTimer targetDate={launchDate} />
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={'text-white w-[70%] text-center'}>
