@@ -41,7 +41,7 @@ export default function RootLayout({
         <title>Home | Linkvertex</title>
       </head>
       <body className={inter.className}>
-        <div className={'main'}></div>
+        <div className={'main !z-[-99999999]'}></div>
         <Header />
         {children}
         <Analytics />
