@@ -18,6 +18,8 @@
       }
     ],
     "paths": {
+      "@/components/*": ["components/*"],
+      "@/content/*": ["content/*"],
       "@/*": ["./*"]
     }
   },

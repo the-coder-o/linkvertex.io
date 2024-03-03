@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+const withMDX = require('@next/mdx')()
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -6,6 +7,7 @@ const nextConfig = {
       { protocol: 'http', hostname: '*' },
     ],
   },
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 }
 
-export default nextConfig
+module.exports = withMDX(nextConfig)
