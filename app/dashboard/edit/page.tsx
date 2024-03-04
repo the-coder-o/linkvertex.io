@@ -168,7 +168,7 @@ const EditPage: React.FC = () => {
                     {links.map((link, index) => (
                       <Draggable key={link.id} draggableId={link.id} index={index}>
                         {(provided) => (
-                          <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={'grid grid-cols-1 border-1 border-[#ffffff29] bg-[#1a202c99] p-[1rem] rounded-[24px] mb-[15px]'}>
+                          <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={'grid grid-cols-1 border-2 border-[#ffffff29] bg-[#1a202c99] p-[1.2rem] rounded-[24px] mb-[15px]'}>
                             <h2 className="text-md uppercase font-bold text-white">URL {index + 1}</h2>
                             <div className="relative">
                               <Input
