@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { ShieldAlert } from 'lucide-react'
+import { Lock, ShieldAlert } from 'lucide-react'
 
 export default function ButtonCard() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null)
@@ -56,9 +56,10 @@ export default function ButtonCard() {
       </Alert>
       <div className={'grid grid-cols-3 gap-5'}>
         {themeImages.map((image, index) => (
-          <div key={index} className={'flex flex-col items-center gap-1'}>
-            <Image onClick={() => toggleImageSelection(index)} width={100} height={100} className={cn('!w-full !rounded-lg cursor-pointer border-4', selectedImageIndex === index ? 'border-4 border-green-300' : '')} src={image?.img} alt={'Air Leaf'} />
+          <div key={index} className={'flex flex-col items-center gap-1 relative'}>
+            <Image onClick={() => toggleImageSelection(index)} width={100} height={100} className={cn('!w-full opacity-50 !rounded-lg cursor-pointer border-4 cursor-not-allowed', selectedImageIndex === index ? 'border-4' : '')} src={image?.img} alt={'Air Leaf'} />
             <p className={'text-white text-sm'}>Air Leaf</p>
+            <Lock className={'text-white w-6 h-6 absolute top-[35%] !opacity-100 flex items-center justify-center'} />
           </div>
         ))}
       </div>
