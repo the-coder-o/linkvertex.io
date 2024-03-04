@@ -208,9 +208,9 @@ const EditPage: React.FC = () => {
             </DragDropContext>
             <Button className="justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
           </motion.div>
-          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
-            <div className={'p-[1rem] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden overflow-hidden'}>
-              <div className={'relative w-[300px] h-[680px] flex items-center justify-center p-[1rem]'}>
+          <motion.div className={''} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
+            <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden'}>
+              <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem]'}>
                 <div className={'grid grid-cols-1 gap-y-4'}>
                   <div className={'flex items-center justify-center flex-col'}>
                     <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>
@@ -225,7 +225,7 @@ const EditPage: React.FC = () => {
                       </div>
                     ))}
                     <div className={'flex items-center justify-center'}>
-                      <p className={'absolute text-xl text-white flex main-text-animation items-center justify-center gap-1 bottom-0'}>
+                      <p className={'text-xl font-bold text-white flex main-text-animation items-center justify-center gap-1 bottom-0'}>
                         linkvertex.io
                         <Image src={LinkvertexIoIcon} alt={'LinkvertexIoIcon'} width={15} height={15} />
                       </p>
