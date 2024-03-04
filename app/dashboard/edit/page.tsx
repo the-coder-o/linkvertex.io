@@ -109,17 +109,6 @@ const EditPage: React.FC = () => {
     [links],
   )
 
-  const cards: { title: string; bars: Bar[] }[] = [
-    {
-      title: 'Air Leaf',
-      bars: [
-        { color: 'bg-green-500', width: 'w-3/4' },
-        { color: 'bg-green-500', width: 'w-3/4' },
-        { color: 'bg-green-500', width: 'w-3/4' },
-      ],
-    },
-  ]
-
   return (
     <div className="container">
       <div className="mt-[100px] mb-[100px]">
