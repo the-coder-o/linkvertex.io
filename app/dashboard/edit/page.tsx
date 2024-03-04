@@ -23,10 +23,12 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
+import { Bar } from '@/types/button-card-props'
 import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
 import EmojiIcon from '@/assets/dashboard/smile.png'
-import LinkvertexIoIcon from '@/assets/images/link-logo.png'
+import LinkVertexIoIcon from '@/assets/images/link-logo.png'
+import ButtonCard from '@/components/button-card'
 
 const regexForPageTitle = /^[A-Za-z-]+$/
 
@@ -38,6 +40,7 @@ const EditPage: React.FC = () => {
   const [description, setDescription] = useState('One Place for All Your Links. One link to rule them all. Easily place your links in a beautiful single page.')
   const [error, setError] = useState('')
   const [error2, setError2] = useState('')
+  const [tab, setTab] = useState(1)
 
   const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
@@ -63,6 +66,10 @@ const EditPage: React.FC = () => {
     } else {
       setError2('Description cannot exceed 150 characters.')
     }
+  }
+
+  const updateTab = (id: number) => {
+    setTab(id)
   }
 
   const addLink = useCallback(() => {
@@ -102,6 +109,17 @@ const EditPage: React.FC = () => {
     [links],
   )
 
+  const cards: { title: string; bars: Bar[] }[] = [
+    {
+      title: 'Air Leaf',
+      bars: [
+        { color: 'bg-green-500', width: 'w-3/4' },
+        { color: 'bg-green-500', width: 'w-3/4' },
+        { color: 'bg-green-500', width: 'w-3/4' },
+      ],
+    },
+  ]
+
   return (
     <div className="container">
       <div className="mt-[100px] mb-[100px]">
@@ -113,8 +131,16 @@ const EditPage: React.FC = () => {
         <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className="mb-[3rem]">
           <h2 className="text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]">Edit Links</h2>
         </motion.div>
-        <div className={'flex justify-between gap-[30px]'}>
-          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className="grid grid-cols-1 gap-y-12">
+        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={'flex items-center gap-6 border-b-2 border-b-white/40 mb-[20px]'}>
+          <span onClick={() => updateTab(1)} className={cn('text-white cursor-pointer', tab === 1 ? 'border-b-2' : 'border-b-transparent')}>
+            links
+          </span>
+          <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
+            themes
+          </span>
+        </motion.div>
+        <div className={'flex justify-between gap-[30px] max-md:gap-0'}>
+          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={cn('grid grid-cols-1 gap-y-12', tab === 1 ? 'block' : 'hidden')}>
             <div className={'grid grid-cols-1 gap-y-6'}>
               <div className={'relative'}>
                 <label className={'text-start text-white text-md font-medium'}>title</label>
@@ -156,7 +182,7 @@ const EditPage: React.FC = () => {
                 {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
               </div>
             </div>
-            <Alert className="!bg-[#1E2B32] border-transparent rounded-[24px]">
+            <Alert className="!bg-[#1E2B32] border-transparent rounded-[24px] mt-8">
               <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
               <AlertTitle className="text-white ml-2">Remember!</AlertTitle>
               <AlertDescription className="text-white ml-2 text-[16px] font-medium">To edit social links, go to Profile Settings. You can also use drag and drop to arrange the links sequence.</AlertDescription>
@@ -164,7 +190,7 @@ const EditPage: React.FC = () => {
             <DragDropContext onDragEnd={onDragEnd}>
               <Droppable droppableId="droppable-links">
                 {(provided) => (
-                  <div {...provided.droppableProps} ref={provided.innerRef} className="border-2 border-[#ffffff29] grid grid-cols-1 items-center rounded-[24px] p-[0.5rem]">
+                  <div {...provided.droppableProps} ref={provided.innerRef} className="border-2 border-[#ffffff29] grid grid-cols-1 mt-10 items-center rounded-[24px] p-[0.5rem]">
                     {links.map((link, index) => (
                       <Draggable key={link.id} draggableId={link.id} index={index}>
                         {(provided) => (
@@ -206,9 +232,12 @@ const EditPage: React.FC = () => {
                 )}
               </Droppable>
             </DragDropContext>
-            <Button className="justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
+            <Button className="justify-center mt-12 py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
           </motion.div>
-          <motion.div className={''} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
+          <div className={cn(tab === 2 ? 'block' : 'hidden')}>
+            <ButtonCard />
+          </div>
+          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
             <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden'}>
               <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem]'}>
                 <div className={'grid grid-cols-1 gap-y-4'}>
@@ -227,7 +256,7 @@ const EditPage: React.FC = () => {
                     <div className={'flex items-center justify-center'}>
                       <p className={'text-xl font-bold text-white flex main-text-animation items-center justify-center gap-1 bottom-0'}>
                         linkvertex.io
-                        <Image src={LinkvertexIoIcon} alt={'LinkvertexIoIcon'} width={15} height={15} />
+                        <Image src={LinkVertexIoIcon} alt={'LinkvertexIoIcon'} width={15} height={15} />
                       </p>
                     </div>
                   </div>
