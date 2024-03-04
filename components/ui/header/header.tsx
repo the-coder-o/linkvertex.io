@@ -8,6 +8,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
+import { UserButton } from '@clerk/nextjs'
+
 import { UrlPages } from '@/components/ui/header/lib/url-pages'
 
 import UsaIcon from '@/assets/languages/usa.png'
@@ -55,8 +57,9 @@ const Header = () => {
           </div>
           <div className={'flex items-center gap-2'}>
             <button onClick={handleLanguageChange}>
-              <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={30} height={30} className={'!bg-cover !w-[100%]'} />
+              <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={18} height={18} className={'!bg-cover !w-[30px]'} />
             </button>
+            <UserButton afterSignOutUrl="/" />
           </div>
         </div>
       </header>
