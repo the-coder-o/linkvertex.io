@@ -45,6 +45,34 @@ export default function ButtonCard() {
     {
       img: 'https://mfe-appearance.production.linktr.ee/images/selector-olivia-rodrigo-guts-v2.a02d37c46d96b1fb1581.webp',
     },
+
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-pebble-blue.48047a34097e85836255.png',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-pebble-yellow.adffcf319fe3cb16a9b7.png',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-pebble-pink.71c34887a9c4ca41828c.png',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-confetti.3da60ad2f58e6d1f40da.webp',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-breeze-green.388d7c952786d8b52e8d.webp',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-rainbow.85e9302f9aac535367aa.webp',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-luke-john-matthew-arnold.589594e412de70fe7d2b.webp',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-cloud-blue.fdecf008bcbf4a4c2d15.png',
+    },
+    {
+      img: 'https://mfe-appearance.production.linktr.ee/images/selector-noir.4d9bdf971052e507724b.webp',
+    },
   ]
 
   return (
@@ -52,14 +80,13 @@ export default function ButtonCard() {
       <Alert className="!bg-[#1E2B32] w-full border-transparent rounded-[24px] mb-8">
         <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
         <AlertTitle className="text-white ml-2">These themes will be coming soon 💤</AlertTitle>
-        <AlertDescription className="text-white ml-2 text-[16px] font-medium">These themes are not working yet. Thanks for your understanding as we use this in production soon.😊</AlertDescription>
+        <AlertDescription className="text-white ml-2 text-[16px] font-medium">These themes are not working yet. Thanks for your understanding as we use this in production soon.😊 themes will be open in v2.0.0</AlertDescription>
       </Alert>
-      <div className={'grid grid-cols-3 gap-5'}>
+      <div className={'grid grid-cols-3 gap-5 flex-wrap max-md:grid-cols-6 max-sm:grid-cols-4 max-[450px]:grid-cols-3'}>
         {themeImages.map((image, index) => (
           <div key={index} className={'flex flex-col items-center gap-1 relative'}>
             <Image onClick={() => toggleImageSelection(index)} width={100} height={100} className={cn('!w-full opacity-50 !rounded-lg cursor-pointer border-4 cursor-not-allowed', selectedImageIndex === index ? 'border-4' : '')} src={image?.img} alt={'Air Leaf'} />
-            <p className={'text-white text-sm'}>Air Leaf</p>
-            <Lock className={'text-white w-6 h-6 absolute top-[35%] !opacity-100 flex items-center justify-center'} />
+            <Lock className={'text-white w-6 h-6 absolute top-[41%] !opacity-100 flex items-center justify-center cursor-not-allowed'} />
           </div>
         ))}
       </div>
