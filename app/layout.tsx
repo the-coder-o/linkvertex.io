@@ -7,7 +7,7 @@ import { Inter } from 'next/font/google'
 
 import { RocketIcon } from 'lucide-react'
 
-import { neobrutalism, dark } from '@clerk/themes'
+import { dark } from '@clerk/themes'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import Header from '@/components/ui/header/header'
