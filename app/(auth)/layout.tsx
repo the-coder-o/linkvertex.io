@@ -3,7 +3,7 @@ import Footer from '@/components/ui/footer/footer'
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={'h-full flex items-center justify-center mt-[150px]'}>
+    <div className={'h-full flex items-center justify-center'}>
       {children}
       <Footer />
     </div>
