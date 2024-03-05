@@ -329,3 +329,76 @@ body {
   border: none !important;
   outline: none !important;
 }
+
+.cl-formButtonPrimary {
+  font-size: 14px;
+  text-transform: none;
+  background-color: #90cdf4;
+  color: #000;
+  border-radius: 20px;
+}
+
+.cl-formButtonPrimary:hover,
+.cl-formButtonPrimary:focus,
+.cl-formButtonPrimary:active {
+  background-color: #90cdf4;
+}
+
+.cl-footerActionLink {
+  color: white !important;
+}
+
+.cl-signIn-start {
+  background-color: transparent;
+  box-shadow: none;
+  width: 30rem;
+}
+
+.cl-signUp-start {
+  background-color: transparent;
+  box-shadow: none;
+  width: 30rem;
+}
+
+.cl-formFieldInput {
+  border-radius: 20px;
+}
+
+.cl-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes hues {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.cl-headerTitle {
+  animation: hues 4s infinite linear;
+  background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f35626;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cl-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cl-identityPreview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

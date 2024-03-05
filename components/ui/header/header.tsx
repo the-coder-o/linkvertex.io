@@ -49,7 +49,7 @@ const Header = () => {
               </Link>
             </h1>
           </div>
-          <div className={'flex items-center gap-3'}>
+          <div className={'flex items-center gap-3 max-md:hidden'}>
             <nav className={'flex items-center gap-10'}>
               {UrlPages?.map((item: { linkTitle: string; linkPath: string }, index) => (
                 <Link key={index} href={item.linkPath} className={cn('hover:text-white/80 text-[#b4b4b4] transition-all text-[16px] pt-1.5 font-bold rounded-lg', item.linkPath === pathName && 'transition-all text-white')}>
