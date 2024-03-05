@@ -3,15 +3,17 @@
 import React from 'react'
 
 import { Copy, LogOutIcon } from 'lucide-react'
-import { useUser } from '@clerk/clerk-react'
 
+import { useUser } from '@clerk/clerk-react'
+import { SignOutButton } from '@clerk/nextjs'
+
+import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 
 import { Button } from '@/components/ui/button'
 import Footer from '@/components/ui/footer/footer'
 import { Skeleton } from '@/components/ui/skeleton'
 import DashboardLink from '@/app/dashboard/components/DashboardPageLink'
-import { cn } from '@/lib/utils'
 
 const Dashboard = () => {
   const { isSignedIn, user, isLoaded } = useUser()
@@ -64,12 +66,14 @@ const Dashboard = () => {
             }
           />
         </motion.div>
-        <Button className="flex items-center gap-2 text-[16px] font-medium rounded-[20px] bg-transparent hover:bg-[#1D1F1F]">
-          <motion.div className={'flex items-center gap-2 text-[16px] font-medium'} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }}>
-            <LogOutIcon className="rotate-180 w-4 h-4" />
-            Logout
-          </motion.div>
-        </Button>
+        <SignOutButton>
+          <Button className="flex items-center gap-2 text-[16px] font-medium rounded-[20px] bg-transparent hover:bg-[#1D1F1F]">
+            <motion.div className={'flex items-center gap-2 text-[16px] font-medium'} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }}>
+              <LogOutIcon className="rotate-180 w-4 h-4" />
+              Logout
+            </motion.div>
+          </Button>
+        </SignOutButton>
       </div>
       <Footer />
     </div>
