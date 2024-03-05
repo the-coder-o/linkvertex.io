@@ -7,7 +7,7 @@ import { Inter } from 'next/font/google'
 
 import { RocketIcon } from 'lucide-react'
 
-import { neobrutalism } from '@clerk/themes'
+import { neobrutalism, dark } from '@clerk/themes'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import Header from '@/components/ui/header/header'
@@ -38,8 +38,7 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        // @ts-ignore
-        baseTheme: [neobrutalism],
+        baseTheme: dark,
       }}
     >
       <html lang="en">

@@ -5,10 +5,13 @@ import React from 'react'
 import Link from 'next/link'
 
 import { motion } from 'framer-motion'
+import { useUser } from '@clerk/nextjs'
 
 import Footer from '@/components/ui/footer/footer'
 
 export default function Home() {
+  const { isSignedIn } = useUser()
+
   return (
     <>
       <main className={'container'}>
@@ -20,7 +23,7 @@ export default function Home() {
             One link to rule them all. Easily place your links in a beautiful single page.
           </motion.p>
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }}>
-            <Link href={'/sign-up'} className={'px-[24px] py-[12px] rounded-[20px] font-[600] text-[18px] bg-[#FCD28D] hover:bg-[#EBB064] transition-all'}>
+            <Link href={isSignedIn ? '/dashboard' : '/sign-in'} className={'px-[24px] py-[12px] rounded-[20px] font-[600] text-[18px] bg-[#FCD28D] hover:bg-[#EBB064] transition-all'}>
               Get Started
             </Link>
           </motion.div>

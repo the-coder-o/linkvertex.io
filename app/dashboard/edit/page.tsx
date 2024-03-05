@@ -25,7 +25,6 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 
-import ButtonStyle from '@/components/button-style'
 import ButtonCardTheme from '@/components/button-card-theme'
 
 import EmojiIcon from '@/assets/dashboard/smile.png'
@@ -128,9 +127,6 @@ const EditPage: React.FC = () => {
           <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
             themes
           </span>
-          <span onClick={() => updateTab(3)} className={cn('text-white cursor-pointer', tab === 3 ? 'border-b-2' : 'border-b-transparent')}>
-            buttons
-          </span>
         </motion.div>
         <div className={'flex justify-between gap-[30px] max-md:gap-0'}>
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={cn('grid grid-cols-1 gap-y-12', tab === 1 ? 'block' : 'hidden')}>
@@ -229,9 +225,6 @@ const EditPage: React.FC = () => {
           </motion.div>
           <div className={cn(tab === 2 ? 'block' : 'hidden')}>
             <ButtonCardTheme />
-          </div>
-          <div className={cn(tab === 3 ? 'block' : 'hidden')}>
-            <ButtonStyle />
           </div>
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
             <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden'}>

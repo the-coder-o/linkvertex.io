@@ -2,20 +2,26 @@
 
 import React from 'react'
 
-import { Copy, LogOutIcon, PieChart } from 'lucide-react'
+import { Copy, LogOutIcon } from 'lucide-react'
+import { useUser } from '@clerk/clerk-react'
 
 import { motion } from 'framer-motion'
 
 import { Button } from '@/components/ui/button'
 import Footer from '@/components/ui/footer/footer'
+import { Skeleton } from '@/components/ui/skeleton'
 import DashboardLink from '@/app/dashboard/components/DashboardPageLink'
+import { cn } from '@/lib/utils'
 
 const Dashboard = () => {
+  const { isSignedIn, user, isLoaded } = useUser()
+
   return (
     <div className="container">
       <div className="mt-[150px] max-sm:mt-[100px] flex flex-col gap-9">
-        <motion.span initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="main-text-animation text-4xl font-bold max-[450px]:text-[30px]">
-          Welcome, I&apos;m Hacker
+        <motion.span initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="main-text-animation text-4xl font-bold max-[450px]:text-[30px] flex items-center">
+          Welcome, <span className={cn(isSignedIn ? 'block' : 'hidden')}>{user?.fullName ?? 'User'}</span>
+          <Skeleton className={cn('h-7 w-[250px] bg-[#fff]/10 mt-1', isLoaded ? 'hidden' : 'block')} />
         </motion.span>
         <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <DashboardLink

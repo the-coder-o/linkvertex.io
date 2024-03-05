@@ -9,7 +9,9 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 import { UserButton } from '@clerk/nextjs'
+import { useUser } from '@clerk/clerk-react'
 
+import { Skeleton } from '@/components/ui/skeleton'
 import { UrlPages } from '@/components/ui/header/lib/url-pages'
 
 import UsaIcon from '@/assets/languages/usa.png'
@@ -26,6 +28,7 @@ const languages = [
 
 const Header = () => {
   const pathName = usePathname()
+  const { isLoaded, user, isSignedIn } = useUser()
 
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0])
 
@@ -59,7 +62,10 @@ const Header = () => {
             <button onClick={handleLanguageChange}>
               <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={18} height={18} className={'!bg-cover !w-[30px]'} />
             </button>
-            <UserButton afterSignOutUrl="/" />
+            <div className={cn(isSignedIn ? 'block' : 'hidden')}>
+              <UserButton afterSignOutUrl="/" />
+            </div>
+            <Skeleton className={cn('w-[32px] h-[32px] rounded-full bg-white/10', isLoaded ? 'hidden' : 'block')} />
           </div>
         </div>
       </header>

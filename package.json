@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^4.30.7",
     "@clerk/nextjs": "^4.29.9",
     "@clerk/themes": "^1.7.9",
     "@firebase/auth": "^1.6.0",
