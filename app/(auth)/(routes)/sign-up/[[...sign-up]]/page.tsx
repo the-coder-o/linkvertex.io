@@ -4,7 +4,7 @@ import Animation from '@/components/animation/framer-animaion'
 export default function Page() {
   return (
     <Animation delay={0}>
-      <div className={'mt-[120px] max-sm:mt-[100px]'}>
+      <div className={'mt-[100px] max-sm:mt-[100px]'}>
         <SignUp />
       </div>
     </Animation>
