@@ -9,6 +9,8 @@ import { motion } from 'framer-motion'
 import { Globe, Lock, SwatchBook, Target } from 'lucide-react'
 
 const Page = () => {
+  const first = 'second'
+
   return (
     <div className={'container'}>
       <div className={'mt-[150px] mb-[50px]'}>
