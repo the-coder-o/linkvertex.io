@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <div className={'container'}>
       <div className={'flex items-center justify-center flex-col mt-[250px] max-md:mt-[200px] gap-[15px]'}>
-        <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className={'text-white text-5xl w-[500px] text-center font-bold leading-tight max-sm:text-5xl max-sm:w-full max-sm:leading-normal'}>
+        <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className={'text-white text-5xl w-[500px] text-center font-bold leading-tight max-sm:text-3xl max-sm:w-full max-sm:leading-normal'}>
           This <span className={'text-red-400'}>Analytic</span> page Coming Soon
         </motion.h1>
         <CountdownTimer targetDate={launchDate} />

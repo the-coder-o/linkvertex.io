@@ -20,8 +20,8 @@ const Dashboard = () => {
 
   return (
     <div className="container">
-      <div className="mt-[150px] max-sm:mt-[100px] flex flex-col gap-9">
-        <motion.span initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="main-text-animation text-4xl font-bold max-[450px]:text-[30px] flex items-center">
+      <div className="mt-[150px] max-sm:mt-[100px] flex flex-col gap-9 max-sm:gap-2">
+        <motion.span initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="main-text-animation text-4xl font-bold max-sm:text-[23px] flex items-center">
           Welcome, <span className={cn(isSignedIn ? 'block' : 'hidden')}>{user?.fullName ?? 'User'}</span>
           <Skeleton className={cn('h-7 w-[250px] bg-[#fff]/10 mt-1', isLoaded ? 'hidden' : 'block')} />
         </motion.span>

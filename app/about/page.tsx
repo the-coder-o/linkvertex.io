@@ -7,7 +7,6 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 import { Globe, Lock, SwatchBook, Target } from 'lucide-react'
-import Link from 'next/link'
 
 const Page = () => {
   return (
