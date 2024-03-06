@@ -1,9 +1,12 @@
 import { SignIn } from '@clerk/nextjs'
+import Animation from '@/components/animation/framer-animaion'
 
 export default function Page() {
   return (
-    <div className={'mt-[130px] max-sm:mt-[100px]'}>
-      <SignIn />
-    </div>
+    <Animation delay={0}>
+      <div className={'mt-[130px] max-sm:mt-[100px]'}>
+        <SignIn />
+      </div>
+    </Animation>
   )
 }

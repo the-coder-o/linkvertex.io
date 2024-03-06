@@ -5,10 +5,10 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 
 import { ChevronLeft } from 'lucide-react'
-import { motion } from 'framer-motion'
 
 import { Button } from '@/components/ui/button'
 import SocialLinks from './components/SocialLinks'
+import Animation from '@/components/animation/framer-animaion'
 
 const Profile = () => {
   const [input, setInput] = useState({
@@ -63,26 +63,30 @@ const Profile = () => {
   return (
     <div className={'container'}>
       <div className={'mt-[100px]'}>
-        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }}>
+        <Animation delay={0}>
           <Link href={'/dashboard'} className={'bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]'}>
             <ChevronLeft className={'w-5 h-5 font-bold'} />
             back
           </Link>
-        </motion.div>
-        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className={'mb-[3rem]'}>
-          <h2 className={'text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]'}>Profile Settings</h2>
-        </motion.div>
-        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={'flex flex-col gap-[2.5rem]'}>
-          <div>
-            <h2 className={'text-3xl font-bold text-white mb-[16px] max-sm:text-[26px]'}>Social Links</h2>
+        </Animation>
+        <Animation delay={1}>
+          <div className={'mb-[3rem]'}>
+            <h2 className={'text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]'}>Profile Settings</h2>
           </div>
-          <div className={'grid grid-cols-1 space-y-[2rem] mb-[100px]'}>
-            <SocialLinks input={input} handleChange={handleChange} isValid={isValid} />
-            <Button disabled={isSaveDisabled} className={'bg-[#9ae6b4] rounded-[20px] font-semibold text-black text-md hover:bg-[#9ae6c9]'}>
-              Save
-            </Button>
+        </Animation>
+        <Animation delay={2}>
+          <div className={'flex flex-col gap-[2.5rem]'}>
+            <div>
+              <h2 className={'text-3xl font-bold text-white mb-[16px] max-sm:text-[26px]'}>Social Links</h2>
+            </div>
+            <div className={'grid grid-cols-1 space-y-[2rem] mb-[100px]'}>
+              <SocialLinks input={input} handleChange={handleChange} isValid={isValid} />
+              <Button disabled={isSaveDisabled} className={'bg-[#9ae6b4] rounded-[20px] font-semibold text-black text-md hover:bg-[#9ae6c9]'}>
+                Save
+              </Button>
+            </div>
           </div>
-        </motion.div>
+        </Animation>
       </div>
     </div>
   )

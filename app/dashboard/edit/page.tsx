@@ -13,7 +13,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
 
 import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
 
@@ -21,6 +20,7 @@ import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import Animation from '@/components/animation/framer-animaion'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
@@ -112,24 +112,26 @@ const EditPage: React.FC = () => {
   return (
     <div className="container">
       <div className="mt-[100px] mb-[100px]">
-        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }}>
+        <Animation delay={0}>
           <Link href={'/dashboard'} className="bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]">
             <ChevronLeft className="w-5 h-5 font-bold" /> back
           </Link>
-        </motion.div>
-        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className="mb-[3rem]">
-          <h2 className="text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]">Edit Links</h2>
-        </motion.div>
-        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={'flex items-center gap-6 border-b-2 border-b-white/40 mb-[20px]'}>
+        </Animation>
+        <Animation delay={1}>
+          <div className="mb-[3rem]">
+            <h2 className="text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]">Edit Links</h2>
+          </div>
+        </Animation>
+        <Animation delay={2} className={'flex items-center gap-6 border-b-2 border-b-white/40 mb-[20px]'}>
           <span onClick={() => updateTab(1)} className={cn('text-white cursor-pointer', tab === 1 ? 'border-b-2' : 'border-b-transparent')}>
             links
           </span>
           <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
             themes
           </span>
-        </motion.div>
-        <div className={'flex justify-between gap-[30px] max-md:gap-0'}>
-          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 3 * 0.1 }} className={cn('grid grid-cols-1 gap-y-12', tab === 1 ? 'block' : 'hidden')}>
+        </Animation>
+        <Animation delay={3} className={'flex justify-between gap-[30px] max-md:gap-0'}>
+          <div className={cn('grid grid-cols-1 gap-y-12', tab === 1 ? 'block' : 'hidden')}>
             <div className={'grid grid-cols-1 gap-y-6'}>
               <div className={'relative'}>
                 <label className={'text-start text-white text-md font-medium'}>title</label>
@@ -222,11 +224,11 @@ const EditPage: React.FC = () => {
               </Droppable>
             </DragDropContext>
             <Button className="justify-center mt-12 py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
-          </motion.div>
+          </div>
           <div className={cn(tab === 2 ? 'block' : 'hidden')}>
             <ButtonCardTheme />
           </div>
-          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 4 * 0.1 }}>
+          <Animation delay={4}>
             <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden'}>
               <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem]'}>
                 <div className={'grid grid-cols-1 gap-y-4'}>
@@ -252,8 +254,8 @@ const EditPage: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </Animation>
+        </Animation>
       </div>
     </div>
   )
