@@ -14,7 +14,7 @@ import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
 
-import { ChevronLeft, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
+import { ChevronLeft, Eye, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
 
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
@@ -29,6 +29,7 @@ import ButtonCardTheme from '@/components/button-card-theme'
 
 import EmojiIcon from '@/assets/dashboard/smile.png'
 import LinkVertexIoIcon from '@/assets/images/link-logo.png'
+import ComingSoon from '@/assets/dashboard/coming-soon.png'
 
 const regexForPageTitle = /^[A-Za-z-]+$/
 
@@ -111,7 +112,7 @@ const EditPage: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="mt-[100px] mb-[100px]">
+      <div className="mt-[100px] mb-[100px] relative">
         <Animation delay={0}>
           <Link href={'/dashboard'} className="bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]">
             <ChevronLeft className="w-5 h-5 font-bold" /> back
@@ -123,11 +124,20 @@ const EditPage: React.FC = () => {
           </div>
         </Animation>
         <Animation delay={2} className={'flex items-center gap-6 border-b-2 border-b-white/40 mb-[20px]'}>
-          <span onClick={() => updateTab(1)} className={cn('text-white cursor-pointer', tab === 1 ? 'border-b-2' : 'border-b-transparent')}>
-            links
+          <span onClick={() => updateTab(1)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 1 ? 'border-b-2' : 'border-b-transparent')}>
+            Links
           </span>
-          <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
-            themes
+          <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
+            Themes
+            <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
+          </span>
+          <span onClick={() => updateTab(3)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 3 ? 'border-b-2' : 'border-b-transparent')}>
+            SEO optimizing
+            <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
+          </span>
+          <span onClick={() => updateTab(4)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 4 ? 'border-b-2' : 'border-b-transparent')}>
+            Subscribers
+            <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
           </span>
         </Animation>
         <Animation delay={3} className={'flex justify-between gap-[30px] max-md:gap-0'}>
@@ -228,6 +238,20 @@ const EditPage: React.FC = () => {
           <div className={cn(tab === 2 ? 'block' : 'hidden')}>
             <ButtonCardTheme />
           </div>
+          <div className={cn(tab === 3 ? 'block' : 'hidden')}>
+            <Alert className="!bg-[#1E2B32] w-full border-transparent rounded-[24px] mb-8">
+              <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
+              <AlertTitle className="text-white ml-2">SEO optimizing will be coming soon 💤</AlertTitle>
+              <AlertDescription className="text-white ml-2 text-[16px] font-medium">Thanks for your understanding as we use this in production soon.😊 SEO optimizing will be open in v2.0.2</AlertDescription>
+            </Alert>
+          </div>
+          <div className={cn(tab === 4 ? 'block' : 'hidden')}>
+            <Alert className="!bg-[#1E2B32] w-full border-transparent rounded-[24px] mb-8">
+              <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
+              <AlertTitle className="text-white ml-2">Subscribers will be coming soon 💤</AlertTitle>
+              <AlertDescription className="text-white ml-2 text-[16px] font-medium">Thanks for your understanding as we use this in production soon.😊 subscribers will be open in v2.0.4</AlertDescription>
+            </Alert>
+          </div>
           <Animation delay={4}>
             <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden'}>
               <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem]'}>
@@ -256,6 +280,13 @@ const EditPage: React.FC = () => {
             </div>
           </Animation>
         </Animation>
+        <div className={'hidden max-md:block'}>
+          <div className={'flex items-center justify-center'}>
+            <Button className={'bg-[#fff] hover:bg-[#fff]/80 text-black fixed bottom-5 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
+              <Eye /> Preview
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   )
