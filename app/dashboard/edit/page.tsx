@@ -124,18 +124,18 @@ const EditPage: React.FC = () => {
           </div>
         </Animation>
         <Animation delay={2} className={'flex items-center gap-6 border-b-2 border-b-white/40 mb-[20px]'}>
-          <span onClick={() => updateTab(1)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 1 ? 'border-b-2' : 'border-b-transparent')}>
+          <span onClick={() => updateTab(1)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 1 ? 'border-b-2' : 'border-b-transparent')}>
             Links
           </span>
-          <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
+          <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
             Themes
             <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
           </span>
-          <span onClick={() => updateTab(3)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 3 ? 'border-b-2' : 'border-b-transparent')}>
-            SEO optimizing
+          <span onClick={() => updateTab(3)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 3 ? 'border-b-2' : 'border-b-transparent')}>
+            SEO
             <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
           </span>
-          <span onClick={() => updateTab(4)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[13px] max-sm:justify-between', tab === 4 ? 'border-b-2' : 'border-b-transparent')}>
+          <span onClick={() => updateTab(4)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 4 ? 'border-b-2' : 'border-b-transparent')}>
             Subscribers
             <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
           </span>
