@@ -1,5 +1,44 @@
 {
   "header": {
-    "title": "The actual title text"
+    "title1": "Biz Haqimizda",
+    "title2": "Savollar",
+    "title3": "Bog'lanish",
+    "title4": "Blog"
+  },
+  "home_section": {
+    "title": "Barcha havolalaringiz uchun bitta joy",
+    "subtitle": "Ularning barchasini boshqarish uchun bitta havola. O'zingizning havolalaringizni osongina chiroyli bitta sahifaga joylashtiring.",
+    "button": "Boshlash"
+  },
+  "dashboard": {
+    "title": "Xush kelibsiz",
+    "page1": "Sizning sahifangiz",
+    "page2": "Havolani tahrirlash",
+    "page3": "Ijtimoiy havolalar",
+    "page4": "Analitika",
+    "logout_btn": "Chiqish"
+  },
+  "social_links_page": {
+    "back_btn": "Orqaga",
+    "title": "Profil sozlamalari",
+    "subtitle": "Ijtimoiy havolalar",
+    "save_btn": "Saqlash"
+  },
+  "edit_link_page": {
+    "back_btn": "Orqaga",
+    "title": "Havolalarni tahrirlash",
+    "tab1": "Havolalar",
+    "tab2": "Mavzular",
+    "tab3": "SEO",
+    "tab4": "Obunachilar",
+    "label": "sarlavha",
+    "profile_title": "sahifa sarlavhasi",
+    "link_label": "sahifangiz-url",
+    "description": "tavsifi",
+    "description_label": "Barcha havolalaringiz uchun bitta joy. Ularning barchasini boshqarish uchun bitta havola. O'zingizning havolalaringizni osongina chiroyli bitta sahifaga joylashtiring.",
+    "alert_title": "Eslab qoling!",
+    "alert_text": "Ijtimoiy havolalarni tahrirlash uchun Profil sozlamalariga o'ting. Havolalar ketma-ketligini tartibga solish uchun sudrab olib tashlash tugmasidan ham foydalanishingiz mumkin.",
+    "save_btn": "Saqlash",
+    "add_link_btn": "Havola qo'shish"
   }
 }

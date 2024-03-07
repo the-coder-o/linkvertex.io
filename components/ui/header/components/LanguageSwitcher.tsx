@@ -2,23 +2,19 @@ import React, { useState, useContext, createContext, ReactNode } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { useTranslation } from 'react-i18next'
 
-// Define a type for the language structure
 type Language = {
   code: string
   name: string
   image: StaticImageData
 }
 
-// Define the context value structure
 interface LanguageContextType {
   handleLanguageChange: () => void
   selectedLanguage: Language
 }
 
-// Create a context with a default value
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-// Define the props for the LanguageProvider component
 interface LanguageProviderProps {
   children: ReactNode
   languages: Language[]
@@ -47,7 +43,7 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <button onClick={handleLanguageChange}>
-      <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={18} height={18} className="!bg-cover !w-[30px]" />
+      <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={18} height={18} className="!bg-cover !w-[32px]" />
     </button>
   )
 }

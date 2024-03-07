@@ -1,5 +1,4 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 
 import Link from 'next/link'
 
@@ -22,8 +21,6 @@ const languages = [
 ]
 
 const Header = () => {
-  const { t } = useTranslation('header')
-
   return (
     <div className={'w-full fixed left-0 right-0 bg-[#0a0c0ccc] h-[4rem] flex items-center justify-center z-10 top-0'} style={{ backdropFilter: 'blur(6px)' }}>
       <header className={'container'}>

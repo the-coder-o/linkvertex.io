@@ -1,5 +1,44 @@
 {
   "header": {
-    "title": "The actual title text"
+    "title1": "Um",
+    "title2": "FAQ",
+    "title3": "Kontakt",
+    "title4": "Blog"
+  },
+  "home_section": {
+    "title": "Ein Ort für alle Ihre Links",
+    "subtitle": "Ein Link, um sie alle zu beherrschen. Platzieren Sie Ihre Links ganz einfach auf einer schönen Einzelseite.",
+    "button": "Loslegen"
+  },
+  "dashboard": {
+    "title": "Willkommen",
+    "page1": "Deine Seite",
+    "page2": "Link bearbeiten",
+    "page3": "Soziale Links",
+    "page4": "Analytik",
+    "logout_btn": "Ausloggen"
+  },
+  "social_links_page": {
+    "back_btn": "Zurück",
+    "title": "Profileinstellungen",
+    "subtitle": "Soziale Links",
+    "save_btn": "Speichern"
+  },
+  "edit_link_page": {
+    "back_btn": "Zurück",
+    "title": "Links bearbeiten",
+    "tab1": "Links",
+    "tab2": "Themen",
+    "tab3": "SEO",
+    "tab4": "Abonnentinnen",
+    "label": "titel",
+    "profile_title": "seitentitel",
+    "link_label": "ihre-seiten-url",
+    "description": "beschreibung",
+    "description_label": "Ein Ort für alle Ihre Links. Ein Link, um sie alle zu beherrschen. Platzieren Sie Ihre Links ganz einfach auf einer schönen Einzelseite.",
+    "alert_title": "Erinnern!",
+    "alert_text": "Um soziale Links zu bearbeiten, gehen Sie zu Profileinstellungen. Sie können die Linkreihenfolge auch per Drag & Drop anordnen.",
+    "save_btn": "Speichern",
+    "add_link_btn": "Link hinzufügen"
   }
 }

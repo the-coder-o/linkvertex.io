@@ -1,5 +1,44 @@
 {
   "header": {
-    "title": "The actual title text"
+    "title1": "About",
+    "title2": "FAQs",
+    "title3": "Contact",
+    "title4": "Blog"
+  },
+  "home_section": {
+    "title": "One Place for All Your Links",
+    "subtitle": "One link to rule them all. Easily place your links in a beautiful single page.",
+    "button": "Get Started"
+  },
+  "dashboard": {
+    "title": "Welcome",
+    "page1": "Your Page",
+    "page2": "Edit Link",
+    "page3": "Social Links",
+    "page4": "Analytics",
+    "logout_btn": "Logout"
+  },
+  "social_links_page": {
+    "back_btn": "Back",
+    "title": "Profile Settings",
+    "subtitle": "Social Links",
+    "save_btn": "Save"
+  },
+  "edit_link_page": {
+    "back_btn": "Back",
+    "title": "Edit Links",
+    "tab1": "Links",
+    "tab2": "Themes",
+    "tab3": "SEO",
+    "tab4": "Subscribers",
+    "label": "title",
+    "profile_title": "page title",
+    "link_label": "your-page-url",
+    "description": "description",
+    "description_label": "One Place for All Your Links. One link to rule them all. Easily place your links in a beautiful single page.",
+    "alert_title": "Remember!",
+    "alert_text": "To edit social links, go to Profile Settings. You can also use drag and drop to arrange the links sequence.",
+    "save_btn": "Save",
+    "add_link_btn": "Add Link"
   }
 }

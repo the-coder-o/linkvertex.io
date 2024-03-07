@@ -1,18 +1,18 @@
 export const UrlPages = [
   {
-    linkTitle: 'About',
+    linkTitle: 'title1',
     linkPath: '/about',
   },
   {
-    linkTitle: 'FAQ',
+    linkTitle: 'title2',
     linkPath: '/faq',
   },
   {
-    linkTitle: 'Contact',
+    linkTitle: 'title3',
     linkPath: '/contact',
   },
   {
-    linkTitle: 'Blog',
+    linkTitle: 'title4',
     linkPath: '/blog',
   },
 ]

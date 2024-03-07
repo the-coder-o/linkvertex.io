@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
+import { useTranslation } from 'react-i18next'
+
 import { DropResult } from 'react-beautiful-dnd'
 import { ChangeEvent, FC, useCallback, useState } from 'react'
 import { ChevronLeft, Eye, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
@@ -28,6 +30,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 const EditPage: FC = () => {
   const regexForPageTitle = /^[A-Za-z-]+$/
+  const { t } = useTranslation('edit_link_page')
 
   const [inputValue, setInputValue] = useState('your-page-url')
   const [isValid, setIsValid] = useState(true)
@@ -97,28 +100,28 @@ const EditPage: FC = () => {
       <div className="mt-[100px] mb-[100px] relative">
         <Animation delay={0}>
           <Link href={'/dashboard'} className="bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]">
-            <ChevronLeft className="w-5 h-5 font-bold" /> back
+            <ChevronLeft className="w-5 h-5 font-bold" /> {t('back_btn')}
           </Link>
         </Animation>
         <Animation delay={1}>
           <div className="mb-[3rem]">
-            <h2 className="text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]">Edit Links</h2>
+            <h2 className="text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]">{t('title')}</h2>
           </div>
         </Animation>
         <Animation delay={2} className={'flex items-center gap-6 border-b-2 border-b-white/40 mb-[20px]'}>
           <span onClick={() => updateTab(1)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 1 ? 'border-b-2' : 'border-b-transparent')}>
-            Links
+            {t('tab1')}
           </span>
           <span onClick={() => updateTab(2)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 2 ? 'border-b-2' : 'border-b-transparent')}>
-            Themes
+            {t('tab2')}
             <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
           </span>
           <span onClick={() => updateTab(3)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 3 ? 'border-b-2' : 'border-b-transparent')}>
-            SEO
+            {t('tab3')}
             <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
           </span>
           <span onClick={() => updateTab(4)} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', tab === 4 ? 'border-b-2' : 'border-b-transparent')}>
-            Subscribers
+            {t('tab4')}
             <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
           </span>
         </Animation>
@@ -126,31 +129,31 @@ const EditPage: FC = () => {
           <div className={cn('grid grid-cols-1 gap-y-12', tab === 1 ? 'block' : 'hidden')}>
             <div className={'grid grid-cols-1 gap-y-6'}>
               <div className={'relative'}>
-                <label className={'text-start text-white text-md font-medium'}>title</label>
+                <label className={'text-start text-white text-md font-medium'}> {t('label')}</label>
                 <Input value={title} onChange={handleInputChangeValidation} type={'text'} className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
                 <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute top-[42.8px] cursor-pointer right-3'} />
                 {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
               </div>
               <div>
-                <label className={'text-start text-white text-md font-medium'}>page title</label>
+                <label className={'text-start text-white text-md font-medium'}>{t('profile_title')}</label>
                 <div className="relative">
                   <Input value={inputValue} onChange={handleInputChange} type="text" className={'mt-[0.5rem] !pl-[190px] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} id="hs-inline-add-on" name="hs-inline-add-on" />
                   <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-                    <span className="text-start text-gray-400 text-sm font-medium">https://linkvertex-a-bd.me/</span>{' '}
+                    <span className="text-start text-gray-400 text-sm font-medium">https://linkvertex-a-bd.me/</span>
                   </div>
                 </div>
-                {!isValid && <p className="text-red-500 text-sm">Please write a correct your page url title.</p>}{' '}
+                {!isValid && <p className="text-red-500 text-sm">Please write a correct your page url title.</p>}
               </div>
               <div>
-                <label className={'text-start text-white text-md font-medium'}>description</label>
+                <label className={'text-start text-white text-md font-medium'}>{t('description')}</label>
                 <Textarea value={description} onChange={handleInputChangeDescription} className={'mt-[0.5rem] h-[150px] !bg-[#141616] !pt-[16px] border-transparent !outline-none focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
                 {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
               </div>
             </div>
             <Alert className="!bg-[#1E2B32] border-transparent rounded-[24px] mt-8">
               <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
-              <AlertTitle className="text-white ml-2">Remember!</AlertTitle>
-              <AlertDescription className="text-white ml-2 text-[16px] font-medium">To edit social links, go to Profile Settings. You can also use drag and drop to arrange the links sequence.</AlertDescription>
+              <AlertTitle className="text-white ml-2">{t('alert_title')}</AlertTitle>
+              <AlertDescription className="text-white ml-2 text-[16px] w-full font-medium">{t('alert_text')}</AlertDescription>
             </Alert>
             <DragDropContext onDragEnd={onDragEnd}>
               <Droppable droppableId="droppable-links">
@@ -179,13 +182,13 @@ const EditPage: FC = () => {
                     ))}
                     {provided.placeholder}
                     <Button onClick={addLink} className="!font-bold flex items-center justify-center rounded-[20px] px-[16px] text-[16px] bg-[#90CDF4] hover:bg-[#90CDF4]/90 text-black w-full">
-                      Add Link
+                      {t('add_link_btn')}
                     </Button>
                   </div>
                 )}
               </Droppable>
             </DragDropContext>
-            <Button className="justify-center mt-12 py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full">Save</Button>
+            <Button className="justify-center mt-12 py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full"> {t('save_btn')}</Button>
           </div>
           <div className={cn(tab === 2 ? 'block' : 'hidden')}>
             <ButtonCardTheme />
