@@ -1,21 +1,24 @@
 'use client'
 
+import Image from 'next/image'
+import dynamic from 'next/dynamic'
+
+import { cn } from '@/lib/utils'
+import { useTranslation } from 'react-i18next'
+
 import { Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
 
-import { useTranslation } from 'react-i18next'
-import { cn } from '@/lib/utils'
-import { Input } from '@/components/ui/input'
-import Image from 'next/image'
-import EmojiIcon from '@/assets/dashboard/smile.png'
-import { Textarea } from '@/components/ui/textarea'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { Switch } from '@/components/ui/switch'
-import { Button } from '@/components/ui/button'
 import { DropResult } from 'react-beautiful-dnd'
 import { ChangeEvent, useCallback, useState } from 'react'
-import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
-import dynamic from 'next/dynamic'
 import { useDataContext } from '@/app/dashboard/edit/edit-context'
+import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
+
+import { Input } from '@/components/ui/input'
+import { Switch } from '@/components/ui/switch'
+import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import EmojiIcon from '@/assets/dashboard/smile.png'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 const Droppable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Droppable), { ssr: false })
 const Draggable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Draggable), { ssr: false })
@@ -110,7 +113,7 @@ const Page = () => {
             {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
           </div>
         </div>
-        <Alert className="!bg-[#1E2B32] border-transparent rounded-[24px] mt-8">
+        <Alert className="!bg-[#1E2B32] border-transparent rounded-[24px]">
           <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
           <AlertTitle className="text-white ml-2">{t('alert_title')}</AlertTitle>
           <AlertDescription className="text-white ml-2 text-[16px] w-full font-medium">{t('alert_text')}</AlertDescription>
@@ -118,7 +121,7 @@ const Page = () => {
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="droppable-links">
             {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef} className="border-2 border-[#ffffff29] grid grid-cols-1 mt-10 items-center rounded-[24px] p-[0.5rem]">
+              <div {...provided.droppableProps} ref={provided.innerRef} className="border-2 border-[#ffffff29] grid grid-cols-1 items-center rounded-[24px] p-[0.5rem]">
                 {links.map((link, index) => (
                   <Draggable key={link.id} draggableId={link.id} index={index}>
                     {(provided) => (
@@ -148,7 +151,7 @@ const Page = () => {
             )}
           </Droppable>
         </DragDropContext>
-        <Button className="justify-center mt-12 py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full"> {t('save_btn')}</Button>
+        <Button className="justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full"> {t('save_btn')}</Button>
       </div>
     </>
   )
