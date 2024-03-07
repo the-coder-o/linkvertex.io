@@ -1,12 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
-
 import Image from 'next/image'
 
-import { cn } from '@/lib/utils'
+import { useState } from 'react'
 import { Lock, ShieldAlert } from 'lucide-react'
 
+import { cn } from '@/lib/utils'
 import { themeImages } from '@/content/themes'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
@@ -22,7 +21,7 @@ export default function ButtonCardTheme() {
   }
 
   return (
-    <>
+    <div className={'flex flex-col items-center'}>
       <Alert className="!bg-[#1E2B32] w-full border-transparent rounded-[24px] mb-8">
         <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
         <AlertTitle className="text-white ml-2">These themes will be coming soon 💤</AlertTitle>
@@ -36,6 +35,6 @@ export default function ButtonCardTheme() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
