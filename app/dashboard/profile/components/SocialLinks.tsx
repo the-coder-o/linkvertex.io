@@ -1,25 +1,8 @@
-import React from 'react'
+import { ChangeEvent, FC } from 'react'
+
 import SocialLinkInput from './SocialLinkInput'
-import {
-  validateYoutube,
-  validateTwitter,
-  validateInstagram,
-  validateMastodon,
-  validateTiktok,
-  validateTwitch,
-  validateLinkedin,
-  validateWhatsApp,
-  validateTelegram,
-  validateEmail,
-  validatePinterest,
-  validateSpotify,
-  validateAppleMusic,
-  validateSnapchat,
-  validateAppStore,
-  validateFacebook,
-  validateGithub,
-  validateGooglePlay,
-} from '@/app/dashboard/profile/lib/validation-inputs'
+
+import { validateYoutube, validateTwitter, validateInstagram, validateMastodon, validateTiktok, validateTwitch, validateLinkedin, validateWhatsApp, validateTelegram, validateEmail, validatePinterest, validateSpotify, validateAppleMusic, validateSnapchat, validateAppStore, validateFacebook, validateGithub, validateGooglePlay } from '@/app/dashboard/profile/lib/validation-inputs'
 
 interface SocialLinksInput {
   instagram: string
@@ -65,11 +48,11 @@ interface SocialLinksIsValid {
 
 interface SocialLinksProps {
   input: SocialLinksInput
-  handleChange: (platform: keyof SocialLinksInput, validator: (value: string) => boolean) => (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleChange: (platform: keyof SocialLinksInput, validator: (value: string) => boolean) => (event: ChangeEvent<HTMLInputElement>) => void
   isValid: SocialLinksIsValid
 }
 
-const SocialLinks: React.FC<SocialLinksProps> = ({ input, handleChange, isValid }) => (
+const SocialLinks: FC<SocialLinksProps> = ({ input, handleChange, isValid }) => (
   <>
     <SocialLinkInput iconClass="fa-brands fa-instagram" label="Instagram" value={input.instagram} placeholder="username" onChange={handleChange('instagram', validateInstagram)} isValid={isValid.instagram} validationMessage="Please enter a valid instagram username." />
     <SocialLinkInput iconClass="fa-brands fa-twitter" label="Twitter" value={input.twitter} placeholder="username" onChange={handleChange('twitter', validateTwitter)} isValid={isValid.twitter} validationMessage="Please enter a valid twitter username" />
@@ -86,15 +69,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ input, handleChange, isValid 
     <SocialLinkInput iconClass="fa-brands fa-apple" label="Apple Music" value={input.appleMusic} placeholder="https://apple.music.com/username" onChange={handleChange('appleMusic', validateAppleMusic)} isValid={isValid.appleMusic} validationMessage="Please enter a valid Apple Music URL." />
     <SocialLinkInput iconClass="fa-brands fa-snapchat-ghost" label="Snapchat" value={input.snapchat} placeholder="https://www.snapchat.com/add/username" onChange={handleChange('snapchat', validateSnapchat)} isValid={isValid.snapchat} validationMessage="Please enter a valid Snapchat URL." />
     <SocialLinkInput iconClass="fa-brands fa-app-store-ios" label="App Store" value={input.appStore} placeholder="https://apps.apple.com/app/id" onChange={handleChange('appStore', validateAppStore)} isValid={isValid.appStore} validationMessage="Please enter a valid App Store URL." />
-    <SocialLinkInput
-      iconClass="fa-brands fa-google-play"
-      label="Google Play"
-      value={input.googlePlay}
-      placeholder="https://play.google.com/store/apps/details?id=your_app_id"
-      onChange={handleChange('googlePlay', validateGooglePlay)}
-      isValid={isValid.googlePlay}
-      validationMessage="Please enter a valid Google Play URL."
-    />
+    <SocialLinkInput iconClass="fa-brands fa-google-play" label="Google Play" value={input.googlePlay} placeholder="https://play.google.com/store/apps/details?id=your_app_id" onChange={handleChange('googlePlay', validateGooglePlay)} isValid={isValid.googlePlay} validationMessage="Please enter a valid Google Play URL." />
     <SocialLinkInput iconClass="fa-brands fa-facebook" label="Facebook" value={input.facebook} placeholder="https://facebook.com/your_page_url" onChange={handleChange('facebook', validateFacebook)} isValid={isValid.facebook} validationMessage="Please enter a valid Facebook URL." />
     <SocialLinkInput iconClass="fa-brands fa-github" label="Github" value={input.github} placeholder="username" onChange={handleChange('github', validateGithub)} isValid={isValid.github} validationMessage="Please enter a valid GitHub username." />
   </>

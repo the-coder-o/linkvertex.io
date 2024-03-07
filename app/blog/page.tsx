@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Footer from '@/components/ui/footer/footer'
 import CountdownTimer from '@/components/soon/count-down-time'
 
-const Page = () => {
+const Blog = () => {
   const launchDate = new Date('2024-08-11T00:00:00')
 
   return (
@@ -24,4 +24,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Blog

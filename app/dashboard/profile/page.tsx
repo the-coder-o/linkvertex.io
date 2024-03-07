@@ -1,58 +1,20 @@
 'use client'
 
-import React, { useState } from 'react'
-
 import Link from 'next/link'
 
 import { ChevronLeft } from 'lucide-react'
+import { ChangeEvent, useState } from 'react'
 
-import { Button } from '@/components/ui/button'
 import SocialLinks from './components/SocialLinks'
 import Animation from '@/components/animation/framer-animaion'
 
-const Profile = () => {
-  const [input, setInput] = useState({
-    instagram: '',
-    mastodon: '',
-    tiktok: '',
-    telegram: '',
-    pinterest: '',
-    github: '',
-    whatsapp: '',
-    email: '',
-    spotify: '',
-    appleMusic: '',
-    snapchat: '',
-    appStore: '',
-    googlePlay: '',
-    facebook: '',
-    youtube: '',
-    twitch: '',
-    linkedin: '',
-    twitter: '',
-  })
-  const [isValid, setIsValid] = useState({
-    instagram: true,
-    mastodon: true,
-    tiktok: true,
-    telegram: true,
-    pinterest: true,
-    github: true,
-    whatsapp: true,
-    email: true,
-    spotify: true,
-    appleMusic: true,
-    snapchat: true,
-    appStore: true,
-    googlePlay: true,
-    facebook: true,
-    youtube: true,
-    twitch: true,
-    linkedin: true,
-    twitter: true,
-  })
+import { Button } from '@/components/ui/button'
 
-  const handleChange = (service: string, validator: (input: string) => boolean) => (event: React.ChangeEvent<HTMLInputElement>) => {
+const Profile = () => {
+  const [input, setInput] = useState({ instagram: '', mastodon: '', tiktok: '', telegram: '', pinterest: '', github: '', whatsapp: '', email: '', spotify: '', appleMusic: '', snapchat: '', appStore: '', googlePlay: '', facebook: '', youtube: '', twitch: '', linkedin: '', twitter: '' })
+  const [isValid, setIsValid] = useState({ instagram: true, mastodon: true, tiktok: true, telegram: true, pinterest: true, github: true, whatsapp: true, email: true, spotify: true, appleMusic: true, snapchat: true, appStore: true, googlePlay: true, facebook: true, youtube: true, twitch: true, linkedin: true, twitter: true })
+
+  const handleChange = (service: string, validator: (input: string) => boolean) => (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
     setInput({ ...input, [service]: value })
     setIsValid({ ...isValid, [service]: validator(value) })

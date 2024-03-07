@@ -7,8 +7,6 @@ export const useAuth = () => {
   const user = useSelector((state: any) => state.user.user) // Предположим, что состояние пользователя хранится здесь
 
   useEffect(() => {
-    if (!user) {
-      router.push('/login')
-    }
+    if (!user) router.push('/login')
   }, [router, user])
 }

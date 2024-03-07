@@ -1,15 +1,11 @@
 'use client'
 
-import React from 'react'
-
 import Image from 'next/image'
-
 import { Globe, Lock, SwatchBook, Target } from 'lucide-react'
+
 import Animation from '@/components/animation/framer-animaion'
 
-const Page = () => {
-  const first = 'second'
-
+const About = () => {
   return (
     <div className={'container'}>
       <div className={'mt-[150px] mb-[50px]'}>
@@ -91,4 +87,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default About

@@ -1,39 +1,34 @@
 'use client'
 
-import React, { useCallback, useState } from 'react'
-
-import dynamic from 'next/dynamic'
-import { DropResult } from 'react-beautiful-dnd'
-
-const DragDropContext = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.DragDropContext), { ssr: false })
-const Droppable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Droppable), { ssr: false })
-const Draggable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Draggable), { ssr: false })
-
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 
-import { cn } from '@/lib/utils'
-
+import { DropResult } from 'react-beautiful-dnd'
+import { ChangeEvent, FC, useCallback, useState } from 'react'
 import { ChevronLeft, Eye, Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
 
+const Droppable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Droppable), { ssr: false })
+const Draggable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Draggable), { ssr: false })
+const DragDropContext = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.DragDropContext), { ssr: false })
+
+import EmojiIcon from '@/assets/dashboard/smile.png'
+import ComingSoon from '@/assets/dashboard/coming-soon.png'
+import LinkVertexIoIcon from '@/assets/images/link-logo.png'
+import ButtonCardTheme from '@/components/button-card-theme'
+import Animation from '@/components/animation/framer-animaion'
+
+import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import Animation from '@/components/animation/framer-animaion'
+import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
-import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
+const EditPage: FC = () => {
+  const regexForPageTitle = /^[A-Za-z-]+$/
 
-import ButtonCardTheme from '@/components/button-card-theme'
-
-import EmojiIcon from '@/assets/dashboard/smile.png'
-import LinkVertexIoIcon from '@/assets/images/link-logo.png'
-import ComingSoon from '@/assets/dashboard/coming-soon.png'
-
-const regexForPageTitle = /^[A-Za-z-]+$/
-
-const EditPage: React.FC = () => {
   const [inputValue, setInputValue] = useState('your-page-url')
   const [isValid, setIsValid] = useState(true)
   const [links, setLinks] = useState<LinkItem[]>([])
@@ -43,7 +38,7 @@ const EditPage: React.FC = () => {
   const [error2, setError2] = useState('')
   const [tab, setTab] = useState(1)
 
-  const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
     setInputValue(value)
     setIsValid(regexForPageTitle.test(value))
@@ -54,9 +49,7 @@ const EditPage: React.FC = () => {
     if (value.length <= 50) {
       setTitle(value)
       setError('')
-    } else {
-      setError('Title cannot exceed 50 characters.')
-    }
+    } else setError('Title cannot exceed 50 characters.')
   }
 
   const handleInputChangeDescription = (e: any) => {
@@ -64,22 +57,13 @@ const EditPage: React.FC = () => {
     if (value.length <= 150) {
       setDescription(value)
       setError2('')
-    } else {
-      setError2('Description cannot exceed 150 characters.')
-    }
+    } else setError2('Description cannot exceed 150 characters.')
   }
 
-  const updateTab = (id: number) => {
-    setTab(id)
-  }
+  const updateTab = (id: number) => setTab(id)
 
   const addLink = useCallback(() => {
-    const newLink: LinkItem = {
-      id: Date.now().toString(),
-      title: '',
-      url: '',
-      enabled: true,
-    }
+    const newLink: LinkItem = { id: Date.now().toString(), title: '', url: '', enabled: true }
     setLinks((prevLinks) => [...prevLinks, newLink])
   }, [])
 
@@ -97,9 +81,7 @@ const EditPage: React.FC = () => {
 
   const onDragEnd = useCallback(
     (result: DropResult) => {
-      if (!result.destination) {
-        return
-      }
+      if (!result.destination) return
 
       const items = Array.from(links)
       const [reorderedItem] = items.splice(result.source.index, 1)
@@ -145,26 +127,14 @@ const EditPage: React.FC = () => {
             <div className={'grid grid-cols-1 gap-y-6'}>
               <div className={'relative'}>
                 <label className={'text-start text-white text-md font-medium'}>title</label>
-                <Input
-                  value={title}
-                  onChange={handleInputChangeValidation}
-                  type={'text'}
-                  className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'}
-                />
+                <Input value={title} onChange={handleInputChangeValidation} type={'text'} className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
                 <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute top-[42.8px] cursor-pointer right-3'} />
                 {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
               </div>
               <div>
                 <label className={'text-start text-white text-md font-medium'}>page title</label>
                 <div className="relative">
-                  <Input
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    type="text"
-                    className={'mt-[0.5rem] !pl-[190px] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'}
-                    id="hs-inline-add-on"
-                    name="hs-inline-add-on"
-                  />
+                  <Input value={inputValue} onChange={handleInputChange} type="text" className={'mt-[0.5rem] !pl-[190px] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} id="hs-inline-add-on" name="hs-inline-add-on" />
                   <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
                     <span className="text-start text-gray-400 text-sm font-medium">https://linkvertex-a-bd.me/</span>{' '}
                   </div>
@@ -173,13 +143,7 @@ const EditPage: React.FC = () => {
               </div>
               <div>
                 <label className={'text-start text-white text-md font-medium'}>description</label>
-                <Textarea
-                  value={description}
-                  onChange={handleInputChangeDescription}
-                  className={
-                    'mt-[0.5rem] h-[150px] !bg-[#141616] !pt-[16px] border-transparent !outline-none focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'
-                  }
-                />
+                <Textarea value={description} onChange={handleInputChangeDescription} className={'mt-[0.5rem] h-[150px] !bg-[#141616] !pt-[16px] border-transparent !outline-none focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
                 {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
               </div>
             </div>
@@ -198,23 +162,11 @@ const EditPage: React.FC = () => {
                           <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={'grid grid-cols-1 border-2 border-[#ffffff29] bg-[#1a202c99] p-[1.2rem] rounded-[24px] mb-[15px]'}>
                             <h2 className="text-md uppercase font-bold text-white">URL {index + 1}</h2>
                             <div className="relative">
-                              <Input
-                                placeholder="Label"
-                                value={link.title}
-                                onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)}
-                                type="text"
-                                className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]"
-                              />
+                              <Input placeholder="Label" value={link.title} onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)} type="text" className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]" />
                               <Tags className="text-white absolute top-[18px] left-3 w-5 h-5" />
                             </div>
                             <div className="relative">
-                              <Input
-                                placeholder="Link URL"
-                                value={link.url}
-                                onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)}
-                                type="text"
-                                className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]"
-                              />
+                              <Input placeholder="Link URL" value={link.url} onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)} type="text" className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]" />
                               <Link2 className="text-white absolute top-[18px] left-3 w-5 h-5" />
                             </div>
                             <div className="flex items-center justify-between mt-[15px]">
