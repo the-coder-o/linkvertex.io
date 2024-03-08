@@ -1,15 +1,7 @@
-import { Input } from '@/components/ui/input'
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
 
-interface SocialLinkInputProps {
-  iconClass: string
-  label: string
-  value: string
-  placeholder: string
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void
-  isValid: boolean
-  validationMessage?: string
-}
+import { Input } from '@/components/ui/input'
+import { SocialLinkInputProps } from '@/interfaces/dashboard/profile.interface'
 
 const SocialLinkInput: FC<SocialLinkInputProps> = ({ iconClass, label, value, placeholder, onChange, isValid, validationMessage }) => (
   <>

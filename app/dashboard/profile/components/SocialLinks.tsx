@@ -1,56 +1,9 @@
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
 
 import SocialLinkInput from './SocialLinkInput'
+import { SocialLinksProps } from '@/interfaces/dashboard/profile.interface'
 
 import { validateYoutube, validateTwitter, validateInstagram, validateMastodon, validateTiktok, validateTwitch, validateLinkedin, validateWhatsApp, validateTelegram, validateEmail, validatePinterest, validateSpotify, validateAppleMusic, validateSnapchat, validateAppStore, validateFacebook, validateGithub, validateGooglePlay } from '@/app/dashboard/profile/lib/validation-inputs'
-
-interface SocialLinksInput {
-  instagram: string
-  mastodon: string
-  tiktok: string
-  telegram: string
-  pinterest: string
-  github: string
-  whatsapp: string
-  email: string
-  spotify: string
-  appleMusic: string
-  snapchat: string
-  appStore: string
-  googlePlay: string
-  facebook: string
-  youtube: string
-  twitch: string
-  linkedin: string
-  twitter: string
-}
-
-interface SocialLinksIsValid {
-  instagram: boolean
-  mastodon: boolean
-  tiktok: boolean
-  telegram: boolean
-  pinterest: boolean
-  github: boolean
-  whatsapp: boolean
-  email: boolean
-  spotify: boolean
-  appleMusic: boolean
-  snapchat: boolean
-  appStore: boolean
-  googlePlay: boolean
-  facebook: boolean
-  youtube: boolean
-  twitch: boolean
-  linkedin: boolean
-  twitter: boolean
-}
-
-interface SocialLinksProps {
-  input: SocialLinksInput
-  handleChange: (platform: keyof SocialLinksInput, validator: (value: string) => boolean) => (event: ChangeEvent<HTMLInputElement>) => void
-  isValid: SocialLinksIsValid
-}
 
 const SocialLinks: FC<SocialLinksProps> = ({ input, handleChange, isValid }) => (
   <>

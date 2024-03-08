@@ -1,15 +1,7 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from 'react'
-import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
 import { useTranslation } from 'react-i18next'
 
-interface DataContextProps {
-  links: LinkItem[]
-  setLinks: Dispatch<SetStateAction<LinkItem[]>>
-  title: string
-  setTitle: Dispatch<SetStateAction<string>>
-  description: string
-  setDescription: Dispatch<SetStateAction<string>>
-}
+import { DataContextProps, LinkItem } from '@/interfaces/dashboard/edit.interface'
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 
 const DataContext = createContext<DataContextProps | undefined>(undefined)
 

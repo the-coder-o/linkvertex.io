@@ -6,9 +6,10 @@ import { useState } from 'react'
 import { Lock, ShieldAlert } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
+import { useTranslation } from 'react-i18next'
+
 import { themeImages } from '@/content/themes'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { useTranslation } from 'react-i18next'
 
 export default function ButtonCardTheme() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null)

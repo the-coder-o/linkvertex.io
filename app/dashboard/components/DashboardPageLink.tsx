@@ -1,8 +1,7 @@
+import { FC } from 'react'
+
 import Link from 'next/link'
-
-import { FC, ReactNode } from 'react'
-
-type DashboardLinkProps = { href: string; label: string; icon?: ReactNode; buttonContent?: ReactNode }
+import { DashboardLinkProps } from '@/types/dashboard.type'
 
 const DashboardLink: FC<DashboardLinkProps> = ({ href, label, icon, buttonContent }) => (
   <div className="border border-[#ffffff29] rounded-[24px] p-[20px] max-[450px]:p-[15px] ease duration-200 hover:scale-105">

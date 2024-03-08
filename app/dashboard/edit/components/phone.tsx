@@ -1,11 +1,13 @@
 import React from 'react'
-import Animation from '@/components/animation/framer-animaion'
-import { LinkItem } from '@/app/dashboard/edit/interfaces/LinkItemProps'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import Image from 'next/image'
-import LinkVertexIoIcon from '@/assets/images/link-logo.png'
+
+import { cn } from '@/lib/utils'
+import Animation from '@/components/animation/framer-animaion'
 import { useDataContext } from '@/app/dashboard/edit/edit-context'
+
+import { LinkItem } from '@/interfaces/dashboard/edit.interface'
+import LinkVertexIoIcon from '@/assets/images/link-logo.png'
 
 const Phone = () => {
   const { links, title, description } = useDataContext()
