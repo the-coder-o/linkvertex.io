@@ -1,4 +1,4 @@
-![linkvertex.io]([https://i.ibb.co/FXCC0zJ/Screenshot-2024-03-08-223251.png])
+![linkvertex.io](https://i.ibb.co/FXCC0zJ/Screenshot-2024-03-08-223251.png)
 
 # Welcome to My Linkvertex.io website 
 
