@@ -14,8 +14,8 @@ const Phone = () => {
 
   return (
     <Animation delay={4}>
-      <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%] max-md:hidden'}>
-        <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem]'}>
+      <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff29] bg-[#0A0C0C] sticky top-[10%]'}>
+        <div className={'relative flex items-center w-[300px] max-md:h-full min-h-full justify-center p-[1rem]'}>
           <div className={'grid grid-cols-1 gap-y-4'}>
             <div className={'flex items-center justify-center flex-col'}>
               <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>

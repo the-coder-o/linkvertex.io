@@ -3,10 +3,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
-import { ChevronLeft, Eye } from 'lucide-react'
+import { ChevronLeft, Eye, EyeOff } from 'lucide-react'
 
 import ComingSoon from '@/assets/dashboard/coming-soon.png'
 import Animation from '@/components/animation/framer-animaion'
@@ -17,8 +17,18 @@ import { DataProvider } from '@/app/dashboard/edit/edit-context'
 import Phone from '@/app/dashboard/edit/components/phone'
 
 const EditPage = ({ children }: { children: ReactNode }) => {
-  const { t } = useTranslation('edit_link_page')
   const pathname = usePathname()
+  const { t } = useTranslation('edit_link_page')
+
+  const [showed, setShowed] = useState(false)
+
+  const handleShowed = () => {
+    setShowed(true)
+  }
+
+  const handleNotShowed = () => {
+    setShowed(false)
+  }
 
   return (
     <DataProvider>
@@ -56,14 +66,22 @@ const EditPage = ({ children }: { children: ReactNode }) => {
 
           <Animation delay={3} className={'flex justify-between gap-[30px] max-md:gap-0'}>
             {children}
-            <Phone />
+            <div className={cn('max-md:fixed max-md:bottom-[-360px] z-50 max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2', showed === true ? 'max-md:block' : 'max-md:hidden')}>
+              <Phone />
+            </div>
           </Animation>
 
           <div className={'hidden max-md:block'}>
             <div className={'flex items-center justify-center'}>
-              <Button className={'bg-[#fff] hover:bg-[#fff]/80 text-black fixed bottom-5 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
-                <Eye /> Preview
-              </Button>
+              {showed === false ? (
+                <Button onClick={handleShowed} className={'bg-[#fff] hover:bg-[#fff] text-black fixed bottom-4 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
+                  <Eye /> Preview
+                </Button>
+              ) : (
+                <Button onClick={handleNotShowed} className={'bg-[#fff] z-50 hover:bg-[#fff] text-black fixed bottom-4 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
+                  <EyeOff /> Unpreview
+                </Button>
+              )}
             </div>
           </div>
         </div>
