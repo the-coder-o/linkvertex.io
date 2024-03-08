@@ -93,23 +93,23 @@ const Page = () => {
         <div className={'grid grid-cols-1 gap-y-6'}>
           <div className={'relative'}>
             <label className={'text-start text-white text-md font-medium'}> {t('label')}</label>
-            <Input value={title} onChange={handleInputChangeValidation} type={'text'} className={'mt-[0.5rem] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
+            <Input value={title} onChange={handleInputChangeValidation} type={'text'} className={'mt-[0.5rem] !bg-transparent border-2 border-[#] rounded-[20px] px-[16px] text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
             <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute top-[42.8px] cursor-pointer right-3'} />
             {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
           </div>
           <div>
             <label className={'text-start text-white text-md font-medium'}>{t('profile_title')}</label>
             <div className="relative">
-              <Input value={inputValue} onChange={handleInputChange} type="text" className={'mt-[0.5rem] !pl-[190px] !bg-[#141616] border-transparent focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} id="hs-inline-add-on" name="hs-inline-add-on" />
+              <Input value={inputValue} onChange={handleInputChange} type="text" className={'mt-[0.5rem] !pl-[195px] !bg-transparent border-2 border-[#] rounded-[20px] px-[16px] text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} id="hs-inline-add-on" name="hs-inline-add-on" />
               <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-                <span className="text-start text-gray-400 text-sm font-medium">https://linkvertex-a-bd.me/</span>
+                <span className="text-start main-text-animation text-sm font-bold">https://linkvertex-a-bd.me/</span>
               </div>
             </div>
             {!isValid && <p className="text-red-500 text-sm">Please write a correct your page url title.</p>}
           </div>
           <div>
             <label className={'text-start text-white text-md font-medium'}>{t('description')}</label>
-            <Textarea value={description} onChange={handleInputChangeDescription} className={'mt-[0.5rem] h-[150px] !bg-[#141616] !pt-[16px] border-transparent !outline-none focus:!bg-transparent rounded-[20px] px-[16px] bg-transparent text-[1rem] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
+            <Textarea value={description} onChange={handleInputChangeDescription} className={'mt-[0.5rem] h-[150px] !bg-transparent !pt-[16px] border-2 border-[#] !outline-none rounded-[20px] px-[16px] text-[1rem] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
             {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
           </div>
         </div>

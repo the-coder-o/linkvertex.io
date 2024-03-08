@@ -22,7 +22,7 @@ const languages = [
 
 const Header = () => {
   return (
-    <div className={'w-full fixed left-0 right-0 bg-[#0a0c0ccc] h-[4rem] flex items-center justify-center z-10 top-0'} style={{ backdropFilter: 'blur(6px)' }}>
+    <div className={'w-full fixed left-0 right-0 h-[4rem] flex items-center justify-center z-10 top-0'} style={{ backdropFilter: 'blur(20px)' }}>
       <header className={'container'}>
         <div className={'flex items-center justify-between'}>
           <div>

@@ -13,6 +13,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import './globals.css'
 import i18n from '@/i18n/i18n'
 import { I18nextProvider } from 'react-i18next'
+import { WavyBackground } from '@/components/animation/background-gradient-animation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,17 +33,19 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           <title>Home | Linkvertex</title>
         </head>
         <I18nextProvider i18n={i18n}>
-          <body className={inter.className}>
-            <div className={'main !z-[-99999999]'}></div>
-            <Header />
-            {children}
-            <Analytics />
-            <Alert className={'w-[350px] z-50 !bg-[#000] right-2 bottom-2 max-md:hidden bg-transparent max-md:w-full max-md:left-0 fixed'}>
-              <RocketIcon className="h-4 w-4 !text-white !main-text-animation" />
-              <AlertTitle className={'text-white main-text-animation'}>Thank you for understanding!</AlertTitle>
-              <AlertDescription className={'text-[12px] text-white'}>This site is currently unavailable as we work on this project. You will only be able to use this site 3 months after the UI and backend work is completed!</AlertDescription>
-            </Alert>
-          </body>
+          <WavyBackground>
+            <body className={inter.className}>
+              <div className={'main !z-[-40]'}></div>
+              <Header />
+              {children}
+              <Analytics />
+              <Alert className={'w-[350px] z-50 !bg-[#000] right-2 bottom-2 max-md:hidden bg-transparent max-md:w-full max-md:left-0 fixed'}>
+                <RocketIcon className="h-4 w-4 !text-white !main-text-animation" />
+                <AlertTitle className={'text-white main-text-animation'}>Thank you for understanding!</AlertTitle>
+                <AlertDescription className={'text-[12px] text-white'}>This site is currently unavailable as we work on this project. You will only be able to use this site 3 months after the UI and backend work is completed!</AlertDescription>
+              </Alert>
+            </body>
+          </WavyBackground>
         </I18nextProvider>
       </html>
     </ClerkProvider>
