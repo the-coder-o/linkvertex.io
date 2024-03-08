@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext, ReactNode } from 'react'
+import React, { useState, useEffect, useContext, createContext, ReactNode } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { useTranslation } from 'react-i18next'
 
@@ -21,14 +21,29 @@ interface LanguageProviderProps {
 }
 
 const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, languages }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0])
+  const getDefaultLanguage = () => {
+    const storedLanguageCode = localStorage.getItem('selectedLanguageCode')
+    if (storedLanguageCode) {
+      const storedLanguage = languages.find((lang) => lang.code === storedLanguageCode)
+      if (storedLanguage) {
+        return storedLanguage
+      }
+    }
+    return languages[0]
+  }
+
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>(getDefaultLanguage())
   const { i18n } = useTranslation()
+
+  useEffect(() => {
+    localStorage.setItem('selectedLanguageCode', selectedLanguage.code)
+    i18n.changeLanguage(selectedLanguage.code)
+  }, [selectedLanguage, i18n])
 
   const handleLanguageChange = () => {
     const currentIndex = languages.findIndex((lang) => lang.code === selectedLanguage.code)
     const nextIndex = (currentIndex + 1) % languages.length
     setSelectedLanguage(languages[nextIndex])
-    i18n.changeLanguage(languages[nextIndex].code)
   }
 
   return <LanguageContext.Provider value={{ handleLanguageChange, selectedLanguage }}>{children}</LanguageContext.Provider>
