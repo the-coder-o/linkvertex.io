@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 const Page = () => {
-  const { t } = useTranslation('themes_page')
+  const { t } = useTranslation('seo_page')
 
   return (
     <div>
