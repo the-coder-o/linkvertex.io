@@ -1,13 +1,18 @@
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+'use client'
+
 import { ShieldAlert } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 const Page = () => {
+  const { t } = useTranslation('themes_page')
+
   return (
     <div>
       <Alert className="!bg-[#1E2B32] w-full border-transparent rounded-[24px] mb-8">
         <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
-        <AlertTitle className="text-white ml-2">SEO optimizing will be coming soon 💤</AlertTitle>
-        <AlertDescription className="text-white ml-2 text-[16px] font-medium">Thanks for your understanding as we use this in production soon.😊 SEO optimizing will be open in v2.0.2</AlertDescription>
+        <AlertTitle className="text-white ml-2">{t('alert_message_title')}</AlertTitle>
+        <AlertDescription className="text-white ml-2 text-[16px] font-medium">{t('alert_message_text')}</AlertDescription>
       </Alert>
     </div>
   )

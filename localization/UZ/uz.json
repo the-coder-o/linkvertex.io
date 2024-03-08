@@ -40,5 +40,17 @@
     "alert_text": "Ijtimoiy havolalarni tahrirlash uchun Profil sozlamalariga o'ting. Havolalar ketma-ketligini tartibga solish uchun sudrab olib tashlash tugmasidan ham foydalanishingiz mumkin.",
     "save_btn": "Saqlash",
     "add_link_btn": "Havola qo'shish"
+  },
+  "themes_page": {
+    "alert_message_title": "Bu mavzular tez orada mavjud bo'ladi \uD83D\uDCA4",
+    "alert_message_text": "Tushunganingiz uchun tashakkur, biz buni tez orada ishlab chiqarishda ishlatamiz. \uD83D\uDE0A Mavzular 2.0.0 versiyada ochiladi"
+  },
+  "seo_page": {
+    "alert_message_title": "SEO optimallashtirish tez orada \uD83D\uDCA4",
+    "alert_message_text": "Tushunganingiz uchun rahmat, biz bundan tez orada ishimizda foydalanamiz.\uD83D\uDE0A SEO optimallashtirish 2.0.2 versiyasida mavjud bo'ladi."
+  },
+  "subscribers_page": {
+    "alert_message_title": "Tez kunda obunachilar bo'ladi \uD83D\uDCA4",
+    "alert_message_text": "Tushunganingiz uchun tashakkur, biz buni tez orada ishlab chiqarishda ishlatamiz. \uD83D\uDE0A Obunachilar 2.0.4 versiyada ochiladi."
   }
 }

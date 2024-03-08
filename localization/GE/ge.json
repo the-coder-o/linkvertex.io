@@ -40,5 +40,17 @@
     "alert_text": "Um soziale Links zu bearbeiten, gehen Sie zu Profileinstellungen. Sie können die Linkreihenfolge auch per Drag & Drop anordnen.",
     "save_btn": "Speichern",
     "add_link_btn": "Link hinzufügen"
+  },
+  "themes_page": {
+    "alert_message_title": "Diese Themen werden bald verfügbar sein \uD83D\uDCA4",
+    "alert_message_text": "Vielen Dank für Ihr Verständnis, da wir dies bald in der Produktion verwenden. \uD83D\uDE0A Themen werden in Version 2.0.0 geöffnet sein"
+  },
+  "seo_page": {
+    "alert_message_title": "SEO-Optimierung kommt bald \uD83D\uDCA4",
+    "alert_message_text": "Vielen Dank für Ihr Verständnis, da wir dies bald in der Produktion verwenden.\uD83D\uDE0A Die SEO-Optimierung wird in Version 2.0.2 verfügbar sein"
+  },
+  "subscribers_page": {
+    "alert_message_title": "Abonnenten kommen bald \uD83D\uDCA4",
+    "alert_message_text": "Vielen Dank für Ihr Verständnis, da wir dies bald in der Produktion verwenden. \uD83D\uDE0A Abonnenten werden in Version 2.0.4 geöffnet sein"
   }
 }

@@ -56,7 +56,6 @@ const EditPage = ({ children }: { children: ReactNode }) => {
 
           <Animation delay={3} className={'flex justify-between gap-[30px] max-md:gap-0'}>
             {children}
-
             <Phone />
           </Animation>
 

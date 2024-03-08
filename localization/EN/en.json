@@ -40,5 +40,17 @@
     "alert_text": "To edit social links, go to Profile Settings. You can also use drag and drop to arrange the links sequence.",
     "save_btn": "Save",
     "add_link_btn": "Add Link"
+  },
+  "themes_page": {
+    "alert_message_title": "These themes will be available soon \uD83D\uDCA4",
+    "alert_message_text": "Thanks for your understanding, we will use this in production soon. \uD83D\uDE0A Themes will open in version 2.0.0"
+  },
+  "seo_page": {
+    "alert_message_title": "SEO optimization coming soon \uD83D\uDCA4",
+    "alert_message_text": "Thank you for your understanding, we will use this in our work soon.\uD83D\uDE0A SEO optimization will be available in version 2.0.2."
+  },
+  "subscribers_page": {
+    "alert_message_title": "Soon there will be subscribers \uD83D\uDCA4",
+    "alert_message_text": "Thanks for your understanding, we will use this in production soon. \uD83D\uDE0A Subscribers will open in version 2.0.4."
   }
 }
