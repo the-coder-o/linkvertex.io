@@ -34,16 +34,14 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           <title>Home | Linkvertex</title>
         </head>
         <I18nextProvider i18n={i18n}>
-          <DotBackgroundDemo>
-            <WavyBackground>
-              <body className={inter.className}>
-                <Header />
-                {children}
-                <Analytics />
-                <AlertMessage />
-              </body>
-            </WavyBackground>
-          </DotBackgroundDemo>
+          <body className={inter.className}>
+            <Header />
+            {children}
+            <Analytics />
+            <AlertMessage />
+            <WavyBackground />
+            <DotBackgroundDemo />
+          </body>
         </I18nextProvider>
       </html>
     </ClerkProvider>
