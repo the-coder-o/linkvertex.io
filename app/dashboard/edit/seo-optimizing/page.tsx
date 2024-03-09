@@ -41,7 +41,7 @@ const Page = () => {
           <AccordionTrigger className={'text-white'}>What is a Meta title?</AccordionTrigger>
           <AccordionContent className={'text-white'}>A meta title is an HTML element that specifies the title of a web page. It is a critical factor in both SEO and user experience and usually appears as the title of a search result in search engines.</AccordionContent>
         </AccordionItem>
-        <AccordionItem className={'!border-b-[#fff]/50'} value="item-3">
+        <AccordionItem className={'!border-b-[#fff]/50'} value="item-4">
           <AccordionTrigger className={'text-white'}>What is a Meta description?</AccordionTrigger>
           <AccordionContent className={'text-white'}>A meta description is an HTML attribute that provides a brief summary of the content of the web page. It is also important for SEO and can influence the click-through rate from the search engine results page.</AccordionContent>
         </AccordionItem>
