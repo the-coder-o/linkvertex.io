@@ -31,15 +31,15 @@ const Page = () => {
           </p>
         </div>
         <Accordion type="single" collapsible className="w-full">
-          <AccordionItem className={'!border-b-[#27272A]'} value="item-1">
+          <AccordionItem className={'!border-b-[#fff]/50'} value="item-1">
             <AccordionTrigger className={'text-white'}>Why should I build email subscribers?</AccordionTrigger>
             <AccordionContent className={'text-white'}>Email is the only reliable medium to build a following, unsusceptible to algorithms and platform shifts. Until now, it has been hard and expensive to build an email list. We’ve reinvented it for creators.</AccordionContent>
           </AccordionItem>
-          <AccordionItem className={'!border-b-[#27272A]'} value="item-2">
+          <AccordionItem className={'!border-b-[#fff]/50'} value="item-2">
             <AccordionTrigger className={'text-white'}>Do I have to offer something in return?</AccordionTrigger>
             <AccordionContent className={'text-white'}>It’s better if you do, but most creators start off by asking their visitors to subscribe for future updates.</AccordionContent>
           </AccordionItem>
-          <AccordionItem className={'!border-b-[#27272A]'} value="item-3">
+          <AccordionItem className={'!border-b-[#fff]/50'} value="item-3">
             <AccordionTrigger className={'text-white'}>What does it cost?</AccordionTrigger>
             <AccordionContent className={'text-white'}>It’s free to get started, and you can accept unlimited subscribers. You only pay ($10/month) when you start sending emails.</AccordionContent>
           </AccordionItem>
