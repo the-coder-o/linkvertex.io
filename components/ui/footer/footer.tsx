@@ -12,7 +12,7 @@ const Footer = () => {
               a-bd.me
             </Link>
           </p>
-          <p className={'text-white'}>v:1.0.1</p>
+          <p className={'text-white'}>v:1.2.0</p>
         </div>
       </footer>
     </div>
