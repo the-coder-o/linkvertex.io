@@ -3,17 +3,16 @@
 import { ReactNode } from 'react'
 import { dark } from '@clerk/themes'
 import { Inter } from 'next/font/google'
-import { RocketIcon } from 'lucide-react'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import Header from '@/components/ui/header/header'
 import { Analytics } from '@vercel/analytics/react'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import './globals.css'
 import i18n from '@/i18n/i18n'
 import { I18nextProvider } from 'react-i18next'
 
+import AlertMessage from '@/components/alerts/alert-message'
 import { DotBackgroundDemo } from '@/components/animation/dot-background'
 import { WavyBackground } from '@/components/animation/background-gradient-animation'
 
@@ -41,11 +40,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
                 <Header />
                 {children}
                 <Analytics />
-                <Alert className={'w-[350px] z-50 !bg-[#000] right-2 bottom-2 max-md:hidden bg-transparent max-md:w-full max-md:left-0 fixed'}>
-                  <RocketIcon className="h-4 w-4 !text-white !main-text-animation" />
-                  <AlertTitle className={'text-white main-text-animation'}>Thank you for understanding!</AlertTitle>
-                  <AlertDescription className={'text-[12px] text-white'}>This site is currently unavailable as we work on this project. You will only be able to use this site 3 months after the UI and backend work is completed!</AlertDescription>
-                </Alert>
+                <AlertMessage />
               </body>
             </WavyBackground>
           </DotBackgroundDemo>

@@ -1,8 +1,7 @@
 'use client'
-// @ts-ignore
+
 import { cn } from '@/utils/cn'
 import React, { useEffect, useRef, useState } from 'react'
-// @ts-ignore
 import { createNoise3D } from 'simplex-noise'
 
 export const WavyBackground = ({ children, className, containerClassName, colors, waveWidth, backgroundFill, blur = 10, speed = 'fast', waveOpacity = 0.5, ...props }: { children?: any; className?: string; containerClassName?: string; colors?: string[]; waveWidth?: number; backgroundFill?: string; blur?: number; speed?: 'slow' | 'fast'; waveOpacity?: number; [key: string]: any }) => {
@@ -73,9 +72,9 @@ export const WavyBackground = ({ children, className, containerClassName, colors
   }, [])
 
   return (
-    <div className={cn('flex w-full h-full flex-col items-center !overflow-hidden justify-center', containerClassName)}>
+    <div className={cn('flex w-full h-full flex-col !z-[-99999999] items-center !overflow-hidden justify-center', containerClassName)}>
       <canvas
-        className="fixed top-0 left-auto right-0 bg-transparent opacity-80 !overflow-hidden -z-50"
+        className="fixed top-0 left-auto right-0 bg-transparent opacity-80 !overflow-hidden z-[-888888]"
         ref={canvasRef}
         id="canvas"
         style={{

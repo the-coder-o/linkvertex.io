@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 
@@ -12,6 +14,7 @@ import UsaIcon from '@/assets/languages/usa.png'
 import RusIcon from '@/assets/languages/russia.png'
 import GerIcon from '@/assets/languages/german.png'
 import UzbIcon from '@/assets/languages/uzbekistan.png'
+import { cn } from '@/lib/utils'
 
 const languages = [
   { code: 'en', name: 'English', image: UsaIcon },
@@ -21,8 +24,23 @@ const languages = [
 ]
 
 const Header = () => {
+  const [hasScrolled, setHasScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const scrollThreshold = 100 // Adjust this value as needed
+
+      setHasScrolled(scrollTop > scrollThreshold)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
-    <div className={'w-full fixed left-0 right-0 h-[4rem] flex items-center justify-center z-10 top-0'} style={{ backdropFilter: 'blur(20px)' }}>
+    <div className={cn("'w-full fixed left-0 right-0 h-[4rem] flex items-center justify-center z-10 top-0", hasScrolled ? 'backdrop-blur-sm bg-black/40' : 'backdrop-blur-none bg-transparent')}>
       <header className={'container'}>
         <div className={'flex items-center justify-between'}>
           <div>
