@@ -13,8 +13,8 @@ const Phone = () => {
   const { links, title, description } = useDataContext()
 
   return (
-    <Animation delay={4}>
-      <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff10] bg-[#000] sticky top-[10%]'}>
+    <Animation delay={4} className={'sticky top-[10%]'}>
+      <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff10] bg-[#000]'}>
         <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem]'}>
           <div className={'grid grid-cols-1 gap-y-4'}>
             <div className={'flex items-center justify-center flex-col'}>
