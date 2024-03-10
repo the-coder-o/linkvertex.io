@@ -52,5 +52,25 @@
   "subscribers_page": {
     "alert_message_title": "Tez kunda obunachilar bo'ladi \uD83D\uDCA4",
     "alert_message_text": "Tushunganingiz uchun tashakkur, biz buni tez orada ishlab chiqarishda ishlatamiz. \uD83D\uDE0A Obunachilar 2.0.4 versiyada ochiladi."
+  },
+  "errors_profile": {
+    "error1": "Iltimos, haqiqiy Instagram foydalanuvchi nomini kiriting.",
+    "error2": "Iltimos, haqiqiy Twitter foydalanuvchi nomini kiriting.",
+    "error3": "Iltimos, haqiqiy Mastodon foydalanuvchi nomini kiriting.",
+    "error4": "Iltimos, haqiqiy YouTube URL manzilini kiriting.",
+    "error5": "Iltimos, haqiqiy TikTok foydalanuvchi nomini kiriting.",
+    "error6": "Iltimos, haqiqiy Twitch URL manzilini kiriting.",
+    "error7": "Iltimos, haqiqiy LinkedIn URL manzilini kiriting.",
+    "error8": "Iltimos, haqiqiy WhatsApp telefon raqamini kiriting.",
+    "error9": "Iltimos, haqiqiy Telegram foydalanuvchi nomini kiriting.",
+    "error10": "Iltimos, haqiqiy elektron pochta manzilini kiriting.",
+    "error11": "Iltimos, haqiqiy Pinterest foydalanuvchi nomini kiriting.",
+    "error12": "Iltimos, haqiqiy Spotify URL manzilini kiriting.",
+    "error13": "Iltimos, haqiqiy Apple Music URL manzilini kiriting.",
+    "error14": "Iltimos, haqiqiy Snapchat URL manzilini kiriting.",
+    "error15": "Iltimos, haqiqiy App Store URL manzilini kiriting.",
+    "error16": "Iltimos, haqiqiy Google Play URL manzilini kiriting.",
+    "error17": "Iltimos, haqiqiy Facebook URL manzilini kiriting.",
+    "error18": "Iltimos, haqiqiy GitHub foydalanuvchi nomini kiriting."
   }
 }

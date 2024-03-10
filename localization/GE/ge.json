@@ -52,5 +52,25 @@
   "subscribers_page": {
     "alert_message_title": "Abonnenten kommen bald \uD83D\uDCA4",
     "alert_message_text": "Vielen Dank für Ihr Verständnis, da wir dies bald in der Produktion verwenden. \uD83D\uDE0A Abonnenten werden in Version 2.0.4 geöffnet sein"
+  },
+  "errors_profile": {
+    "error1": "Bitte geben Sie einen gültigen Instagram-Benutzernamen ein.",
+    "error2": "Bitte geben Sie einen gültigen Twitter-Benutzernamen ein.",
+    "error3": "Bitte geben Sie einen gültigen Mastodon-Benutzernamen ein.",
+    "error4": "Bitte geben Sie eine gültige YouTube-URL ein.",
+    "error5": "Bitte geben Sie einen gültigen TikTok-Benutzernamen ein.",
+    "error6": "Bitte geben Sie eine gültige Twitch-URL ein.",
+    "error7": "Bitte geben Sie eine gültige LinkedIn-URL ein.",
+    "error8": "Bitte geben Sie eine gültige WhatsApp-Telefonnummer ein.",
+    "error9": "Bitte geben Sie einen gültigen Telegram-Benutzernamen ein.",
+    "error10": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "error11": "Bitte geben Sie einen gültigen Pinterest-Benutzernamen ein.",
+    "error12": "Bitte geben Sie eine gültige Spotify-URL ein.",
+    "error13": "Bitte geben Sie eine gültige Apple Music-URL ein.",
+    "error14": "Bitte geben Sie eine gültige Snapchat-URL ein.",
+    "error15": "Bitte geben Sie eine gültige App Store-URL ein.",
+    "error16": "Bitte geben Sie eine gültige Google Play-URL ein.",
+    "error17": "Bitte geben Sie eine gültige Facebook-URL ein.",
+    "error18": "Bitte geben Sie einen gültigen GitHub-Benutzernamen ein."
   }
 }

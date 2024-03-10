@@ -52,5 +52,25 @@
   "subscribers_page": {
     "alert_message_title": "Soon there will be subscribers \uD83D\uDCA4",
     "alert_message_text": "Thanks for your understanding, we will use this in production soon. \uD83D\uDE0A Subscribers will open in version 2.0.4."
+  },
+  "errors_profile": {
+    "error1": "Please enter a valid instagram username.",
+    "error2": "Please enter a valid twitter username\n\n",
+    "error3": "Please enter a valid mastodon username.\n\n",
+    "error4": "Please enter a valid YouTube URL.\n\n",
+    "error5": "Please enter a valid tiktok username.\n\n",
+    "error6": "Please enter a valid twitch URL.\n\n",
+    "error7": "Please enter a valid linkedin URL.\n\n",
+    "error8": "Please enter a valid whatsapp phone number.\n\n",
+    "error9": "Please enter a valid telegram username.\n\n",
+    "error10": "Please enter a valid email address.\n\n",
+    "error11": "Please enter a valid Pinterest username.\n\n",
+    "error12": "Please enter a valid Spotify URL.\n\n",
+    "error13": "Please enter a valid Apple Music URL.\n\n",
+    "error14": "Please enter a valid Snapchat URL.\n\n",
+    "error15": "Please enter a valid App Store URL.\n\n",
+    "error16": "Please enter a valid Google Play URL.\n\n",
+    "error17": "Please enter a valid Facebook URL.\n\n",
+    "error18": "Please enter a valid GitHub username.\n\n"
   }
 }
