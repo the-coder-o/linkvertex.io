@@ -72,5 +72,18 @@
     "error16": "Bitte geben Sie eine gültige Google Play-URL ein.",
     "error17": "Bitte geben Sie eine gültige Facebook-URL ein.",
     "error18": "Bitte geben Sie einen gültigen GitHub-Benutzernamen ein."
+  },
+  "errors_edit": {
+    "error1": "Bitte geben Sie einen korrekten Titel Ihrer Seiten-URL ein."
+  },
+  "edit_page_faqs": {
+    "q1": "Was ist SEO-Optimierung?",
+    "q2": "Was sollten wir tun, bis die SEO-Optimierung...",
+    "q3": "Was ist ein Meta-Titel?",
+    "q4": "Was ist eine Meta-Beschreibung?",
+    "a1": "SEO-Optimierung ist der Prozess, Ihre Website für Suchmaschinen sichtbarer zu machen. Es beinhaltet die Anpassung verschiedener Elemente Ihrer Site, damit Suchmaschinen sie besser verstehen und in den Suchergebnissen für relevante Anfragen höher einstufen können.\n",
+    "a2": "Das Bild deutet darauf hin, Nutzern für ihr Verständnis zu danken. Bis die SEO-Optimierung veröffentlicht wird, fahren Sie fort, Inhalte zu erstellen und die Struktur und Metadaten Ihrer Site für das Update vorzubereiten.\n",
+    "a3": "Ein Meta-Titel ist ein HTML-Element, das den Titel einer Webseite angibt. Er ist ein kritischer Faktor sowohl für SEO als auch für die Benutzererfahrung und erscheint in der Regel als Titel eines Suchergebnisses in Suchmaschinen.\n",
+    "a4": "Eine Meta-Beschreibung ist ein HTML-Attribut, das eine kurze Zusammenfassung des Inhalts der Webseite bietet. Sie ist ebenfalls wichtig für SEO und kann die Klickrate von der Suchergebnisseite beeinflussen.\n"
   }
 }

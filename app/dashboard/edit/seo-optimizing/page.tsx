@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import SeoAlert from '@/app/dashboard/edit/seo-optimizing/components/seo-alert'
 
 const Page = () => {
   const { t } = useTranslation('seo_page')
@@ -28,24 +28,7 @@ const Page = () => {
           <Textarea disabled={true} placeholder={'Example: Linktree. Make your link do more. Changes to metadata may take some time to appear on other platforms.'} className={' placeholder:text-[#BDC3DD] cursor-not-allowed mt-[0.5rem] h-[150px] !bg-transparent !pt-[16px] border-2 !outline-none rounded-[20px] px-[16px] text-[1rem] text-white placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
         </div>
       </div>
-      <Accordion type="single" collapsible className="w-full">
-        <AccordionItem className={'!border-b-[#fff]/50'} value="item-1">
-          <AccordionTrigger className={'text-white'}>What is SEO Optimization?</AccordionTrigger>
-          <AccordionContent className={'text-white'}> SEO optimization is the process of making your website more visible to search engines. It involves adjusting various elements of your site so that search engines can understand it better and rank it higher in the search results for relevant queries.</AccordionContent>
-        </AccordionItem>
-        <AccordionItem className={'!border-b-[#fff]/50'} value="item-2">
-          <AccordionTrigger className={'text-white'}>What should we do until SEO optimization...</AccordionTrigger>
-          <AccordionContent className={'text-white'}>The image suggests thanking users for their understanding. Until SEO optimization is released, continue creating content and preparing your site's structure and metadata for the update.</AccordionContent>
-        </AccordionItem>
-        <AccordionItem className={'!border-b-[#fff]/50'} value="item-3">
-          <AccordionTrigger className={'text-white'}>What is a Meta title?</AccordionTrigger>
-          <AccordionContent className={'text-white'}>A meta title is an HTML element that specifies the title of a web page. It is a critical factor in both SEO and user experience and usually appears as the title of a search result in search engines.</AccordionContent>
-        </AccordionItem>
-        <AccordionItem className={'!border-b-[#fff]/50'} value="item-4">
-          <AccordionTrigger className={'text-white'}>What is a Meta description?</AccordionTrigger>
-          <AccordionContent className={'text-white'}>A meta description is an HTML attribute that provides a brief summary of the content of the web page. It is also important for SEO and can influence the click-through rate from the search engine results page.</AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      <SeoAlert />
     </div>
   )
 }

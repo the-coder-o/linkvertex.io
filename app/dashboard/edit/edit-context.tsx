@@ -8,9 +8,9 @@ const DataContext = createContext<DataContextProps | undefined>(undefined)
 export const useDataContext = () => useContext(DataContext)!
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
+  const { t } = useTranslation('edit_link_page')
   const [links, setLinks] = useState<LinkItem[]>([])
   const [title, setTitle] = useState('My Page Title')
-  const { t } = useTranslation('edit_link_page')
   const description1 = t('description_label')
   const [description, setDescription] = useState(description1 as string)
 

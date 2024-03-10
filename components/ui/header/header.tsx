@@ -40,7 +40,7 @@ const Header = () => {
     }
   }, [])
   return (
-    <div className={cn("'w-full fixed left-0 right-0 h-[4rem] flex items-center justify-center z-10 top-0", hasScrolled ? 'backdrop-blur-sm bg-black/40' : 'backdrop-blur-none bg-transparent')}>
+    <div className={cn("'w-full fixed left-0 right-0 h-[4rem] flex items-center justify-center z-[999999] top-0", hasScrolled ? 'backdrop-blur-sm bg-black/40' : 'backdrop-blur-none bg-transparent')}>
       <header className={'container'}>
         <div className={'flex items-center justify-between'}>
           <div>

@@ -55,22 +55,35 @@
   },
   "errors_profile": {
     "error1": "Please enter a valid instagram username.",
-    "error2": "Please enter a valid twitter username\n\n",
-    "error3": "Please enter a valid mastodon username.\n\n",
-    "error4": "Please enter a valid YouTube URL.\n\n",
-    "error5": "Please enter a valid tiktok username.\n\n",
-    "error6": "Please enter a valid twitch URL.\n\n",
-    "error7": "Please enter a valid linkedin URL.\n\n",
-    "error8": "Please enter a valid whatsapp phone number.\n\n",
-    "error9": "Please enter a valid telegram username.\n\n",
-    "error10": "Please enter a valid email address.\n\n",
-    "error11": "Please enter a valid Pinterest username.\n\n",
-    "error12": "Please enter a valid Spotify URL.\n\n",
-    "error13": "Please enter a valid Apple Music URL.\n\n",
-    "error14": "Please enter a valid Snapchat URL.\n\n",
-    "error15": "Please enter a valid App Store URL.\n\n",
-    "error16": "Please enter a valid Google Play URL.\n\n",
-    "error17": "Please enter a valid Facebook URL.\n\n",
-    "error18": "Please enter a valid GitHub username.\n\n"
+    "error2": "Please enter a valid twitter username",
+    "error3": "Please enter a valid mastodon username.",
+    "error4": "Please enter a valid YouTube URL.",
+    "error5": "Please enter a valid tiktok username.",
+    "error6": "Please enter a valid twitch URL.",
+    "error7": "Please enter a valid linkedin URL.",
+    "error8": "Please enter a valid whatsapp phone number.",
+    "error9": "Please enter a valid telegram username.",
+    "error10": "Please enter a valid email address.",
+    "error11": "Please enter a valid Pinterest username.",
+    "error12": "Please enter a valid Spotify URL.",
+    "error13": "Please enter a valid Apple Music URL.",
+    "error14": "Please enter a valid Snapchat URL.",
+    "error15": "Please enter a valid App Store URL.",
+    "error16": "Please enter a valid Google Play URL.",
+    "error17": "Please enter a valid Facebook URL.",
+    "error18": "Please enter a valid GitHub username."
+  },
+  "errors_edit": {
+    "error1": "Please write a correct your page url title."
+  },
+  "edit_page_faqs": {
+    "q1": "What is SEO Optimization?",
+    "q2": "What should we do until SEO optimization...",
+    "q3": "What is a Meta title?",
+    "q4": "What is a Meta description?",
+    "a1": "SEO optimization is the process of making your website more visible to search engines. It involves adjusting various elements of your site so that search engines can understand it better and rank it higher in the search results for relevant queries.\n",
+    "a2": "The image suggests thanking users for their understanding. Until SEO optimization is released, continue creating content and preparing your site's structure and metadata for the update.\n",
+    "a3": "A meta title is an HTML element that specifies the title of a web page. It is a critical factor in both SEO and user experience and usually appears as the title of a search result in search engines.\n",
+    "a4": "A meta description is an HTML attribute that provides a brief summary of the content of the web page. It is also important for SEO and can influence the click-through rate from the search engine results page.\n"
   }
 }

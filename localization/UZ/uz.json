@@ -72,5 +72,18 @@
     "error16": "Iltimos, haqiqiy Google Play URL manzilini kiriting.",
     "error17": "Iltimos, haqiqiy Facebook URL manzilini kiriting.",
     "error18": "Iltimos, haqiqiy GitHub foydalanuvchi nomini kiriting."
+  },
+  "errors_edit": {
+    "error1": "Iltimos, sahifangiz URL sarlavhasini to'g'ri yozing."
+  },
+  "edit_page_faqs": {
+    "q1": "SEO optimizatsiyasi nima?",
+    "q2": "SEO optimizatsiyasi chiqquniga qadar nima qilishimiz kerak...",
+    "q3": "Meta sarlavha nima?",
+    "q4": "Meta tavsif nima?",
+    "a1": "SEO optimizatsiyasi veb-saytingizni qidiruv tizimlariga ko'proq ko'rinadigan qilish jarayonidir. Bu, qidiruv tizimlari saytingizni yaxshiroq tushunishi va tegishli so'rovlar bo'yicha qidiruv natijalarida uni yuqori o'rinlarga qo'yishi uchun saytingizning turli elementlarini sozlashni o'z ichiga oladi.\n",
+    "a2": "Tasvir foydalanuvchilarga tushunish uchun minnatdorchilik bildirishni taklif qiladi. SEO optimizatsiyasi chiqqunga qadar, kontent yaratishda davom eting va saytingizning tuzilishi hamda metadatalarini yangilanish uchun tayyorlang.\n",
+    "a3": "Meta sarlavha bu veb-sahifaning sarlavhasini ko'rsatuvchi HTML elementidir. U SEO va foydalanuvchi tajribasi uchun muhim omil hisoblanadi va odatda qidiruv tizimlaridagi qidiruv natijasining sarlavhasi sifatida paydo bo'ladi.\n",
+    "a4": "Meta tavsif bu veb-sahifaning mazmunini qisqacha bayon qiluvchi HTML atributidir. U SEO uchun ham muhimdir va qidiruv tizimi natijalar sahifasidan bosish darajasiga ta'sir qilishi mumkin.\n"
   }
 }
