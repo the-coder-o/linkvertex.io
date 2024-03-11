@@ -7,6 +7,7 @@ import StorySection from '@/app/about/components/StorySection'
 import FeatureSections from '@/app/about/components/FeatureSections'
 
 const About = () => {
+  console.log('hello world!')
   return (
     <div className={'container'}>
       <StorySection />
