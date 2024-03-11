@@ -38,7 +38,7 @@
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.5.0",
-    "lucide-react": "^0.354.0",
+    "lucide-react": "^0.356.0",
     "mini-svg-data-uri": "^1.4.4",
     "mongodb": "^6.3.0",
     "mongoose": "^8.2.0",
