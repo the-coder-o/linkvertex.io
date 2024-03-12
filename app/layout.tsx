@@ -27,6 +27,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <head>
+          <link rel={'manifest'} href={'/manifest.webmanifest'} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
