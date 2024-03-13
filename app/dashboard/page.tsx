@@ -27,7 +27,7 @@ const Dashboard = () => {
     await clerk.signOut().finally(() => setIsLoggingOut(false))
   }
 
-  if (!isLoggingOut) {
+  if (isLoggingOut) {
     return <Loader />
   } else {
     return (
