@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
+import { useUser } from '@clerk/clerk-react'
+
 import Animation from '@/components/animation/framer-animaion'
 import { useDataContext } from '@/app/dashboard/edit/edit-context'
 
@@ -11,12 +13,18 @@ import LinkVertexIoIcon from '@/assets/images/link-logo.png'
 
 const Phone = () => {
   const { links, title, description } = useDataContext()
+  const { user } = useUser()
+
+  const imageUrl = user?.profileImageUrl || 'https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yZFM1dzZ4TE1wendoM2E2S212amtab3BUZXkiLCJyaWQiOiJ1c2VyXzJkU0ZjMEI3cWF0aWRSZTJJbk5FeVJvTnQ5VCJ9?width=80'
 
   return (
     <Animation delay={4} className={'sticky top-[10%]'}>
       <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff10] bg-[#000]'}>
         <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem]'}>
           <div className={'grid grid-cols-1 gap-y-4'}>
+            <div className={'flex items-center justify-center'}>
+              <img src={imageUrl} alt="User profile" className={'rounded-full w-[100px]'} />
+            </div>
             <div className={'flex items-center justify-center flex-col'}>
               <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>
               <p className={'text-white text-sm w-full flex items-center justify-center text-ellipsis whitespace-break-spaces text-center mt-2 text-style'}>{description}</p>
