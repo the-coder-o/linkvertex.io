@@ -3,7 +3,7 @@ import Animation from '@/components/animation/framer-animaion'
 
 export default function Page() {
   return (
-    <Animation delay={1} className={'mt-[110px] max-sm:mt-[100px]'}>
+    <Animation delay={1} className={'flex items-center justify-center h-[100vh]'}>
       <SignIn afterSignInUrl={'/dashboard'} />
     </Animation>
   )
