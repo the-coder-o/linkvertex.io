@@ -70,7 +70,7 @@ const EditPage = ({ children }: { children: ReactNode }) => {
 
             <Animation delay={3} className={'flex justify-between gap-[30px] max-md:gap-0'}>
               {children}
-              <div className={cn('max-md:fixed max-md:bottom-[-360px] z-50 max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2', showed === true ? 'max-md:block' : 'max-md:hidden')}>
+              <div className={cn('max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0 max-md:z-[99999999]', showed === true ? 'max-md:block' : 'max-md:hidden')}>
                 <Phone />
               </div>
             </Animation>
@@ -82,7 +82,7 @@ const EditPage = ({ children }: { children: ReactNode }) => {
                     <Eye /> Preview
                   </Button>
                 ) : (
-                  <Button onClick={handleNotShowed} className={'bg-[#fff] z-50 hover:bg-[#fff] text-black fixed bottom-4 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
+                  <Button onClick={handleNotShowed} className={'bg-[#fff] z-[9999999999999] hover:bg-[#fff] text-black fixed bottom-4 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
                     <EyeOff /> Unpreview
                   </Button>
                 )}
