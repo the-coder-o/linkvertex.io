@@ -1,8 +1,11 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { dark } from '@clerk/themes'
+
 import { Inter } from 'next/font/google'
+import { NextFont } from 'next/dist/compiled/@next/font'
+
+import { dark } from '@clerk/themes'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import Header from '@/components/ui/header/header'
@@ -16,7 +19,7 @@ import AlertMessage from '@/components/alerts/alert-message'
 import { DotBackgroundDemo } from '@/components/animation/dot-background'
 import { WavyBackground } from '@/components/animation/background-gradient-animation'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter: NextFont = Inter({ subsets: ['latin'] })
 
 interface RootLayoutProps {
   children: ReactNode

@@ -127,7 +127,7 @@ body {
   background-color: #fff;
   border-radius: 50%;
   box-shadow:
-    -42vw -4vh 0px 0px #fff,
+    -42vw -4vh 0 0 #fff,
     25vw -41vh 0px 0px #fff,
     -20vw 49vh 0px 1px #fff,
     5vw 40vh 1px 1px #fff,
@@ -211,8 +211,6 @@ body {
     -16vw 17vh 0px 0px #fff,
     18vw 27vh 0px 1px #fff,
     -8vw -10vh 1px 1px #fff;
-
-  /* stars were too big with the layers above but left the code in case no one cares  -- as in, if noone's just that  one other loner who actually cares    */
 
   animation: zoom 13s alternate infinite;
 }
@@ -315,21 +313,11 @@ body {
   }
 }
 
-.shadow-style {
-  box-shadow:
-    0 2px 4px rgba(104, 104, 104, 0.1),
-    0 3px 6px rgba(68, 68, 68, 0.06);
-}
-
-.text-style {
-  word-break: break-word !important;
-}
-
 .border-style {
   border: none !important;
   outline: none !important;
 }
-
+/*clerk.com-styles*/
 .cl-formButtonPrimary {
   font-size: 14px;
   text-transform: none;

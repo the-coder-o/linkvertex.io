@@ -8,11 +8,11 @@ const schema = [
 
 const account = [
   {
-    user_avatar: 'string',
-    first_name: 'string',
     last_name: 'string',
-    user_page_name: 'string',
-    use_social_links: [],
+    first_name: 'string',
+    user_avatar: 'string',
+    users_page_name: 'string',
+    users_social_links: [],
   },
 ]
 
@@ -21,6 +21,11 @@ const edit = [
     title: 'string',
     description: 'string',
     url: 'string',
-    urls: [],
+    urls: [
+      {
+        url_name: 'string',
+        url_value: 'string',
+      },
+    ],
   },
 ]

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 import { LogOutIcon } from 'lucide-react'
 
+import { LoadedClerk } from '@clerk/types'
 import { useClerk, useUser } from '@clerk/clerk-react'
 
 import { cn } from '@/lib/utils'
@@ -17,10 +18,11 @@ import { Skeleton } from '@/components/ui/skeleton'
 import DashboardButtons from '@/app/dashboard/components/DashboardButtons'
 
 const Dashboard = () => {
+  const clerk: LoadedClerk = useClerk()
   const { isSignedIn, user, isLoaded } = useUser()
-  const clerk = useClerk()
+
   const { t } = useTranslation('dashboard')
-  const [isLoggingOut, setIsLoggingOut] = useState(false)
+  const [isLoggingOut, setIsLoggingOut] = useState<boolean>(false)
 
   const handleLogout = async () => {
     setIsLoggingOut(true)

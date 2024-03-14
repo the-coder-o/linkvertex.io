@@ -13,8 +13,9 @@ import Animation from '@/components/animation/framer-animaion'
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import { DataProvider } from '@/app/dashboard/edit/edit-context'
 import Phone from '@/app/dashboard/edit/components/phone'
+
+import { DataProvider } from '@/app/dashboard/edit/edit-context'
 
 const EditPage = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname()
@@ -62,7 +63,7 @@ const EditPage = ({ children }: { children: ReactNode }) => {
                 {t('tab3')}
                 <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
               </Link>
-              <Link href={'/dashboard/edit/subscribers'} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', pathname === '/dashboard/edit/subscribers' ? 'border-b-2' : 'border-b-transparent')}>
+              <Link href={'/dashboard/edit/subscribe'} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', pathname === '/dashboard/edit/subscribe' ? 'border-b-2' : 'border-b-transparent')}>
                 {t('tab4')}
                 <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
               </Link>
@@ -83,7 +84,7 @@ const EditPage = ({ children }: { children: ReactNode }) => {
                   </Button>
                 ) : (
                   <Button onClick={handleNotShowed} className={'bg-[#fff] z-[9999999999999] hover:bg-[#fff] text-black fixed bottom-4 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
-                    <EyeOff /> Unpreview
+                    <EyeOff /> Hide
                   </Button>
                 )}
               </div>

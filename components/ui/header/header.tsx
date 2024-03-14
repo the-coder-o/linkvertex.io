@@ -29,7 +29,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      const scrollThreshold = 100 // Adjust this value as needed
+      const scrollThreshold = 100
 
       setHasScrolled(scrollTop > scrollThreshold)
     }

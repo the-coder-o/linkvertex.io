@@ -1,12 +1,13 @@
 'use client'
 
+import React from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { HelpCircle, ShieldAlert } from 'lucide-react'
 
 import { Switch } from '@/components/ui/switch'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import React from 'react'
 
 const Page = () => {
   const { t } = useTranslation('subscribers_page')
