@@ -12,7 +12,7 @@ const Footer = () => {
               a-bd.me
             </Link>
           </p>
-          <p className={'text-white'}>v:1.2.0</p>
+          <p className={'text-white'}><span className={'main-text-animation text-[16px] font-[800]'}>Beta</span> v:1.2.0</p>
         </div>
       </footer>
     </div>
