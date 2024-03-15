@@ -78,7 +78,7 @@ const EditPage = ({ children }: { children: ReactNode }) => {
 
             <div className={'hidden max-md:block'}>
               <div className={'flex items-center justify-center'}>
-                {showed === false ? (
+                {!showed ? (
                   <Button onClick={handleShowed} className={'fixed bottom-4 flex items-center gap-2 rounded-[22px] bg-[#fff] px-[25px] text-xl font-bold text-black hover:bg-[#fff]'}>
                     <Eye /> Preview
                   </Button>

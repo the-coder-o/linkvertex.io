@@ -25,7 +25,7 @@ const Phone = () => {
         <div className={'relative flex min-h-full w-[300px] items-center justify-center p-[1rem] max-md:w-auto'}>
           <div className={'grid grid-cols-1 gap-y-4 max-md:w-full max-md:items-center max-md:justify-center'}>
             <div className={'flex items-center justify-center'}>
-              <img src={imageUrl} alt="User profile" className={'w-[100px] rounded-full'} />
+              <img src={imageUrl} alt="User profile" className={'w-[100px] h-[100px] bg-cover rounded-full'} />
             </div>
             <div className={'flex flex-col items-center justify-center'}>
               <h2 className={'text-style flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-4xl font-bold text-white'}>{title}</h2>

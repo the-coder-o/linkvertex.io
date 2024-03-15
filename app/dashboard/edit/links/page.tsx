@@ -1,34 +1,39 @@
 'use client'
 
+import { ChangeEvent, useCallback, useState } from 'react'
+
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 import { cn } from '@/lib/utils'
+
 import { useTranslation } from 'react-i18next'
 
+import EmojiPicker from 'emoji-picker-react';
 import { Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
 
 import { DropResult } from 'react-beautiful-dnd'
-import { ChangeEvent, useCallback, useState } from 'react'
+import { LinkItem } from '@/interfaces/dashboard/edit.interface'
 import { useDataContext } from '@/app/dashboard/edit/edit-context'
 
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import EmojiIcon from '@/assets/dashboard/smile.png'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { LinkItem } from '@/interfaces/dashboard/edit.interface'
+
+import EmojiIcon from '@/assets/dashboard/smile.png'
 
 const Droppable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Droppable), { ssr: false })
 const Draggable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Draggable), { ssr: false })
 const DragDropContext = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.DragDropContext), { ssr: false })
 
 const Page = () => {
-  const [inputValue, setInputValue] = useState('your-page-url')
-  const [isValid, setIsValid] = useState(true)
   const [error, setError] = useState('')
   const [error2, setError2] = useState('')
+  const [isValid, setIsValid] = useState(true)
+  const [inputValue, setInputValue] = useState('your-page-url')
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
   const { links, setLinks, setTitle, setDescription, title, description } = useDataContext()
 
@@ -87,6 +92,14 @@ const Page = () => {
     [links],
   )
 
+  const onEmojiClick = (e:any) => {
+    const sym = e.unified.split("_");
+    const codeArray:any[] = [];
+    sym.forEach((el:any) => codeArray.push("0x" + el));
+    let emoji = String.fromCodePoint(...codeArray);
+    setTitle(title + emoji);
+  };
+
   return (
     <>
       <div className={cn('grid grid-cols-1 gap-y-12')}>
@@ -94,7 +107,15 @@ const Page = () => {
           <div className={'relative'}>
             <label className={'text-md text-start font-medium text-white'}> {t('label')}</label>
             <Input value={title} onChange={handleInputChangeValidation} type={'text'} className={'mt-[0.5rem] rounded-[20px] border-2 border-[#] !bg-transparent px-[16px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!transition'} />
-            <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute right-3 top-[42.8px] cursor-pointer'} />
+            <span onClick={() => setShowEmojiPicker(val => !val)} className={'absolute right-3 top-[42.8px] cursor-pointer'}>
+              <Image src={EmojiIcon} alt={'Emoji'} width={18} height={18} />
+            </span>
+            {showEmojiPicker && (
+                <div className="absolute right-0 z-10">
+                  {/*// @ts-ignore*/}
+                  <EmojiPicker theme={'dark'} searchDisabled={false} width={300} height={250} autoFocusSearch={false} onEmojiClick={onEmojiClick} />
+                </div>
+            )}
             {error && <div className="mt-2 text-sm text-red-500">{error}</div>}
           </div>
           <div>
