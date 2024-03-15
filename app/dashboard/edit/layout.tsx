@@ -1,14 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 
 import React, { ReactNode, useState } from 'react'
-import { usePathname } from 'next/navigation'
+
 import { useTranslation } from 'react-i18next'
 import { ChevronLeft, Eye, EyeOff } from 'lucide-react'
 
-import ComingSoon from '@/assets/dashboard/coming-soon.png'
 import Animation from '@/components/animation/framer-animaion'
 
 import { cn } from '@/lib/utils'
@@ -16,9 +14,9 @@ import { Button } from '@/components/ui/button'
 import Phone from '@/app/dashboard/edit/components/phone'
 
 import { DataProvider } from '@/app/dashboard/edit/edit-context'
+import DashboardTabs from "@/app/dashboard/edit/components/dashboard-tabs";
 
 const EditPage = ({ children }: { children: ReactNode }) => {
-  const pathname = usePathname()
   const { t } = useTranslation('edit_link_page')
 
   const [showed, setShowed] = useState(false)
@@ -44,38 +42,18 @@ const EditPage = ({ children }: { children: ReactNode }) => {
                 <ChevronLeft className="h-5 w-5 font-bold" /> {t('back_btn')}
               </Link>
             </Animation>
-
             <Animation delay={1}>
               <div className="mb-[3rem]">
                 <h2 className="main-text-animation my-[16px] text-4xl font-bold max-sm:text-[30px]">{t('title')}</h2>
               </div>
             </Animation>
-
-            <Animation delay={2} className={'mb-[20px] flex items-center gap-6 border-b-2 border-b-white/40'}>
-              <Link href={'/dashboard/edit/links'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/links' ? 'border-b-2' : 'border-b-transparent')}>
-                {t('tab1')}
-              </Link>
-              <Link href={'/dashboard/edit/themes'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/themes' ? 'border-b-2' : 'border-b-transparent')}>
-                {t('tab2')}
-                <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
-              </Link>
-              <Link href={'/dashboard/edit/seo-optimizing'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/seo-optimizing' ? 'border-b-2' : 'border-b-transparent')}>
-                {t('tab3')}
-                <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
-              </Link>
-              <Link href={'/dashboard/edit/subscribe'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/subscribe' ? 'border-b-2' : 'border-b-transparent')}>
-                {t('tab4')}
-                <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
-              </Link>
-            </Animation>
-
+            <DashboardTabs/>
             <Animation delay={3} className={'flex justify-between gap-[30px] max-md:gap-0'}>
               {children}
               <div className={cn('max-md:fixed max-md:left-0 max-md:right-0 max-md:top-0 max-md:z-[99999999]', showed === true ? 'max-md:block' : 'max-md:hidden')}>
                 <Phone />
               </div>
             </Animation>
-
             <div className={'hidden max-md:block'}>
               <div className={'flex items-center justify-center'}>
                 {!showed ? (
