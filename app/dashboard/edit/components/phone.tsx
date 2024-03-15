@@ -8,14 +8,16 @@ import { useUser } from '@clerk/clerk-react'
 import Animation from '@/components/animation/framer-animaion'
 import { useDataContext } from '@/app/dashboard/edit/edit-context'
 
-import { LinkItem } from '@/interfaces/dashboard/edit.interface'
+import { Button } from '@/components/ui/button'
 import LinkVertexIoIcon from '@/assets/images/link-logo.png'
+
+import { LinkItem } from '@/interfaces/dashboard/edit.interface'
 
 const Phone = () => {
   const { user } = useUser()
   const { links, title, description } = useDataContext()
 
-  const imageUrl = user?.profileImageUrl || 'https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yZFM1dzZ4TE1wendoM2E2S212amtab3BUZXkiLCJyaWQiOiJ1c2VyXzJkU0ZjMEI3cWF0aWRSZTJJbk5FeVJvTnQ5VCJ9?width=80'
+  const imageUrl: string = user?.profileImageUrl || 'https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yZFM1dzZ4TE1wendoM2E2S212amtab3BUZXkiLCJyaWQiOiJ1c2VyXzJkU0ZjMEI3cWF0aWRSZTJJbk5FeVJvTnQ5VCJ9?width=80'
 
   return (
     <Animation delay={4} className={'sticky top-[10%]'}>
@@ -29,20 +31,20 @@ const Phone = () => {
               <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>
               <p className={'text-white text-sm w-full flex items-center justify-center text-ellipsis whitespace-break-spaces text-center mt-2 text-style max-md:w-[300px]'}>{description}</p>
             </div>
-            <div className={'grid gap-y-4 justify-center items-center'}>
+            <div>
               {links?.map((links: LinkItem, index: number) => (
-                <div key={index} className={cn(links.enabled ? 'block' : 'hidden')}>
-                  <Link target={'_blank'} href={links?.url} className={'flex items-center justify-center text-white font-semibold text-lg bg-[#131313] leading-[1.2] w-[300px] h-[3rem] p-[0.75rem] rounded-[10px] hover:scale-105 transition-all'}>
-                    {links?.title}
+                <div key={index} className={cn('grid justify-center items-center', links.enabled ? 'block' : 'hidden')}>
+                  <Link target={'_blank'} href={links?.url}>
+                    <Button className={'w-full text-white font-[600] my-[3px] text-lg bg-[#131313] leading-[1.2] h-[3rem] p-[0.75rem] rounded-[10px] hover:scale-105 transition-all'}>{links?.title}</Button>
                   </Link>
                 </div>
               ))}
-              <div className={'flex items-center justify-center'}>
-                <p className={'text-xl font-bold text-white flex main-text-animation items-center justify-center gap-1 bottom-0'}>
-                  linkvertex.io
-                  <Image src={LinkVertexIoIcon} alt={'LinkvertexIoIcon'} width={15} height={15} />
-                </p>
-              </div>
+            </div>
+            <div className={'flex items-center justify-center'}>
+              <p className={'text-xl font-bold text-white flex main-text-animation items-center justify-center gap-1 bottom-0'}>
+                linkvertex.io
+                <Image src={LinkVertexIoIcon} alt={'LinkvertexIoIcon'} width={15} height={15} />
+              </p>
             </div>
           </div>
         </div>

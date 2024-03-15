@@ -5,8 +5,8 @@ import { ReactNode } from 'react'
 import { Inter } from 'next/font/google'
 import { NextFont } from 'next/dist/compiled/@next/font'
 
-import { dark } from '@clerk/themes'
 import { ClerkProvider } from '@clerk/nextjs'
+import { dark } from '@clerk/themes'
 
 import Header from '@/components/ui/header/header'
 import { Analytics } from '@vercel/analytics/react'
