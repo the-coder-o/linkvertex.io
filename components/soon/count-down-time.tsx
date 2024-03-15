@@ -39,7 +39,7 @@ const CountdownTimer: FC<CountdownProps> = ({ targetDate }) => {
       <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-red-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
         {timeLeft?.days} <p className={'text-sm'}>Days</p>
       </span>
-      <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-purple-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
+      <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-yellow-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
         {timeLeft?.hours} <p className={'text-sm'}>Hours</p>
       </span>
       <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-green-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
