@@ -38,32 +38,32 @@ const EditPage = ({ children }: { children: ReactNode }) => {
       </head>
       <DataProvider>
         <div className="container">
-          <div className="mt-[100px] mb-[100px] relative">
+          <div className="relative mb-[100px] mt-[100px]">
             <Animation delay={0}>
-              <Link href={'/dashboard'} className="bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]">
-                <ChevronLeft className="w-5 h-5 font-bold" /> {t('back_btn')}
+              <Link href={'/dashboard'} className="flex w-[13%] items-center justify-center rounded-[24px] bg-[#1D1F1F]/80 py-[8px] pr-[10px] text-[16px] font-[500] text-white transition-all hover:bg-[#1D1F1F] max-sm:w-[100px]">
+                <ChevronLeft className="h-5 w-5 font-bold" /> {t('back_btn')}
               </Link>
             </Animation>
 
             <Animation delay={1}>
               <div className="mb-[3rem]">
-                <h2 className="text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]">{t('title')}</h2>
+                <h2 className="main-text-animation my-[16px] text-4xl font-bold max-sm:text-[30px]">{t('title')}</h2>
               </div>
             </Animation>
 
-            <Animation delay={2} className={'flex items-center gap-6 border-b-2 border-b-white/40 mb-[20px]'}>
-              <Link href={'/dashboard/edit/links'} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', pathname === '/dashboard/edit/links' ? 'border-b-2' : 'border-b-transparent')}>
+            <Animation delay={2} className={'mb-[20px] flex items-center gap-6 border-b-2 border-b-white/40'}>
+              <Link href={'/dashboard/edit/links'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/links' ? 'border-b-2' : 'border-b-transparent')}>
                 {t('tab1')}
               </Link>
-              <Link href={'/dashboard/edit/themes'} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', pathname === '/dashboard/edit/themes' ? 'border-b-2' : 'border-b-transparent')}>
+              <Link href={'/dashboard/edit/themes'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/themes' ? 'border-b-2' : 'border-b-transparent')}>
                 {t('tab2')}
                 <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
               </Link>
-              <Link href={'/dashboard/edit/seo-optimizing'} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', pathname === '/dashboard/edit/seo-optimizing' ? 'border-b-2' : 'border-b-transparent')}>
+              <Link href={'/dashboard/edit/seo-optimizing'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/seo-optimizing' ? 'border-b-2' : 'border-b-transparent')}>
                 {t('tab3')}
                 <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
               </Link>
-              <Link href={'/dashboard/edit/subscribe'} className={cn('text-white cursor-pointer flex items-center gap-1 max-sm:text-[15.5px] max-sm:justify-between', pathname === '/dashboard/edit/subscribe' ? 'border-b-2' : 'border-b-transparent')}>
+              <Link href={'/dashboard/edit/subscribe'} className={cn('flex cursor-pointer items-center gap-1 text-white max-sm:justify-between max-sm:text-[15.5px]', pathname === '/dashboard/edit/subscribe' ? 'border-b-2' : 'border-b-transparent')}>
                 {t('tab4')}
                 <Image src={ComingSoon} alt={'ComingSoon'} width={20} height={20} />
               </Link>
@@ -71,7 +71,7 @@ const EditPage = ({ children }: { children: ReactNode }) => {
 
             <Animation delay={3} className={'flex justify-between gap-[30px] max-md:gap-0'}>
               {children}
-              <div className={cn('max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0 max-md:z-[99999999]', showed === true ? 'max-md:block' : 'max-md:hidden')}>
+              <div className={cn('max-md:fixed max-md:left-0 max-md:right-0 max-md:top-0 max-md:z-[99999999]', showed === true ? 'max-md:block' : 'max-md:hidden')}>
                 <Phone />
               </div>
             </Animation>
@@ -79,11 +79,11 @@ const EditPage = ({ children }: { children: ReactNode }) => {
             <div className={'hidden max-md:block'}>
               <div className={'flex items-center justify-center'}>
                 {showed === false ? (
-                  <Button onClick={handleShowed} className={'bg-[#fff] hover:bg-[#fff] text-black fixed bottom-4 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
+                  <Button onClick={handleShowed} className={'fixed bottom-4 flex items-center gap-2 rounded-[22px] bg-[#fff] px-[25px] text-xl font-bold text-black hover:bg-[#fff]'}>
                     <Eye /> Preview
                   </Button>
                 ) : (
-                  <Button onClick={handleNotShowed} className={'bg-[#fff] z-[9999999999999] hover:bg-[#fff] text-black fixed bottom-4 flex items-center gap-2 text-xl font-bold rounded-[22px] px-[25px]'}>
+                  <Button onClick={handleNotShowed} className={'fixed bottom-4 z-[9999999999999] flex items-center gap-2 rounded-[22px] bg-[#fff] px-[25px] text-xl font-bold text-black hover:bg-[#fff]'}>
                     <EyeOff /> Hide
                   </Button>
                 )}

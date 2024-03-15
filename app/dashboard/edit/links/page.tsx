@@ -92,66 +92,66 @@ const Page = () => {
       <div className={cn('grid grid-cols-1 gap-y-12')}>
         <div className={'grid grid-cols-1 gap-y-6'}>
           <div className={'relative'}>
-            <label className={'text-start text-white text-md font-medium'}> {t('label')}</label>
-            <Input value={title} onChange={handleInputChangeValidation} type={'text'} className={'mt-[0.5rem] !bg-transparent border-2 border-[#] rounded-[20px] px-[16px] text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
-            <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute top-[42.8px] cursor-pointer right-3'} />
-            {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+            <label className={'text-md text-start font-medium text-white'}> {t('label')}</label>
+            <Input value={title} onChange={handleInputChangeValidation} type={'text'} className={'mt-[0.5rem] rounded-[20px] border-2 border-[#] !bg-transparent px-[16px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!transition'} />
+            <Image src={EmojiIcon} alt={'EmojiIcon'} width={18} height={18} className={'absolute right-3 top-[42.8px] cursor-pointer'} />
+            {error && <div className="mt-2 text-sm text-red-500">{error}</div>}
           </div>
           <div>
-            <label className={'text-start text-white text-md font-medium'}>{t('profile_title')}</label>
+            <label className={'text-md text-start font-medium text-white'}>{t('profile_title')}</label>
             <div className="relative">
-              <Input value={inputValue} onChange={handleInputChange} type="text" className={'mt-[0.5rem] !pl-[195px] !bg-transparent border-2 border-[#] rounded-[20px] px-[16px] text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} id="hs-inline-add-on" name="hs-inline-add-on" />
-              <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-                <span className="text-start main-text-animation text-sm font-bold">https://linkvertex-a-bd.me/</span>
+              <Input value={inputValue} onChange={handleInputChange} type="text" className={'mt-[0.5rem] rounded-[20px] border-2 border-[#] !bg-transparent px-[16px] !pl-[195px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!transition'} id="hs-inline-add-on" name="hs-inline-add-on" />
+              <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4">
+                <span className="main-text-animation text-start text-sm font-bold">https://linkvertex-a-bd.me/</span>
               </div>
             </div>
-            {!isValid && <p className="text-red-500 text-sm">Please write a correct your page url title.</p>}
+            {!isValid && <p className="text-sm text-red-500">Please write a correct your page url title.</p>}
           </div>
           <div>
-            <label className={'text-start text-white text-md font-medium'}>{t('description')}</label>
-            <Textarea value={description} onChange={handleInputChangeDescription} className={'mt-[0.5rem] h-[150px] !bg-transparent !pt-[16px] border-2 border-[#] !outline-none rounded-[20px] px-[16px] text-[1rem] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
-            {error2 && <div className="text-red-500 text-sm mt-2">{error2}</div>}
+            <label className={'text-md text-start font-medium text-white'}>{t('description')}</label>
+            <Textarea value={description} onChange={handleInputChangeDescription} className={'mt-[0.5rem] h-[150px] rounded-[20px] border-2 border-[#] !bg-transparent px-[16px] !pt-[16px] text-[1rem] text-white !outline-none placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!transition'} />
+            {error2 && <div className="mt-2 text-sm text-red-500">{error2}</div>}
           </div>
         </div>
-        <Alert className="!bg-[#1E2B32] border-transparent rounded-[24px]">
-          <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
-          <AlertTitle className="text-white ml-2">{t('alert_title')}</AlertTitle>
-          <AlertDescription className="text-white ml-2 text-[16px] w-full font-medium">{t('alert_text')}</AlertDescription>
+        <Alert className="rounded-[24px] border-transparent !bg-[#1E2B32]">
+          <ShieldAlert className="flex items-center justify-center rounded-full bg-[#90CDF4] p-[4px]" />
+          <AlertTitle className="ml-2 text-white">{t('alert_title')}</AlertTitle>
+          <AlertDescription className="ml-2 w-full text-[16px] font-medium text-white">{t('alert_text')}</AlertDescription>
         </Alert>
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="droppable-links">
             {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef} className="border-2 border-[#ffffff29] grid grid-cols-1 items-center rounded-[24px] p-[0.5rem]">
+              <div {...provided.droppableProps} ref={provided.innerRef} className="grid grid-cols-1 items-center rounded-[24px] border-2 border-[#ffffff29] p-[0.5rem]">
                 {links.map((link, index) => (
                   <Draggable key={link.id} draggableId={link.id} index={index}>
                     {(provided) => (
-                      <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={'grid grid-cols-1 border-2 border-[#ffffff29] bg-[#1a202c99] p-[1.2rem] rounded-[24px] mb-[15px]'}>
-                        <h2 className="text-md uppercase font-bold text-white">URL {index + 1}</h2>
+                      <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={'mb-[15px] grid grid-cols-1 rounded-[24px] border-2 border-[#ffffff29] bg-[#1a202c99] p-[1.2rem]'}>
+                        <h2 className="text-md font-bold uppercase text-white">URL {index + 1}</h2>
                         <div className="relative">
-                          <Input placeholder="Label" value={link.title} onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)} type="text" className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]" />
-                          <Tags className="text-white absolute top-[18px] left-3 w-5 h-5" />
+                          <Input placeholder="Label" value={link.title} onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)} type="text" className="mt-[0.5rem] rounded-[20px] border-transparent !bg-[#1C2129] bg-transparent px-[40px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!bg-transparent focus:!transition" />
+                          <Tags className="absolute left-3 top-[18px] h-5 w-5 text-white" />
                         </div>
                         <div className="relative">
-                          <Input placeholder="Link URL" value={link.url} onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)} type="text" className="mt-[0.5rem] !bg-[#1C2129] border-transparent focus:!bg-transparent rounded-[20px] px-[40px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#454646] placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]" />
-                          <Link2 className="text-white absolute top-[18px] left-3 w-5 h-5" />
+                          <Input placeholder="Link URL" value={link.url} onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)} type="text" className="mt-[0.5rem] rounded-[20px] border-transparent !bg-[#1C2129] bg-transparent px-[40px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!bg-transparent focus:!transition" />
+                          <Link2 className="absolute left-3 top-[18px] h-5 w-5 text-white" />
                         </div>
-                        <div className="flex items-center justify-between mt-[15px]">
+                        <div className="mt-[15px] flex items-center justify-between">
                           <Switch id={`switch-${link.id}`} checked={link.enabled} onClick={() => toggleLinkEnabled(link.id)} />
-                          <Trash onClick={() => deleteLink(link.id)} className="text-red-500 w-5 h-5 cursor-pointer" />
+                          <Trash onClick={() => deleteLink(link.id)} className="h-5 w-5 cursor-pointer text-red-500" />
                         </div>
                       </div>
                     )}
                   </Draggable>
                 ))}
                 {provided.placeholder}
-                <Button onClick={addLink} className="!font-bold flex items-center justify-center rounded-[20px] px-[16px] text-[16px] bg-[#90CDF4] hover:bg-[#90CDF4]/90 text-black w-full">
+                <Button onClick={addLink} className="flex w-full items-center justify-center rounded-[20px] bg-[#90CDF4] px-[16px] text-[16px] !font-bold text-black hover:bg-[#90CDF4]/90">
                   {t('add_link_btn')}
                 </Button>
               </div>
             )}
           </Droppable>
         </DragDropContext>
-        <Button className="justify-center py-6 !font-bold flex items-center gap-2 rounded-[18px] px-[16px] text-[16px] bg-[#9AE6B4] hover:bg-[#9AE6B4]/90 text-black w-full"> {t('save_btn')}</Button>
+        <Button className="flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#9AE6B4] px-[16px] py-6 text-[16px] !font-bold text-black hover:bg-[#9AE6B4]/90"> {t('save_btn')}</Button>
       </div>
     </>
   )

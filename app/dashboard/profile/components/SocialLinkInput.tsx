@@ -8,10 +8,10 @@ const SocialLinkInput: FC<SocialLinkInputProps> = ({ iconClass, label, value, pl
     <div className={'flex flex-row gap-[1rem]'}>
       <i className={`${iconClass} text-[22px] text-white`}></i>
       <div className={'w-full'}>
-        <label className={'text-start text-white text-md font-medium'}>{label}</label>
+        <label className={'text-md text-start font-medium text-white'}>{label}</label>
         <div>
-          <Input value={value} onChange={onChange} type={'text'} placeholder={placeholder} className={'mt-[0.5rem] border border-[#ffffff29] rounded-[20px] px-[16px] bg-transparent text-[1rem] pt-[5px] text-white placeholder:text-[#fff]/60 placeholder:font-medium focus:!border-2 focus:!transition focus:!border-[#63b3ed]'} />
-          {!isValid && <p className={'text-red-500 text-sm mt-1.5'}>{validationMessage}</p>}
+          <Input value={value} onChange={onChange} type={'text'} placeholder={placeholder} className={'mt-[0.5rem] rounded-[20px] border border-[#ffffff29] bg-transparent px-[16px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#fff]/60 focus:!border-2 focus:!border-[#63b3ed] focus:!transition'} />
+          {!isValid && <p className={'mt-1.5 text-sm text-red-500'}>{validationMessage}</p>}
         </div>
       </div>
     </div>

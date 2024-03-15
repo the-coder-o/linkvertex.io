@@ -38,20 +38,20 @@ const Dashboard = () => {
           <title>Dashboard | Linkvertex</title>
         </head>
         <div className="container">
-          <div className="mt-[150px] max-sm:mt-[100px] flex flex-col gap-9 max-sm:gap-2">
+          <div className="mt-[150px] flex flex-col gap-9 max-sm:mt-[100px] max-sm:gap-2">
             <Animation delay={0}>
-              <span className="main-text-animation text-4xl font-bold max-sm:text-[23px] flex items-center">
+              <span className="main-text-animation flex items-center text-4xl font-bold max-sm:text-[23px]">
                 {t('title')}, <span className={cn(isSignedIn ? 'block' : 'hidden')}>{user?.fullName ?? 'User'}</span>
-                <Skeleton className={cn('h-7 w-[250px] bg-[#fff]/10 mt-1', isLoaded ? 'hidden' : 'block')} />
+                <Skeleton className={cn('mt-1 h-7 w-[250px] bg-[#fff]/10', isLoaded ? 'hidden' : 'block')} />
               </span>
             </Animation>
             <Animation delay={1}>
               <DashboardButtons />
             </Animation>
-            <Button onClick={handleLogout} className="flex items-center hover:text-black gap-2 text-[16px] !font-bold rounded-[20px] bg-transparent hover:bg-[#90CDF4]">
+            <Button onClick={handleLogout} className="flex items-center gap-2 rounded-[20px] bg-transparent text-[16px] !font-bold hover:bg-[#90CDF4] hover:text-black">
               <Animation delay={2}>
                 <div className={'flex items-center gap-2 text-[16px] font-medium'}>
-                  <LogOutIcon className="rotate-180 w-4 h-4" />
+                  <LogOutIcon className="h-4 w-4 rotate-180" />
                   {t('logout_btn')}
                 </div>
               </Animation>

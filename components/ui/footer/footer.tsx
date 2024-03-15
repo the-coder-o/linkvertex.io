@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className={'absolute left-0 right-0 bottom-2'}>
+    <div className={'absolute bottom-2 left-0 right-0'}>
       <footer className={'container'}>
         <div className={'flex items-center justify-between'}>
           <p className={'text-white'}>

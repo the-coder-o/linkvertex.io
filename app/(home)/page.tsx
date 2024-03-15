@@ -14,15 +14,15 @@ export default function Home() {
 
   return (
     <div className={'container'}>
-      <div className={'flex items-center flex-col justify-center gap-[3.5rem] h-[100vh]'}>
+      <div className={'flex h-[100vh] flex-col items-center justify-center gap-[3.5rem]'}>
         <Animation delay={0}>
-          <h1 className={'main-text-animation w-[410px] text-[3.80rem] text-center leading-[110%] font-[800] max-md:text-[48px] max-md:w-[508px] max-sm:w-[450px] max-[530px]:w-full'}>{t('title')}</h1>
+          <h1 className={'main-text-animation w-[410px] text-center text-[3.80rem] font-[800] leading-[110%] max-md:w-[508px] max-md:text-[48px] max-sm:w-[450px] max-[530px]:w-full'}>{t('title')}</h1>
         </Animation>
         <Animation delay={1}>
-          <p className={'w-[410px] font-[600] text-white leading-[1.5rem] text-center max-sm:w-[85%] ml-auto mr-auto'}>{t('subtitle')}</p>
+          <p className={'ml-auto mr-auto w-[410px] text-center font-[600] leading-[1.5rem] text-white max-sm:w-[85%]'}>{t('subtitle')}</p>
         </Animation>
         <Animation delay={2}>
-          <Link href={isSignedIn ? '/dashboard' : '/sign-in'} className={'px-[24px] py-[12px] rounded-[20px] font-[600] text-[18px] bg-[#FCD28D] hover:bg-[#EBB064] transition-all'}>
+          <Link href={isSignedIn ? '/dashboard' : '/sign-in'} className={'rounded-[20px] bg-[#FCD28D] px-[24px] py-[12px] text-[18px] font-[600] transition-all hover:bg-[#EBB064]'}>
             {t('button')}
           </Link>
         </Animation>

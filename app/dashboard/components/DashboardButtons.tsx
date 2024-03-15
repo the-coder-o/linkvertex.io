@@ -17,8 +17,8 @@ const DashboardButtons = () => {
         href="/"
         label={t('page1')}
         buttonContent={
-          <Button className="flex items-center gap-2 px-[12px] text-sm font-bold text-[#fff] rounded-[24px] border border-[#81e6d9] h-8 bg-transparent hover:bg-[#81e6d9]/10">
-            <Copy className="w-3.5 h-3.5" />
+          <Button className="flex h-8 items-center gap-2 rounded-[24px] border border-[#81e6d9] bg-transparent px-[12px] text-sm font-bold text-[#fff] hover:bg-[#81e6d9]/10">
+            <Copy className="h-3.5 w-3.5" />
             Copy
           </Button>
         }

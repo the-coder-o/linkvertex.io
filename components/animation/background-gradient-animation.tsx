@@ -72,9 +72,9 @@ export const WavyBackground = ({ children, className, containerClassName, colors
   }, [])
 
   return (
-    <div className={cn('flex w-full h-full flex-col !z-[-99999999] items-center !overflow-hidden justify-center', containerClassName)}>
+    <div className={cn('!z-[-99999999] flex h-full w-full flex-col items-center justify-center !overflow-hidden', containerClassName)}>
       <canvas
-        className="fixed top-0 left-auto right-0 bg-transparent opacity-80 !overflow-hidden z-[-888888]"
+        className="fixed left-auto right-0 top-0 z-[-888888] !overflow-hidden bg-transparent opacity-80"
         ref={canvasRef}
         id="canvas"
         style={{

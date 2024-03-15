@@ -68,7 +68,7 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <button onClick={handleLanguageChange}>
-      <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={18} height={18} className="!bg-cover !w-[32px]" />
+      <Image src={selectedLanguage.image} alt={selectedLanguage.name} width={18} height={18} className="!w-[32px] !bg-cover" />
     </button>
   )
 }

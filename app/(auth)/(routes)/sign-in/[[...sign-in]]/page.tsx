@@ -6,7 +6,7 @@ export default function Page() {
       <head>
         <title>Sign in to your dashboard | Linkvertex</title>
       </head>
-      <div className={'flex items-center justify-center h-[100vh]'}>
+      <div className={'flex h-[100vh] items-center justify-center'}>
         <SignIn afterSignInUrl={'/dashboard'} />
       </div>
     </>

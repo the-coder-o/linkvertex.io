@@ -25,16 +25,16 @@ export default function ButtonCardTheme() {
 
   return (
     <div className={'flex flex-col items-center'}>
-      <Alert className="!bg-[#1E2B32] w-full border-transparent rounded-[24px] mb-8">
-        <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
-        <AlertTitle className="text-white ml-2">{t('alert_message_title')}</AlertTitle>
-        <AlertDescription className="text-white !w-full ml-2 text-[16px] font-medium">{t('alert_message_text')}</AlertDescription>
+      <Alert className="mb-8 w-full rounded-[24px] border-transparent !bg-[#1E2B32]">
+        <ShieldAlert className="flex items-center justify-center rounded-full bg-[#90CDF4] p-[4px]" />
+        <AlertTitle className="ml-2 text-white">{t('alert_message_title')}</AlertTitle>
+        <AlertDescription className="ml-2 !w-full text-[16px] font-medium text-white">{t('alert_message_text')}</AlertDescription>
       </Alert>
-      <div className={'grid grid-cols-3 gap-5 flex-wrap max-md:grid-cols-6 max-sm:grid-cols-4 max-[450px]:grid-cols-3'}>
+      <div className={'grid grid-cols-3 flex-wrap gap-5 max-md:grid-cols-6 max-sm:grid-cols-4 max-[450px]:grid-cols-3'}>
         {themeImages.map((image, index) => (
-          <div key={index} className={'flex flex-col items-center gap-1 relative'}>
-            <Image onClick={() => toggleImageSelection(index)} width={100} height={100} className={cn('!w-full opacity-50 !rounded-lg cursor-pointer border-4 cursor-not-allowed', selectedImageIndex === index ? 'border-4' : '')} src={image?.img} alt={'Air Leaf'} />
-            <Lock className={'text-white w-6 h-6 absolute top-[41%] !opacity-100 flex items-center justify-center cursor-not-allowed'} />
+          <div key={index} className={'relative flex flex-col items-center gap-1'}>
+            <Image onClick={() => toggleImageSelection(index)} width={100} height={100} className={cn('!w-full cursor-not-allowed cursor-pointer !rounded-lg border-4 opacity-50', selectedImageIndex === index ? 'border-4' : '')} src={image?.img} alt={'Air Leaf'} />
+            <Lock className={'absolute top-[41%] flex h-6 w-6 cursor-not-allowed items-center justify-center text-white !opacity-100'} />
           </div>
         ))}
       </div>

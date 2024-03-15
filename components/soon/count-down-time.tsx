@@ -36,16 +36,16 @@ const CountdownTimer: FC<CountdownProps> = ({ targetDate }) => {
 
   return (
     <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 2 * 0.1 }} className={'flex items-center justify-center gap-5'}>
-      <span className={'text-5xl max-sm:text-3xl max-sm:w-[80px] max-[400px]:w-[70px] text-red-500 font-bold flex items-center justify-center flex-col rounded-[15px] p-3 !py-[20px] bg-[#fff]/10 w-[100px]'}>
+      <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-red-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
         {timeLeft?.days} <p className={'text-sm'}>Days</p>
       </span>
-      <span className={'text-5xl max-sm:text-3xl max-sm:w-[80px] max-[400px]:w-[70px] text-purple-500 font-bold flex items-center justify-center flex-col rounded-[15px] p-3 !py-[20px] bg-[#fff]/10 w-[100px]'}>
+      <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-purple-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
         {timeLeft?.hours} <p className={'text-sm'}>Hours</p>
       </span>
-      <span className={'text-5xl max-sm:text-3xl max-sm:w-[80px] max-[400px]:w-[70px] text-green-500 font-bold flex items-center justify-center flex-col rounded-[15px] p-3 !py-[20px] bg-[#fff]/10 w-[100px]'}>
+      <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-green-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
         {timeLeft?.minutes} <p className={'text-sm'}>Minutes</p>
       </span>
-      <span className={'text-5xl max-sm:text-3xl max-sm:w-[80px] max-[400px]:w-[70px] text-blue-500 font-bold flex items-center justify-center flex-col rounded-[15px] p-3 !py-[20px] bg-[#fff]/10 w-[100px]'}>
+      <span className={'flex w-[100px] flex-col items-center justify-center rounded-[15px] bg-[#fff]/10 p-3 !py-[20px] text-5xl font-bold text-blue-500 max-sm:w-[80px] max-sm:text-3xl max-[400px]:w-[70px]'}>
         {timeLeft?.seconds} <p className={'text-sm'}>Seconds</p>
       </span>
     </motion.div>

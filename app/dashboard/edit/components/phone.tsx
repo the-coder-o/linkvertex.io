@@ -21,27 +21,27 @@ const Phone = () => {
 
   return (
     <Animation delay={4} className={'sticky top-[10%]'}>
-      <div className={'p-[1rem] overflow-auto h-[730px] border-8 rounded-[32px] border-[#ffffff10] bg-[#000] max-md:h-[100vh] max-md:rounded-none max-md:border-none max-md:'}>
-        <div className={'relative flex items-center w-[300px] min-h-full justify-center p-[1rem] max-md:w-auto'}>
-          <div className={'grid grid-cols-1 gap-y-4 max-md:justify-center max-md:items-center max-md:w-full'}>
+      <div className={'max-md: h-[730px] overflow-auto rounded-[32px] border-8 border-[#ffffff10] bg-[#000] p-[1rem] max-md:h-[100vh] max-md:rounded-none max-md:border-none'}>
+        <div className={'relative flex min-h-full w-[300px] items-center justify-center p-[1rem] max-md:w-auto'}>
+          <div className={'grid grid-cols-1 gap-y-4 max-md:w-full max-md:items-center max-md:justify-center'}>
             <div className={'flex items-center justify-center'}>
-              <img src={imageUrl} alt="User profile" className={'rounded-full w-[100px]'} />
+              <img src={imageUrl} alt="User profile" className={'w-[100px] rounded-full'} />
             </div>
-            <div className={'flex items-center justify-center flex-col'}>
-              <h2 className={'text-4xl font-bold text-white flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-style'}>{title}</h2>
-              <p className={'text-white text-sm w-full flex items-center justify-center text-ellipsis whitespace-break-spaces text-center mt-2 text-style max-md:w-[300px]'}>{description}</p>
+            <div className={'flex flex-col items-center justify-center'}>
+              <h2 className={'text-style flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-4xl font-bold text-white'}>{title}</h2>
+              <p className={'text-style mt-2 flex w-full items-center justify-center text-ellipsis whitespace-break-spaces text-center text-sm text-white max-md:w-[300px]'}>{description}</p>
             </div>
             <div>
               {links?.map((links: LinkItem, index: number) => (
-                <div key={index} className={cn('grid justify-center items-center', links.enabled ? 'block' : 'hidden')}>
+                <div key={index} className={cn('grid items-center justify-center', links.enabled ? 'block' : 'hidden')}>
                   <Link target={'_blank'} href={links?.url}>
-                    <Button className={'w-full text-white font-[600] my-[3px] text-lg bg-[#131313] leading-[1.2] h-[3rem] p-[0.75rem] rounded-[10px] hover:scale-105 transition-all'}>{links?.title}</Button>
+                    <Button className={'my-[3px] h-[3rem] w-full rounded-[10px] bg-[#131313] p-[0.75rem] text-lg font-[600] leading-[1.2] text-white transition-all hover:scale-105'}>{links?.title}</Button>
                   </Link>
                 </div>
               ))}
             </div>
             <div className={'flex items-center justify-center'}>
-              <p className={'text-xl font-bold text-white flex main-text-animation items-center justify-center gap-1 bottom-0'}>
+              <p className={'main-text-animation bottom-0 flex items-center justify-center gap-1 text-xl font-bold text-white'}>
                 linkvertex.io
                 <Image src={LinkVertexIoIcon} alt={'LinkvertexIoIcon'} width={15} height={15} />
               </p>

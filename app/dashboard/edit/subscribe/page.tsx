@@ -18,15 +18,15 @@ const Page = () => {
         <title>Subscribe | Linkvertex</title>
       </head>
       <div>
-        <Alert className="!bg-[#1E2B32] w-full border-transparent rounded-[24px] mb-8">
-          <ShieldAlert className="bg-[#90CDF4] rounded-full flex items-center justify-center p-[4px]" />
-          <AlertTitle className="text-white ml-2">{t('alert_message_title')}</AlertTitle>
-          <AlertDescription className="text-white ml-2 text-[16px] font-medium">{t('alert_message_text')}</AlertDescription>
+        <Alert className="mb-8 w-full rounded-[24px] border-transparent !bg-[#1E2B32]">
+          <ShieldAlert className="flex items-center justify-center rounded-full bg-[#90CDF4] p-[4px]" />
+          <AlertTitle className="ml-2 text-white">{t('alert_message_title')}</AlertTitle>
+          <AlertDescription className="ml-2 text-[16px] font-medium text-white">{t('alert_message_text')}</AlertDescription>
         </Alert>
         <div>
-          <div className={'bg-transparent border-2 border-white p-5 rounded-[20px]'}>
-            <div className={'flex justify-between items-center mb-5'}>
-              <p className={'text-white text-xl flex items-center gap-2'}>
+          <div className={'rounded-[20px] border-2 border-white bg-transparent p-5'}>
+            <div className={'mb-5 flex items-center justify-between'}>
+              <p className={'flex items-center gap-2 text-xl text-white'}>
                 Let visitors subscribe
                 <HelpCircle size={20} />
               </p>

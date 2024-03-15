@@ -40,11 +40,11 @@ const Header = () => {
     }
   }, [])
   return (
-    <div className={cn("'w-full fixed left-0 right-0 h-[4rem] flex items-center justify-center z-[999999] top-0", hasScrolled ? 'backdrop-blur-sm bg-black/40' : 'backdrop-blur-none bg-transparent')}>
+    <div className={cn("'w-full fixed left-0 right-0 top-0 z-[999999] flex h-[4rem] items-center justify-center", hasScrolled ? 'bg-black/40 backdrop-blur-sm' : 'bg-transparent backdrop-blur-none')}>
       <header className={'container'}>
         <div className={'flex items-center justify-between'}>
           <div>
-            <h1 className={'text-white text-[1.25rem] font-bold main-text-animation'}>
+            <h1 className={'main-text-animation text-[1.25rem] font-bold text-white'}>
               <Link href={'/'} className={'flex items-center gap-1'}>
                 linkvertex.io
               </Link>

@@ -8,7 +8,7 @@ type SpotlightProps = {
 
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
-    <svg className={cn('animate-spotlight pointer-events-none absolute z-[1]  h-[169%] w-[138%] lg:w-[84%] opacity-0', className)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3787 2842" fill="none">
+    <svg className={cn('animate-spotlight pointer-events-none absolute z-[1]  h-[169%] w-[138%] opacity-0 lg:w-[84%]', className)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3787 2842" fill="none">
       <g filter="url(#filter)">
         <ellipse cx="1924.71" cy="273.501" rx="1924.71" ry="273.501" transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)" fill={fill || 'white'} fillOpacity="0.21"></ellipse>
       </g>

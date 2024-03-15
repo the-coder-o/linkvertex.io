@@ -7,11 +7,11 @@ import { AnimatedTooltip } from '@/components/animation/animated-tooltip'
 
 const AboutLinks = () => {
   return (
-    <div className={'flex items-center gap-2.5 mb-6 mt-5'}>
+    <div className={'mb-6 mt-5 flex items-center gap-2.5'}>
       <a href="https://www.buymeacoffee.com/abdulbacit">
         <img className={'!h-8'} src="https://img.buymeacoffee.com/button-api/?text=Buy a coffee&emoji=☕&slug=abdulbacit&button_colour=5F7FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" />
       </a>
-      <Link href={'https://github.com/the-coder-o/linkvertex.io/issues/7'} className={'flex items-center gap-1 text-white bg-blue-500 rounded-[9px] px-6 h-8'}>
+      <Link href={'https://github.com/the-coder-o/linkvertex.io/issues/7'} className={'flex h-8 items-center gap-1 rounded-[9px] bg-blue-500 px-6 text-white'}>
         Issues <MessageCircle size={15} />
       </Link>
       <iframe src="https://github.com/sponsors/the-coder-o/button" title="Sponsor the-coder-o" height="32" width="114"></iframe>

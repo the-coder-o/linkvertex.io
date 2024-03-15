@@ -32,24 +32,24 @@ const Profile = () => {
       <div className={'container'}>
         <div className={'mt-[100px]'}>
           <Animation delay={0}>
-            <Link href={'/dashboard'} className={'bg-[#1D1F1F]/80 rounded-[24px] text-white flex justify-center font-[500] pr-[10px] w-[13%] items-center py-[8px] text-[16px] hover:bg-[#1D1F1F] transition-all max-sm:w-[100px]'}>
-              <ChevronLeft className={'w-5 h-5 font-bold'} />
+            <Link href={'/dashboard'} className={'flex w-[13%] items-center justify-center rounded-[24px] bg-[#1D1F1F]/80 py-[8px] pr-[10px] text-[16px] font-[500] text-white transition-all hover:bg-[#1D1F1F] max-sm:w-[100px]'}>
+              <ChevronLeft className={'h-5 w-5 font-bold'} />
               {t('back_btn')}
             </Link>
           </Animation>
           <Animation delay={1}>
             <div className={'mb-[3rem]'}>
-              <h2 className={'text-4xl main-text-animation font-bold my-[16px] max-sm:text-[30px]'}>{t('title')}</h2>
+              <h2 className={'main-text-animation my-[16px] text-4xl font-bold max-sm:text-[30px]'}>{t('title')}</h2>
             </div>
           </Animation>
           <Animation delay={2}>
             <div className={'flex flex-col gap-[2.5rem]'}>
               <div>
-                <h2 className={'text-3xl font-bold text-white mb-[16px] max-sm:text-[26px]'}>{t('subtitle')}</h2>
+                <h2 className={'mb-[16px] text-3xl font-bold text-white max-sm:text-[26px]'}>{t('subtitle')}</h2>
               </div>
-              <div className={'grid grid-cols-1 space-y-[2rem] mb-[100px]'}>
+              <div className={'mb-[100px] grid grid-cols-1 space-y-[2rem]'}>
                 <SocialLinks input={input} handleChange={handleChange} isValid={isValid} />
-                <Button disabled={isSaveDisabled} className={'bg-[#9ae6b4] rounded-[20px] font-semibold text-black text-md hover:bg-[#9ae6c9]'}>
+                <Button disabled={isSaveDisabled} className={'text-md rounded-[20px] bg-[#9ae6b4] font-semibold text-black hover:bg-[#9ae6c9]'}>
                   {t('save_btn')}
                 </Button>
               </div>

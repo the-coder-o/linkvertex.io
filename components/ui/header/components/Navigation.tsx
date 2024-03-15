@@ -17,7 +17,7 @@ const Navigation: React.FC<NavigationProps> = ({ UrlPages }) => {
   return (
     <nav className="flex items-center gap-10  max-sm:hidden">
       {UrlPages.map((item, index) => (
-        <Link key={index} href={item.linkPath} className={`hover:text-white/80 text-[#b4b4b4] transition-all text-[16px] pt-1.5 font-bold rounded-lg ${item.linkPath === pathName ? 'text-white' : ''}`}>
+        <Link key={index} href={item.linkPath} className={`rounded-lg pt-1.5 text-[16px] font-bold text-[#b4b4b4] transition-all hover:text-white/80 ${item.linkPath === pathName ? 'text-white' : ''}`}>
           {t(item?.linkTitle)}
         </Link>
       ))}

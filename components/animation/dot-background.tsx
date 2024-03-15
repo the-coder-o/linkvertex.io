@@ -2,8 +2,8 @@ import React from 'react'
 
 export function DotBackgroundDemo() {
   return (
-    <div className="h-screen z-[-9999999] w-full bg-dot-white/[0.8] fixed top-0 bottom-0 flex items-center justify-center">
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+    <div className="fixed bottom-0 top-0 z-[-9999999] flex h-screen w-full items-center justify-center bg-dot-white/[0.8]">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
     </div>
   )
 }
