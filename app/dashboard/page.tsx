@@ -22,7 +22,7 @@ const Dashboard = () => {
   const { isSignedIn, user, isLoaded } = useUser()
 
   const { t } = useTranslation('dashboard')
-  const [isLoggingOut, setIsLoggingOut] = useState<boolean>(false)
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
 
   const handleLogout = async () => {
     setIsLoggingOut(true)
