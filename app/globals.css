@@ -95,27 +95,28 @@ body {
   background-color: black;
 }
 
-@keyframes hue {
-  from {
-    filter: hue-rotate(0deg);
-  }
-
-  to {
-    filter: hue-rotate(360deg);
-  }
+.main-text-animation {
+  color: transparent;
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 1) 0%, rgba(238, 100, 10, 1) 7%, rgba(210, 169, 39, 1) 14%, rgba(234, 252, 62, 1) 21%, rgba(134, 248, 82, 1) 28%, rgba(99, 245, 156, 1) 35%, rgba(87, 241, 215, 1) 42%, rgba(75, 216, 237, 1) 49%, rgba(66, 158, 239, 1) 56%, rgba(57, 74, 241, 1) 63%, rgba(126, 45, 244, 1) 70%, rgba(162, 84, 247, 1) 77%, rgba(229, 117, 249, 1) 84%, rgba(251, 103, 164, 1) 91%, rgba(253, 127, 190, 1) 97%, rgba(255, 0, 191, 1) 100%);
+  -webkit-background-clip: text;
+  animation: animate 20s linear infinite;
+  background-size: 1000%;
 }
 
-.main-text-animation {
-  animation: hue 4s infinite linear;
-  background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #f35626;
+@keyframes animate {
+  0% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
 }
 
 .main-text-animation:hover {
-  animation: hue 1s infinite linear;
+  animation: animate 5s infinite linear;
 }
 
 .main {
