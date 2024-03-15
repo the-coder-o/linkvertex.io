@@ -7,12 +7,14 @@ import { useTranslation } from 'react-i18next'
 
 import Footer from '@/components/ui/footer/footer'
 import Animation from '@/components/animation/framer-animaion'
+import Loader from "@/components/loader";
 
 export default function Home() {
-  const { isSignedIn } = useUser()
+  const { isSignedIn,user } = useUser()
   const { t } = useTranslation('home_section')
 
-  return (
+  if (user){
+    return (
     <div className={'container'}>
       <div className={'flex h-[100vh] flex-col items-center justify-center gap-[3.5rem]'}>
         <Animation delay={0}>
@@ -30,4 +32,8 @@ export default function Home() {
       <Footer />
     </div>
   )
+  }else {
+    return <Loader/>
+  }
+
 }
