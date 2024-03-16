@@ -2,16 +2,16 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { cn } from '@/lib/utils'
-import { useUser } from '@clerk/clerk-react'
+import {cn} from '@/lib/utils'
+import {useUser} from '@clerk/clerk-react'
 
 import Animation from '@/components/animation/framer-animaion'
-import { useDataContext } from '@/app/dashboard/edit/edit-context'
+import {useDataContext} from '@/app/dashboard/edit/edit-context'
 
-import { Button } from '@/components/ui/button'
+import {Button} from '@/components/ui/button'
 import LinkVertexIoIcon from '@/assets/images/link-logo.png'
 
-import { LinkItem } from '@/interfaces/dashboard/edit.interface'
+import {LinkItem} from '@/interfaces/dashboard/edit.interface'
 
 const Phone = () => {
   const { user } = useUser()
@@ -35,7 +35,7 @@ const Phone = () => {
               {links?.map((links: LinkItem, index: number) => (
                 <div key={index} className={cn('grid items-center justify-center', links.enabled ? 'block' : 'hidden')}>
                   <Link target={'_blank'} href={links?.url}>
-                    <Button className={'my-[3px] h-[3rem] w-full rounded-[10px] bg-[#131313] p-[0.75rem] text-lg font-[600] leading-[1.2] text-white transition-all hover:scale-105'}>{links?.title}</Button>
+                    <Button className={'my-[3px] h-[3rem] w-full rounded-[10px] hover:bg-[#131313] bg-[#131313] p-[0.75rem] text-lg font-[600] leading-[1.2] text-white transition-all hover:scale-105'}>{links?.title}</Button>
                   </Link>
                 </div>
               ))}
