@@ -1,27 +1,25 @@
 'use client'
 
 import React from 'react'
-
-import AboutLinks from '@/app/about/components/AboutLinks'
 import StorySection from '@/app/about/components/StorySection'
 import FeatureSections from '@/app/about/components/FeatureSections'
 
 const About = () => {
-  return (
-    <>
-      <head>
-        <title>About | Linkvertex</title>
-      </head>
-      <div className={'container'}>
-        <StorySection />
-        <FeatureSections />
-        <AboutLinks />
-        <div className={'mb-[50px] rounded-[25px] bg-[#E8C1E9]'}>
-          <h2 className={'flex items-center justify-center py-[10px] text-[100px] font-bold text-[#502374] max-md:text-[80px] max-[550px]:text-[70px] max-[490px]:text-[60px] max-[410px]:text-[50px]'}>linkvertex.io</h2>
-        </div>
-      </div>
-    </>
-  )
+    return (
+        <>
+            <head>
+                <title>About | Linkvertex</title>
+            </head>
+            <div className={'container'}>
+                <StorySection/>
+                <FeatureSections/>
+                {/*<AboutLinks/>*/}
+                <div className={'mb-[50px] rounded-[25px] bg-[#E8C1E9]'}>
+                    <h2 className={'flex items-center justify-center py-[10px] text-[100px] font-bold text-[#502374] max-md:text-[80px] max-[550px]:text-[70px] max-[490px]:text-[60px] max-[410px]:text-[50px]'}>linkvertex.io</h2>
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default About
