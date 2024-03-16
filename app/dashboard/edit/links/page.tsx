@@ -1,26 +1,26 @@
 'use client'
 
-import { ChangeEvent, useCallback, useState } from 'react'
+import {ChangeEvent, useCallback, useState} from 'react'
 
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
-import { cn } from '@/lib/utils'
+import {cn} from '@/lib/utils'
 
-import { useTranslation } from 'react-i18next'
+import {useTranslation} from 'react-i18next'
 
 import EmojiPicker from 'emoji-picker-react';
-import { Link2, ShieldAlert, Tags, Trash } from 'lucide-react'
+import {Link2, ShieldAlert, Tags, Trash} from 'lucide-react'
 
-import { DropResult } from 'react-beautiful-dnd'
-import { LinkItem } from '@/interfaces/dashboard/edit.interface'
-import { useDataContext } from '@/app/dashboard/edit/edit-context'
+import {DropResult} from 'react-beautiful-dnd'
+import {LinkItem} from '@/interfaces/dashboard/edit.interface'
+import {useDataContext} from '@/app/dashboard/edit/edit-context'
 
-import { Input } from '@/components/ui/input'
-import { Switch } from '@/components/ui/switch'
-import { Button } from '@/components/ui/button'
-import { Textarea } from '@/components/ui/textarea'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import {Input} from '@/components/ui/input'
+import {Switch} from '@/components/ui/switch'
+import {Button} from '@/components/ui/button'
+import {Textarea} from '@/components/ui/textarea'
+import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert'
 
 import EmojiIcon from '@/assets/dashboard/smile.png'
 
@@ -149,11 +149,11 @@ const Page = () => {
                       <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={'mb-[15px] grid grid-cols-1 rounded-[24px] border-2 border-[#ffffff29] bg-[#1a202c99] p-[1.2rem]'}>
                         <h2 className="text-md font-bold uppercase text-white">URL {index + 1}</h2>
                         <div className="relative">
-                          <Input placeholder="Label" value={link.title} onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)} type="text" className="mt-[0.5rem] rounded-[20px] border-transparent !bg-[#1C2129] bg-transparent px-[40px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!bg-transparent focus:!transition" />
+                          <Input placeholder="Label" required={true} value={link.title} onChange={(e) => handleLinkEdit(link.id, e.target.value, link.url)} type="text" className="mt-[0.5rem] rounded-[20px] border-transparent !bg-[#1C2129] bg-transparent px-[40px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!bg-transparent focus:!transition" />
                           <Tags className="absolute left-3 top-[18px] h-5 w-5 text-white" />
                         </div>
                         <div className="relative">
-                          <Input placeholder="Link URL" value={link.url} onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)} type="text" className="mt-[0.5rem] rounded-[20px] border-transparent !bg-[#1C2129] bg-transparent px-[40px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!bg-transparent focus:!transition" />
+                          <Input placeholder="Link URL" required={true} value={link.url} onChange={(e) => handleLinkEdit(link.id, link.title, e.target.value)} type="text" className="mt-[0.5rem] rounded-[20px] border-transparent !bg-[#1C2129] bg-transparent px-[40px] pt-[5px] text-[1rem] text-white placeholder:font-medium placeholder:text-[#454646] focus:!border-2 focus:!border-[#63b3ed] focus:!bg-transparent focus:!transition" />
                           <Link2 className="absolute left-3 top-[18px] h-5 w-5 text-white" />
                         </div>
                         <div className="mt-[15px] flex items-center justify-between">
