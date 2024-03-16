@@ -85,5 +85,17 @@
     "a2": "Tasvir foydalanuvchilarga tushunish uchun minnatdorchilik bildirishni taklif qiladi. SEO optimizatsiyasi chiqqunga qadar, kontent yaratishda davom eting va saytingizning tuzilishi hamda metadatalarini yangilanish uchun tayyorlang.\n",
     "a3": "Meta sarlavha bu veb-sahifaning sarlavhasini ko'rsatuvchi HTML elementidir. U SEO va foydalanuvchi tajribasi uchun muhim omil hisoblanadi va odatda qidiruv tizimlaridagi qidiruv natijasining sarlavhasi sifatida paydo bo'ladi.\n",
     "a4": "Meta tavsif bu veb-sahifaning mazmunini qisqacha bayon qiluvchi HTML atributidir. U SEO uchun ham muhimdir va qidiruv tizimi natijalar sahifasidan bosish darajasiga ta'sir qilishi mumkin.\n"
+  },
+  "about_page": {
+    "title": "Asoschilarimizning hikoyasi",
+    "description": "bu sizga barcha onlayn kontentingizni bitta oddiy havola orqali baham ko'rishga yordam beradigan vosita – bu sizning onlayn kontentingizni ko'proq topiladigan, boshqarish oson va aylanish ehtimoli ko'proq qiladi. Mana shu yerda hamma narsa boshlangan.",
+    "about_title_1": "Sizning dunyolaringizni bog'lash",
+    "about_description_1": "Bir guruh ishtiyoqli raqamli me'morlar tomonidan asos solingan, Linkvertex.io doimiy o'sib borayotgan onlayn profil ro'yxatini tartibsizlik va murakkabliklarsiz boshqarish mumkin bo'lgan umumiy muammo uchun javob sifatida boshlandi. Bizning safarimiz shaxslar va bizneslar bir xilda barcha raqamli nuqtalarni ulay oladigan markazlashtirilgan, foydalanish oson platforma yaratish ko'zlamasi bilan yo'lga qo'yildi.",
+    "about_title_2": "Sizning Raqamli Markazingiz",
+    "about_description_2": "Doim kengayib borayotgan raqamli olamda, sizning onlayn mavjudligingiz profil, platforma va portfellar konstellatsiyasi hisoblanadi. Linkvertex.io da, biz sizning raqamli kosmosingizni birga ushlab turuvchi gravitatsiyani ta'minlaymiz, siz va tinglovchilaringiz o'rtasida yagona, kuchli ulanish nuqtasini yaratamiz. Bizning missiyamiz oddiy: sizning onlayn shaxsingizni dunyo bo'ylab aloqalarni ochadigan bitta, nafis havolaga soddalashtirish.",
+    "about_title_3": "Soddalashtirish, Bog'lanish, Kuchaytirish",
+    "about_description_3": "Linkvertex.io faqat sizning onlayn mavjudligingizni soddalashtirish haqida emas; bu sizning yetib borishingizni kuchaytirish haqida. Siz ishingizni namoyish etmoqchi bo'lgan yaratuvchi, barcha malakalaringizni bog'lamoqchi bo'lgan professional yoki bir nechta kanallar orqali jalb qilishni xohlaydigan biznes bo'lsangiz, bizning platformamiz sizning uchuv punktingizdir.",
+    "about_title_4": "Intuitiv, Mustahkam va Xavfsiz",
+    "about_description_4": "Bizning intuitiv interfeysimiz raqamli yangi boshlanuvchilar va mutaxassislar uchun mo'ljallangan, sizga havolalaringizni osonlik va samaradorlik bilan boshqarish imkonini beradi. Xavfsizlik keyingi o'ylash emas; bu bizning platformamizning asosiy qismiga to'qilgan. Biz doimiy ravishda ma'lumotlaringiz va tinchligingizni himoya qiladigan mustahkam xavfsizlik choralarini amalga oshirish uchun rivojlanamiz."
   }
 }
