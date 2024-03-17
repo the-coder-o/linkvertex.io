@@ -67,7 +67,7 @@ const MainContent: React.FC = () => {
                             </> :
                             os === 'macos' ?
                                 <>
-                                    <i className="fa-brands fa-apple mt-[2px]"></i>
+                                    <i className="fa-solid fa-tv mt-[2px]"></i>
                                     Download
                                 </> :
                                 os === 'android' ?
