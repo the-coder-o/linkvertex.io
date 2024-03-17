@@ -97,7 +97,7 @@ export default function Home() {
                                     </> :
                                     os === 'android' ? // Added condition for Android
                                         <>
-                                            <i className="fa-brands fa-android mt-[2px]"></i> // Added Android icon
+                                            <i className="fa-brands fa-android mt-[2px]"></i>
                                             Download
                                         </> :
                                         'Download'
