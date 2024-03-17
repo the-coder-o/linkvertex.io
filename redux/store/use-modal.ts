@@ -1,13 +1,19 @@
-import create from 'zustand'
+// store/useModalStore.ts
+import create from 'zustand';
+import {BeforeInstallPromptEvent} from "@/types/install-app.type";
 
-interface ModalState {
-  isModalOpen: boolean
-  openModal: () => void
-  closeModal: () => void
-}
+type ModalState = {
+  isModalOpen: boolean;
+  deferredPrompt: BeforeInstallPromptEvent | null;
+  openModal: (event: BeforeInstallPromptEvent) => void;
+  closeModal: () => void;
+  setDeferredPrompt: (event: BeforeInstallPromptEvent | null) => void;
+};
 
-export const useStore = create<ModalState>((set) => ({
+export const useModalStore = create<ModalState>((set) => ({
   isModalOpen: false,
-  openModal: () => set({ isModalOpen: true }),
+  deferredPrompt: null,
+  openModal: (event) => set({ isModalOpen: true, deferredPrompt: event }),
   closeModal: () => set({ isModalOpen: false }),
-}))
+  setDeferredPrompt: (event) => set({ deferredPrompt: event }),
+}));
