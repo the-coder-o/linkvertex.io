@@ -17,7 +17,7 @@ import {I18nextProvider} from 'react-i18next'
 
 import AlertMessage from '@/components/alerts/alert-message'
 import {DotBackgroundDemo} from '@/components/animation/dot-background'
-import {WavyBackground} from '@/components/animation/background-gradient-animation'
+import {WavyBackground} from "@/components/animation/background-gradient-animation";
 
 const inter: NextFont = Inter({subsets: ['latin']})
 
@@ -47,6 +47,8 @@ export default function RootLayout({children}: Readonly<RootLayoutProps>) {
                 <Analytics/>
                 <AlertMessage/>
                 <WavyBackground/>
+                <iframe className={'fixed top-0px bottom-0 left-0 right-0 !z-[-99999]'} src='' frameBorder='0' width='100%' height='100%'></iframe>
+                {/*<iframe className={'fixed top-0px bottom-0 left-0 right-0 !z-[-99999]'} src='https://my.spline.design/3dcitynavigation-b3eecec7f493221f378fcd7be7b2b47b/' frameBorder='0' width='100%' height='100%'></iframe>*/}
                 <DotBackgroundDemo/>
                 </body>
             </I18nextProvider>
