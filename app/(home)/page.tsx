@@ -8,14 +8,15 @@ import {useUser} from '@clerk/nextjs'
 import {useTranslation} from 'react-i18next'
 
 import Loader from "@/components/loader";
+import {Button} from "@/components/ui/button";
 import Footer from '@/components/ui/footer/footer'
 import Animation from '@/components/animation/framer-animaion'
-import {Button} from "@/components/ui/button";
 
 export default function Home() {
     const {isSignedIn, user} = useUser()
     const {t} = useTranslation('home_section')
 
+    const [os, setOs] = useState('unknown');
     const [installPrompt, setInstallPrompt] = useState(null);
 
     useEffect(() => {
@@ -49,13 +50,17 @@ export default function Home() {
     };
 
     const getOS = () => {
-        const platform = navigator.platform.toLowerCase();
-        if (platform.includes('win')) return 'windows';
-        if (platform.includes('mac')) return 'macos';
+        if (typeof window !== 'undefined') {
+            const platform = navigator.platform.toLowerCase();
+            if (platform.includes('win')) return 'windows';
+            if (platform.includes('mac')) return 'macos';
+        }
         return 'unknown';
     };
 
-    const os = getOS();
+    useEffect(() => {
+        setOs(getOS());
+    }, []);
 
     if (!user) {
         return <Loader/>
