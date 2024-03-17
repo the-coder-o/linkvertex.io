@@ -79,7 +79,7 @@ export default function Home() {
                               className={'rounded-[20px] bg-[#FCD28D] px-[24px] py-[12px] text-[18px] font-[600] transition-all hover:bg-[#EBB064]'}>
                             {t('button')}
                         </Link>
-                        <Button disabled={!installPrompt} onClick={handleClick}
+                        <Button onClick={handleClick}
                                 className={'flex items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !h-[51px] !text-[18px] text-black font-[600] transition-all hover:bg-[#90CDF4]/80'}>
                             {os === 'windows' ?
                                 <>
