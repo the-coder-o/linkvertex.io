@@ -52,11 +52,15 @@ export default function Home() {
     const getOS = () => {
         if (typeof window !== 'undefined') {
             const platform = navigator.platform.toLowerCase();
+            const userAgent = navigator.userAgent.toLowerCase();
+
             if (platform.includes('win')) return 'windows';
             if (platform.includes('mac')) return 'macos';
+            if (userAgent.includes('android')) return 'android';
         }
         return 'unknown';
     };
+
 
     useEffect(() => {
         setOs(getOS());
@@ -91,10 +95,14 @@ export default function Home() {
                                         <i className="fa-brands fa-apple mt-[2px]"></i>
                                         Download
                                     </> :
-                                    'Download for your OS'
+                                    os === 'android' ? // Added condition for Android
+                                        <>
+                                            <i className="fa-brands fa-android mt-[2px]"></i> // Added Android icon
+                                            Download
+                                        </> :
+                                        'Download'
                             }
                         </Button>
-
                     </Animation>
                 </div>
                 <Footer/>
