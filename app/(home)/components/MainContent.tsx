@@ -52,17 +52,17 @@ const MainContent: React.FC = () => {
           {os === "windows" ? (
             <>
               <i className="fa-brands fa-windows mt-[2px]"></i>
-              Download
+              {t("download_btn")}
             </>
           ) : os === "macos" ? (
             <>
               <i className="fa-solid fa-tv mt-[2px]"></i>
-              Download
+              {t("download_btn")}
             </>
           ) : os === "android" ? (
             <>
               <i className="fa-brands fa-android mt-[2px]"></i>
-              Download
+              {t("download_btn")}
             </>
           ) : (
             "Download"

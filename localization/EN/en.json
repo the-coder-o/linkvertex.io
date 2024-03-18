@@ -8,7 +8,8 @@
   "home_section": {
     "title": "One Place for All Your Links",
     "subtitle": "One link to rule them all. Easily place your links in a beautiful single page.",
-    "button": "Get Started"
+    "button": "Get Started",
+    "download_btn": "Download"
   },
   "dashboard": {
     "title": "Welcome",

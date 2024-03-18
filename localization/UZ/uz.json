@@ -8,7 +8,8 @@
   "home_section": {
     "title": "Barcha linklar bitta joyda",
     "subtitle": "Barcha linklarni boshqarish uchun bitta joy. O'zingizning havolalaringizni chiroyli sahifaga joylashtiring.",
-    "button": "Boshlash"
+    "button": "Boshlash",
+    "download_btn": "Yuklab olish"
   },
   "dashboard": {
     "title": "Xush kelibsiz",
