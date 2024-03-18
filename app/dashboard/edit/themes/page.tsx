@@ -1,5 +1,5 @@
-import React from 'react'
-import ButtonCardTheme from '@/components/button-card-theme'
+import React from "react";
+import ButtonCardTheme from "@/components/button-card-theme";
 
 const Page = () => {
   return (
@@ -9,7 +9,7 @@ const Page = () => {
       </head>
       <ButtonCardTheme />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

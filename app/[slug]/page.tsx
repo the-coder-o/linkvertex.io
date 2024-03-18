@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Page = () => {
   return (
@@ -8,7 +8,7 @@ const Page = () => {
       </head>
       <div></div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC } from "react";
 
-import Link from 'next/link'
-import { DashboardLinkProps } from '@/types/dashboard.type'
+import Link from "next/link";
+import { DashboardLinkProps } from "@/types/dashboard.type";
 
 const DashboardLink: FC<DashboardLinkProps> = ({ href, label, icon, buttonContent }) => (
   <div className="ease rounded-[24px] border border-[#fff]/50 p-[20px] duration-200 hover:scale-105 max-[450px]:p-[15px]">
@@ -13,6 +13,6 @@ const DashboardLink: FC<DashboardLinkProps> = ({ href, label, icon, buttonConten
       </div>
     </Link>
   </div>
-)
+);
 
-export default DashboardLink
+export default DashboardLink;
