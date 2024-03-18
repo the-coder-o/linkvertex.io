@@ -39,16 +39,18 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       </head>
       <body className={inter.className}>
         <HydrationProvider>
-          <I18nextProvider i18n={i18n}>
-            <ClerkProvider appearance={{ baseTheme: dark }}>
-              <Header />
-              <Client>{children}</Client>
-              <Analytics />
-              <AlertMessage />
-              <WavyBackground />
-              <DotBackgroundDemo />
-            </ClerkProvider>
-          </I18nextProvider>
+          <ClerkProvider appearance={{ baseTheme: dark }}>
+            <I18nextProvider i18n={i18n}>
+              <Client>
+                {children}
+                <Header />
+                <Analytics />
+                <AlertMessage />
+                <WavyBackground />
+                <DotBackgroundDemo />
+              </Client>
+            </I18nextProvider>
+          </ClerkProvider>
         </HydrationProvider>
       </body>
     </html>
