@@ -1,31 +1,31 @@
-const schema = [
+const useSschema = [
   {
-    email: 'string',
-    username: 'string',
-    password: 'string',
+    email: "string",
+    username: "string",
+    password: "string",
   },
-]
+];
 
 const account = [
   {
-    last_name: 'string',
-    first_name: 'string',
-    user_avatar: 'string',
-    users_page_name: 'string',
+    last_name: "string",
+    first_name: "string",
+    user_avatar: "string",
+    users_page_name: "string",
     users_social_links: [],
   },
-]
+];
 
 const edit = [
   {
-    title: 'string',
-    description: 'string',
-    url: 'string',
+    title: "string",
+    description: "string",
+    url: "string",
     urls: [
       {
-        url_name: 'string',
-        url_value: 'string',
+        url_name: "string",
+        url_value: "string",
       },
     ],
   },
-]
+];

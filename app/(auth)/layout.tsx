@@ -1,14 +1,14 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 
-import Footer from '@/components/ui/footer/footer'
+import Footer from "@/components/ui/footer/footer";
 
 const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className={'flex h-full items-center justify-center'}>
+    <div className={"flex h-full items-center justify-center"}>
       {children}
-        <Footer />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default AuthLayout
+export default AuthLayout;

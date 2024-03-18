@@ -3,58 +3,64 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
+  provider     = "postgresql"
   url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  username  String   @unique
-  password  String
-  account   Account? @relation(fields: [accountId], references: [id])
-  accountId Int?     @unique
-  edits     Edit[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String?
+  password  String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  Account   Account[]
 }
 
 model Account {
-  id           Int          @id @default(autoincrement())
-  userAvatar   String
-  firstName    String
-  lastName     String
-  userPageName String
-  socialLinks  SocialLink[] // Changed from useSocialLinks
-  User         User?        @relation(fields: [userId], references: [id])
-  userId       Int?         @unique
-  createdAt    DateTime     @default(now())
-  updatedAt    DateTime     @updatedAt
+  id              String            @id @default(cuid())
+  name            String
+  last_name       String
+  first_name      String
+  avatar          String
+  userId          String
+  user            User              @relation(fields: [userId], references: [id])
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  SocialLinks     SocialLinks[]
+  EditSocialLinks EditSocialLinks[]
+
+  @@index([userId])
 }
 
-model SocialLink {
-  id        Int     @id @default(autoincrement())
+model SocialLinks {
+  id        String   @id @default(cuid())
+  username  String
   url       String
-  Account   Account @relation(fields: [accountId], references: [id])
-  accountId Int
+  accountId String
+  account   Account  @relation(fields: [accountId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([accountId])
 }
 
 model Edit {
-  id          Int       @id @default(autoincrement())
+  id          String @id @default(cuid())
   title       String
   description String
   url         String
-  editUrls    EditUrl[] // Changed from urls
-  userId      Int
-  User        User      @relation(fields: [userId], references: [id])
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
 }
 
-model EditUrl {
-  id     Int    @id @default(autoincrement())
-  url    String
-  Edit   Edit   @relation(fields: [editId], references: [id])
-  editId Int
+model EditSocialLinks {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Account   Account? @relation(fields: [accountId], references: [id])
+  accountId String?
+
+  @@index([accountId])
 }
