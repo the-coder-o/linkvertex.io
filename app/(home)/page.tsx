@@ -10,9 +10,9 @@ import Footer from "@/components/ui/footer/footer";
 import MainContent from "@/app/(home)/components/MainContent";
 
 const Home = async () => {
-  const profile = await initialProfile();
+  const profile: any = await initialProfile();
 
-  const account = await db.user.findFirst({
+  const account: any = await db.user.findFirst({
     where: {
       id: profile.id,
     },
