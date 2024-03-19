@@ -15,7 +15,7 @@ import "./globals.css";
 import i18n from "@/i18n/i18n";
 import { I18nextProvider } from "react-i18next";
 
-import AlertMessage from "@/components/alerts/alert-message";
+import { Toaster } from "sonner";
 import { DotBackgroundDemo } from "@/components/animation/dot-background";
 import { WavyBackground } from "@/components/animation/background-gradient-animation";
 import { Client, HydrationProvider } from "react-hydration-provider";
@@ -45,9 +45,10 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
                 {children}
                 <Header />
                 <Analytics />
-                <AlertMessage />
+                {/*<AlertMessage />*/}
                 <WavyBackground />
                 <DotBackgroundDemo />
+                <Toaster position="top-right" />
               </Client>
             </I18nextProvider>
           </ClerkProvider>
