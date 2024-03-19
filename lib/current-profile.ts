@@ -1,13 +1,10 @@
-"use server";
-
 import { auth } from "@clerk/nextjs";
-
 import { db } from "@/lib/db";
 
 export const currentProfile = async () => {
-  const { userId }: any = auth();
+  const userId = auth()?.userId;
 
-  if (!userId) {
+  if (!userId || typeof userId !== "string") {
     return null;
   }
 
