@@ -16,20 +16,10 @@ import { Button } from "@/components/ui/button";
 import Footer from "@/components/ui/footer/footer";
 import DashboardButtons from "@/app/dashboard/components/DashboardButtons";
 
-interface ProfileType {
-  id: string;
-  userId: string;
-  name: string;
-  email: string;
-  avatar: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
 const Dashboard = () => {
   const clerk: LoadedClerk = useClerk();
 
-  const [profile, setProfile] = useState<ProfileType | null>(null);
+  const [profile, setProfile] = useState<any | null>(null);
 
   const { t } = useTranslation("dashboard");
   const [isLoggingOut, setIsLoggingOut] = useState(false);
@@ -42,7 +32,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const profileData: ProfileType | null = await currentProfile();
+        const profileData: any | null = await currentProfile();
         setProfile(profileData);
       } catch (error) {
         console.error(error);
