@@ -17,11 +17,13 @@ import Footer from "@/components/ui/footer/footer";
 import DashboardButtons from "@/app/dashboard/components/DashboardButtons";
 
 interface ProfileType {
+  id: string;
+  userId: string;
   name: string;
   email: string;
   avatar: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const Dashboard = () => {
@@ -40,7 +42,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const profileData: ProfileType = await currentProfile();
+        const profileData: ProfileType | null = await currentProfile();
         setProfile(profileData);
       } catch (error) {
         console.error(error);
