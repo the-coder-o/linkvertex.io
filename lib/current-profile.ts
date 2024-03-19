@@ -11,12 +11,13 @@ export const currentProfile = async (): Promise<User | null> => {
   if (!userId) {
     return null;
   }
-
-  const profile = await db.user.findUnique({
-    where: {
-      userId,
-    },
-  });
+  const [profile] = await Promise.all([
+    db.user.findUnique({
+      where: {
+        userId,
+      },
+    }),
+  ]);
 
   return profile;
 };
