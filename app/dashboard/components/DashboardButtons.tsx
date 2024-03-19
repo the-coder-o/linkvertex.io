@@ -1,20 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Copy } from "lucide-react";
+
 import { useTranslation } from "react-i18next";
+import { currentProfile } from "@/lib/current-profile";
 
 import { Button } from "@/components/ui/button";
 import DashboardLink from "@/app/dashboard/components/DashboardPageLink";
 
 const DashboardButtons = () => {
   const { t } = useTranslation("dashboard");
+  const [profile, setProfile] = useState<any | null>(null);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const profileData: any | null = await currentProfile();
+        setProfile(profileData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
 
   return (
     <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
       <DashboardLink
-        href="/"
+        href={`/${profile?.id}`}
         label={t("page1")}
         buttonContent={
           <Button className="flex h-8 w-[100px] items-center gap-2 rounded-[24px] border border-[#81e6d9] bg-transparent px-[12px] text-sm font-bold text-[#fff] hover:bg-[#81e6d9]/10">

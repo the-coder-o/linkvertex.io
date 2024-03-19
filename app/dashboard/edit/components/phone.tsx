@@ -1,12 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
-import { useUser } from "@clerk/clerk-react";
+
+import { currentProfile } from "@/lib/current-profile";
+import { useDataContext } from "@/app/dashboard/edit/edit-context";
 
 import Animation from "@/components/animation/framer-animaion";
-import { useDataContext } from "@/app/dashboard/edit/edit-context";
 
 import { Button } from "@/components/ui/button";
 import LinkVertexIoIcon from "@/assets/images/link-logo.png";
@@ -14,10 +17,24 @@ import LinkVertexIoIcon from "@/assets/images/link-logo.png";
 import { LinkItem } from "@/interfaces/dashboard/edit.interface";
 
 const Phone = () => {
-  const { user } = useUser();
+  const [profile, setProfile] = useState<any | null>(null);
+
   const { links, title, description } = useDataContext();
 
-  const imageUrl: string = user?.profileImageUrl || "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yZFM1dzZ4TE1wendoM2E2S212amtab3BUZXkiLCJyaWQiOiJ1c2VyXzJkU0ZjMEI3cWF0aWRSZTJJbk5FeVJvTnQ5VCJ9?width=80";
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const profileData: any | null = await currentProfile();
+        setProfile(profileData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
+  const imageUrl: string = profile?.avatar || "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yZFM1dzZ4TE1wendoM2E2S212amtab3BUZXkiLCJyaWQiOiJ1c2VyXzJkU0ZjMEI3cWF0aWRSZTJJbk5FeVJvTnQ5VCJ9?width=80";
 
   return (
     <Animation delay={4} className={"sticky top-[10%]"}>

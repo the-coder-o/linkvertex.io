@@ -2,25 +2,20 @@
 
 import React from "react";
 
-import { db } from "@/lib/db";
-import { redirect } from "next/navigation";
-import { initialProfile } from "@/lib/initial-profile";
+import {db} from "@/lib/db";
+import {initialProfile} from "@/lib/initial-profile";
 
 import Footer from "@/components/ui/footer/footer";
 import MainContent from "@/app/(home)/components/MainContent";
 
 const Home = async () => {
-  const profile: any = await initialProfile();
+  const profile = await initialProfile();
 
-  const account: any = await db.user.findFirst({
+  const account = await db.user.findFirst({
     where: {
       id: profile.id,
     },
   });
-
-  if (account) {
-    return redirect(`/dashboard`);
-  }
 
   return (
     <div className="container">
