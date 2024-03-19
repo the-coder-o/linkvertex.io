@@ -6,18 +6,17 @@ import { db } from "@/lib/db";
 import { User } from "@prisma/client";
 
 export const currentProfile = async (): Promise<User | null> => {
-  const { userId } = auth();
+  const userId = auth()?.userId;
 
   if (!userId) {
     return null;
   }
-  const [profile] = await Promise.all([
-    db.user.findUnique({
-      where: {
-        userId,
-      },
-    }),
-  ]);
+
+  const profile: any = await db.user.findUnique({
+    where: {
+      userId,
+    },
+  });
 
   return profile;
 };
