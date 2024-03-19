@@ -12,9 +12,9 @@ import MainContent from "@/app/(home)/components/MainContent";
 const Home = async () => {
   const profile = await initialProfile();
 
-  const account = await db.account.findFirst({
+  const account = await db.user.findFirst({
     where: {
-      userId: profile.id,
+      id: profile.id,
     },
   });
 

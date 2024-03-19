@@ -71,7 +71,7 @@ const Dashboard = () => {
               <Animation delay={1}>
                 <DashboardButtons />
               </Animation>
-              <Button onClick={handleLogout} className="hover:z flex items-center gap-2 rounded-[20px] bg-transparent text-[16px] !font-bold hover:text-black">
+              <Button onClick={handleLogout} className="flex items-center gap-2 rounded-[20px] bg-transparent text-[16px] !font-bold hover:bg-[#90CDF4] hover:text-black">
                 <Animation delay={2}>
                   <div className={"flex items-center gap-2 text-[16px] font-medium"}>
                     <LogOutIcon className="h-4 w-4 rotate-180" />
