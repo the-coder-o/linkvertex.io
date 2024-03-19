@@ -11,8 +11,8 @@ datasource db {
 model User {
   id        String    @id @default(cuid())
   email     String    @unique
-  name      String?
-  password  String?
+  name      String
+  avatar    String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   Account   Account[]
@@ -20,10 +20,6 @@ model User {
 
 model Account {
   id              String            @id @default(cuid())
-  name            String
-  last_name       String
-  first_name      String
-  avatar          String
   userId          String
   user            User              @relation(fields: [userId], references: [id])
   createdAt       DateTime          @default(now())
