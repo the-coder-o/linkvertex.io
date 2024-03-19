@@ -20,6 +20,8 @@ interface ProfileType {
   name: string;
   email: string;
   avatar: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const Dashboard = () => {
@@ -38,7 +40,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const profileData: ProfileType | null = await currentProfile();
+        const profileData: ProfileType = await currentProfile();
         setProfile(profileData);
       } catch (error) {
         console.error(error);
