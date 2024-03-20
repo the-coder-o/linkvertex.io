@@ -33,10 +33,10 @@ const DashboardButtons = () => {
     <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
       <div className="ease rounded-[24px] border border-[#fff]/50 p-[20px] duration-200 hover:scale-105 max-[450px]:p-[15px]">
         <div className="flex flex-col gap-[35px] max-sm:w-full max-sm:flex-row max-sm:justify-between">
-          <Link href={"/"} className="flex h-full w-full items-center justify-between">
+          <Link href={`/${profile?.id}`} className="flex h-full w-full items-center justify-between">
             <h2 className="ml-2 text-xl font-bold text-[#fff] max-[450px]:text-[20px]">Your Page</h2>
           </Link>
-          <Button onClick={() => toast("Your wussh URL (https://wussh.sznm.dev/hacker) have been copied!\n" + "\n", { className: "!border-2 !border-[#90CDF4] !bg-[#90CDF4] !text-black", icon: <CircleCheck className={"-mt-3 h-5 w-5"} /> })} className="flex h-8 w-[100px] items-center gap-2 rounded-[24px] border border-[#81e6d9] bg-transparent px-[12px] text-sm font-bold text-[#fff] hover:bg-[#81e6d9]/10">
+          <Button onClick={() => toast("Your linkvertex.io URL (https://linkvertex.io/hacker) have been copied!", { className: "!border-2 !border-[#90CDF4] !bg-[#90CDF4] !text-black", icon: <CircleCheck className={"-mt-3 h-5 w-5"} /> })} className="flex h-8 w-[100px] items-center gap-2 rounded-[24px] border border-[#81e6d9] bg-transparent px-[12px] text-sm font-bold text-[#fff] hover:bg-[#81e6d9]/10">
             <Copy className="h-3.5 w-3.5" />
             Copy
           </Button>
