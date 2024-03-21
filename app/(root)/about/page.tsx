@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import StorySection from "@/app/about/components/StorySection";
-import FeatureSections from "@/app/about/components/FeatureSections";
+import StorySection from "@/app/(root)/about/components/StorySection";
+import FeatureSections from "@/app/(root)/about/components/FeatureSections";
 
 const About = () => {
   return (
