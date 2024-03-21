@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-import Footer from "@/components/ui/footer/footer";
 import CountdownTimer from "@/components/soon/count-down-time";
 
 const Profile = () => {
@@ -19,7 +17,6 @@ const Profile = () => {
           We are excited to announce that we will be launching soon and can't wait to share our new platform with you.
         </motion.p>
       </div>
-      <Footer />
     </div>
   );
 };
