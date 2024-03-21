@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { currentProfile } from "@/lib/current-profile";
-import DashboardLink from "@/app/dashboard/components/DashboardPageLink";
+import DashboardLink from "@/app/(root)/dashboard/components/DashboardPageLink";
 
 const DashboardButtons = () => {
   const { t } = useTranslation("dashboard");

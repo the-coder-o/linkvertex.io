@@ -14,7 +14,6 @@ import { Link2, ShieldAlert, Tags, Trash } from "lucide-react";
 
 import { DropResult } from "react-beautiful-dnd";
 import { LinkItem } from "@/interfaces/dashboard/edit.interface";
-import { useDataContext } from "@/app/dashboard/edit/edit-context";
 
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -23,6 +22,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 import EmojiIcon from "@/assets/dashboard/smile.png";
+import { useDataContext } from "@/app/(root)/dashboard/edit/edit-context";
 
 const Droppable = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.Droppable), { ssr: false });
 const Draggable = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.Draggable), { ssr: false });

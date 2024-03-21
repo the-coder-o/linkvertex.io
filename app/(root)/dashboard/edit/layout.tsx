@@ -10,14 +10,14 @@ import { useTranslation } from "react-i18next";
 import { ChevronLeft, Eye, EyeOff } from "lucide-react";
 
 import Animation from "@/components/animation/framer-animaion";
+import { DataProvider } from "@/app/(root)/dashboard/edit/edit-context";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import Phone from "@/app/dashboard/edit/components/phone";
 
 import Loader from "@/components/loader";
-import { DataProvider } from "@/app/dashboard/edit/edit-context";
-import DashboardTabs from "@/app/dashboard/edit/components/dashboard-tabs";
+import Phone from "@/app/(root)/dashboard/edit/components/phone";
+import DashboardTabs from "@/app/(root)/dashboard/edit/components/dashboard-tabs";
 
 const EditPage = ({ children }: { children: ReactNode }) => {
   const { isLoaded } = useUser();

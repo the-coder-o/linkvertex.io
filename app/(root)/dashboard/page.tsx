@@ -14,7 +14,7 @@ import Animation from "@/components/animation/framer-animaion";
 import Loader from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/ui/footer/footer";
-import DashboardButtons from "@/app/dashboard/components/DashboardButtons";
+import DashboardButtons from "@/app/(root)/dashboard/components/DashboardButtons";
 
 const Dashboard = () => {
   const clerk: LoadedClerk = useClerk();

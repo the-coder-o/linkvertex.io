@@ -7,7 +7,6 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 import { currentProfile } from "@/lib/current-profile";
-import { useDataContext } from "@/app/dashboard/edit/edit-context";
 
 import Animation from "@/components/animation/framer-animaion";
 
@@ -15,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import LinkVertexIoIcon from "@/assets/images/link-logo.png";
 
 import { LinkItem } from "@/interfaces/dashboard/edit.interface";
+import { useDataContext } from "@/app/(root)/dashboard/edit/edit-context";
 
 const Phone = () => {
   const [profile, setProfile] = useState<any | null>(null);

@@ -1,13 +1,14 @@
 "use client";
 
+import React from "react";
+
 import { ShieldAlert } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import SeoAlert from "@/app/dashboard/edit/seo-optimizing/components/seo-alert";
-import React from "react";
+import SeoAlert from "@/app/(root)/dashboard/edit/seo-optimizing/components/seo-alert";
 
 const Page = () => {
   const { t } = useTranslation("seo_page");

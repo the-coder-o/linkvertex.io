@@ -2,11 +2,11 @@
 
 import React from "react";
 
-import {db} from "@/lib/db";
-import {initialProfile} from "@/lib/initial-profile";
+import { db } from "@/lib/db";
+import { initialProfile } from "@/lib/initial-profile";
 
 import Footer from "@/components/ui/footer/footer";
-import MainContent from "@/app/(home)/components/MainContent";
+import MainContent from "@/app/(root)/(home)/components/MainContent";
 
 const Home = async () => {
   const profile = await initialProfile();

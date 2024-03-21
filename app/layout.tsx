@@ -45,7 +45,6 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
                 {children}
                 <Header />
                 <Analytics />
-                {/*<AlertMessage />*/}
                 <WavyBackground />
                 <DotBackgroundDemo />
                 <Toaster position="top-right" />
