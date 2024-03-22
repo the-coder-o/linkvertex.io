@@ -15,14 +15,14 @@
     "title": "Willkommen",
     "page1": "Deine Seite",
     "page2": "Link bearbeiten",
-    "page3": "Soziale Links",
+    "page3": "Füge Icons hinzu\n\n",
     "page4": "Analytik",
     "logout_btn": "Ausloggen"
   },
   "social_links_page": {
     "back_btn": "Zurück",
-    "title": "Profileinstellungen",
-    "subtitle": "Soziale Links",
+    "title": "Symbole Einstellungen\n\n",
+    "subtitle": "Sei ikonisch\n\n",
     "save_btn": "Speichern"
   },
   "edit_link_page": {

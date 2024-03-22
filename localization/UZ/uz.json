@@ -15,14 +15,14 @@
     "title": "Xush kelibsiz",
     "page1": "Sizning sahifangiz",
     "page2": "Havolani tahrirlash",
-    "page3": "Ijtimoiy havolalar",
+    "page3": "Belgilarni qo'shish\n\n",
     "page4": "Analitika",
     "logout_btn": "Chiqish"
   },
   "social_links_page": {
     "back_btn": "Orqaga",
-    "title": "Profil sozlamalari",
-    "subtitle": "Ijtimoiy havolalar",
+    "title": "Belgilar Sozlamalari\n\n\n\n\n",
+    "subtitle": "Belgilar Sozlamalari\n\n\n\n\n",
     "save_btn": "Saqlash"
   },
   "edit_link_page": {

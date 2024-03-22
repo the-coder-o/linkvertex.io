@@ -4,7 +4,7 @@ import SocialLinkInput from "./SocialLinkInput";
 import { SocialLinksProps } from "@/interfaces/dashboard/profile.interface";
 
 import { useTranslation } from "react-i18next";
-import { validateAppleMusic, validateAppStore, validateEmail, validateFacebook, validateGithub, validateGooglePlay, validateInstagram, validateLinkedin, validateMastodon, validatePinterest, validateSnapchat, validateSpotify, validateTelegram, validateTiktok, validateTwitch, validateTwitter, validateWhatsApp, validateYoutube } from "@/app/(root)/dashboard/profile/lib/validation-inputs";
+import { validateAppleMusic, validateAppStore, validateEmail, validateFacebook, validateGithub, validateGooglePlay, validateInstagram, validateLinkedin, validateMastodon, validatePinterest, validateSnapchat, validateSpotify, validateTelegram, validateTiktok, validateTwitch, validateTwitter, validateWhatsApp, validateYoutube } from "@/app/(root)/dashboard/social-icons/lib/validation-inputs";
 
 const SocialLinks: FC<SocialLinksProps> = ({ input, handleChange, isValid }) => {
   const { t } = useTranslation("errors_profile");

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import SocialLinks from "./components/SocialLinks";
 import Animation from "@/components/animation/framer-animaion";
 
-const Profile = () => {
+const SocialIcons = () => {
   const [input, setInput] = useState({ instagram: "", mastodon: "", tiktok: "", telegram: "", pinterest: "", github: "", whatsapp: "", email: "", spotify: "", appleMusic: "", snapchat: "", appStore: "", googlePlay: "", facebook: "", youtube: "", twitch: "", linkedin: "", twitter: "" });
   const [isValid, setIsValid] = useState({ instagram: true, mastodon: true, tiktok: true, telegram: true, pinterest: true, github: true, whatsapp: true, email: true, spotify: true, appleMusic: true, snapchat: true, appStore: true, googlePlay: true, facebook: true, youtube: true, twitch: true, linkedin: true, twitter: true });
   const { t } = useTranslation("social_links_page");
@@ -27,7 +27,7 @@ const Profile = () => {
   return (
     <>
       <head>
-        <title>Add Icon | Linkvertex</title>
+        <title>Social Icons | Linkvertex</title>
       </head>
       <div className={"container"}>
         <div className={"mt-[100px]"}>
@@ -61,4 +61,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default SocialIcons;
