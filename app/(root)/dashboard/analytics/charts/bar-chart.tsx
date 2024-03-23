@@ -1,6 +1,9 @@
-import { CardBody, CardHeader, Typography } from "@material-tailwind/react";
-import Chart from "react-apexcharts";
+import React from "react";
+
 import { Lock } from "lucide-react";
+
+import Chart from "react-apexcharts";
+import { CardBody, CardHeader, Typography } from "@material-tailwind/react";
 
 const chartConfig = {
   type: "line",
