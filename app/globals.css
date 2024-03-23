@@ -500,3 +500,7 @@ body {
 .loading span {
   display: inline-block;
 }
+
+.border-style {
+  border-radius: 25px !important;
+}
