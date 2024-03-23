@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { CardHeader, Typography } from "@material-tailwind/react";
-import Chart from "react-apexcharts";
+
 import { Lock } from "lucide-react";
+
+import Chart from "react-apexcharts";
+import { CardHeader, Typography } from "@material-tailwind/react";
 
 const DeviceChart = () => {
   const initialSeries = [35.1, 23.5, 2.4, 5.4];
