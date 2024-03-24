@@ -7,7 +7,7 @@ import { Check, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import DeviceChart from "@/app/(root)/dashboard/analytics/charts/device-chart";
-import ChartsOverviewDemo from "@/app/(root)/dashboard/analytics/charts/bar-chart";
+import BarChart from "@/app/(root)/dashboard/analytics/charts/bar-chart";
 import SubscribeChart from "@/app/(root)/dashboard/analytics/charts/subscribe-chart";
 
 const Analytic = () => {
@@ -88,7 +88,7 @@ const Analytic = () => {
               <div className={"absolute bottom-0 left-0 right-0 top-0 z-50 w-full rounded-[25px] bg-[#000]/50"}>
                 <h2 className={"flex h-[100%] items-center justify-center text-4xl font-bold text-white"}>Coming Soon</h2>
               </div>
-              <ChartsOverviewDemo />
+              <BarChart />
             </div>
           </div>
           <div>

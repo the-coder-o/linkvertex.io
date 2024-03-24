@@ -1,111 +1,84 @@
 "use client";
 
-import React from "react";
-
-import { Lock } from "lucide-react";
-
-import Chart from "react-apexcharts";
-import { CardBody, CardHeader, Typography } from "@material-tailwind/react";
-
-const chartConfig = {
-  type: "line",
-  height: 240,
-  series: [
-    {
-      name: "Sales",
-      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-    },
-  ],
-  options: {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    title: {
-      show: "",
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    colors: ["#502374"],
-    stroke: {
-      lineCap: "round",
-      curve: "smooth",
-    },
-    markers: {
-      size: 0,
-    },
-    xaxis: {
-      axisTicks: {
-        show: false,
-      },
-      axisBorder: {
-        show: false,
-      },
-      labels: {
-        style: {
-          colors: "#502374",
-          fontSize: "12px",
-          fontFamily: "inherit",
-          fontWeight: 400,
-        },
-      },
-      categories: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: "#502374",
-          fontSize: "12px",
-          fontFamily: "inherit",
-          fontWeight: 400,
-        },
-      },
-    },
-    grid: {
-      show: true,
-      borderColor: "#502374",
-      strokeDashArray: 5,
-      xaxis: {
-        lines: {
-          show: true,
-        },
-      },
-      padding: {
-        top: 5,
-        right: 20,
-      },
-    },
-    fill: {
-      opacity: 0.8,
-    },
-    tooltip: {
-      theme: "dark",
-    },
-  },
-};
+import React, { useEffect, useRef } from "react";
 
 export default function BarChart() {
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      grid: {
+        show: true,
+        strokeDashArray: 4,
+      },
+      series: [
+        {
+          name: "Unique Views",
+          data: [1500, 1418, 1456, 1526, 1356, 1256],
+          color: "#1A56DB",
+        },
+        {
+          name: "Total Clicks",
+          data: [643, 413, 765, 412, 1423, 1731],
+          color: "#7E3BF2",
+        },
+        {
+          name: "Total Views",
+          data: [158, 158, 45, 155, 1007, 125],
+          color: "#EB00EF",
+        },
+      ],
+      chart: {
+        type: "area",
+        fontFamily: "Inter, sans-serif",
+      },
+      tooltip: {
+        enabled: true,
+        x: {
+          show: false,
+        },
+      },
+      legend: {
+        show: true,
+      },
+      fill: {
+        type: "gradient",
+        gradient: {
+          opacityFrom: 0.55,
+          opacityTo: 0,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: 6,
+      },
+      yaxis: {
+        labels: {
+          formatter: function (value: any) {
+            return value;
+          },
+        },
+      },
+    };
+
+    if (chartRef.current) {
+      const chart = new ApexCharts(chartRef.current, options);
+      chart.render();
+    }
+  }, []);
+
   return (
-    <div className={"rounded-[25px] bg-white"}>
-      <CardHeader floated={false} shadow={false} color="transparent" className="border-style flex flex-col gap-4 p-6 md:flex-row md:items-center" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-        <div className="w-max rounded-lg bg-[#502374] p-5 text-white">
-          <Lock className="h-6 w-6" />
-        </div>
+    <div className="w-full rounded-[24px] bg-white p-6 shadow dark:bg-gray-800 md:p-6">
+      <div className="mb-5 flex justify-between">
         <div>
-          <Typography variant="h6" color="blue-gray" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            Line Chart
-          </Typography>
-          <Typography variant="small" color="gray" className="max-w-sm font-normal" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            Visualize your data in a simple way using the @material-tailwind/react chart plugin.
-          </Typography>
+          <h5 className="pb-2 text-3xl font-bold leading-none text-gray-900 dark:text-white">12,423k</h5>
+          <p className="text-base font-normal text-gray-500 dark:text-gray-400">Sales this week</p>
         </div>
-      </CardHeader>
-      <CardBody className="px-2 pb-0" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-        {/*// @ts-ignore*/}
-        <Chart {...chartConfig} />
-      </CardBody>
+        <div className="flex items-center px-2.5 py-0.5 text-center text-base font-semibold text-green-500 dark:text-green-500">23%</div>
+      </div>
+      <div ref={chartRef}></div>
     </div>
   );
 }

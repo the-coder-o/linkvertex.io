@@ -1,79 +1,87 @@
-import React, { useState } from "react";
-
-import { Lock } from "lucide-react";
-
+import React from "react";
 import Chart from "react-apexcharts";
-import { CardHeader, Typography } from "@material-tailwind/react";
 
 const DeviceChart = () => {
-  const initialSeries = [35.1, 23.5, 2.4, 5.4];
-  const labels = ["Tablet", "Mobile", "Other", "Desktop"];
-
-  const [series, setSeries] = useState(initialSeries);
-
   const chartOptions = {
-    colors: ["#1C64F2", "#16BDCA", "#FDBA8C", "#E74694"],
-    chart: {
-      type: "donut",
-      height: 320,
-    },
-    stroke: {
-      colors: ["transparent"],
-    },
-    plotOptions: {
-      pie: {
-        donut: {
-          labels: {
-            show: true,
-            name: {
-              show: true,
-              offsetY: 20,
-            },
-            total: {
-              showAlways: true,
-              show: true,
-              label: "Unique visitors",
-              formatter: (w: any) => {
-                const sum = w.globals.seriesTotals.reduce((a: any, b: any) => a + b, 0);
-                return `${sum}k`;
-              },
-            },
-            value: {
-              show: true,
-              offsetY: -20,
-              formatter: (value: any) => `${value}k`,
-            },
-          },
-          size: "80%",
+    series: [90, 85, 70, 25],
+    options: {
+      colors: ["#1C64F2", "#16BDCA", "#7E3BF2", "#EB00EF"],
+      chart: {
+        height: "380px",
+        type: "radialBar",
+        sparkline: {
+          enabled: true,
         },
       },
-    },
-    legend: {
-      position: "bottom",
-    },
-    labels,
-    dataLabels: {
-      enabled: false,
+      plotOptions: {
+        radialBar: {
+          track: {
+            background: "#E5E7EB",
+          },
+          dataLabels: {
+            show: false,
+          },
+          hollow: {
+            margin: 0,
+            size: "32%",
+          },
+        },
+      },
+      grid: {
+        show: false,
+      },
+      labels: ["Tablet", "Mobile", "Desktop", "Other"],
+      legend: {
+        show: true,
+        position: "bottom",
+        fontFamily: "Inter, sans-serif",
+      },
+      tooltip: {
+        enabled: true,
+        x: {
+          show: false,
+        },
+      },
+      yaxis: {
+        show: false,
+        labels: {
+          formatter: function (value: any) {
+            return value + "%";
+          },
+        },
+      },
     },
   };
 
   return (
-    <div className="traffic-analysis-chart rounded-[25px] bg-white pb-6">
-      <CardHeader floated={false} shadow={false} color="transparent" className="border-style flex flex-col gap-4 p-6 md:flex-row md:items-center">
-        <div className="w-max rounded-lg bg-[#502374] p-5 text-white">
-          <Lock className="h-6 w-6" />
+    <div className="w-full rounded-[24px] bg-white p-6 shadow dark:bg-gray-800 md:p-6">
+      <div className="mb-3 flex justify-between">
+        <div className="flex items-center">
+          <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Top Devices</h5>
         </div>
-        <div>
-          <Typography variant="h6" color="blue-gray">
-            Line Chart
-          </Typography>
-          <Typography variant="small" color="gray" className="max-w-sm font-normal">
-            Visualize your data in a simple way using the @material-tailwind/react chart plugin.
-          </Typography>
+      </div>
+      <div className="mb-2 grid grid-cols-4 gap-3">
+        <div className="flex h-[78px] flex-col items-center justify-center rounded-lg bg-orange-50 dark:bg-gray-600">
+          <div className="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-sm font-medium text-orange-600 dark:bg-gray-500 dark:text-orange-300">12</div>
+          <div className="text-sm font-medium text-orange-600 dark:text-orange-300">Desktop</div>
         </div>
-      </CardHeader>
-      {/*// @ts-ignore*/}
-      <Chart options={chartOptions} series={series} type="donut" height={320} />
+        <div className="flex h-[78px] flex-col items-center justify-center rounded-lg bg-teal-50 dark:bg-gray-600">
+          <div className="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-teal-100 text-sm font-medium text-teal-600 dark:bg-gray-500 dark:text-teal-300">23</div>
+          <div className="text-sm font-medium text-teal-600 dark:text-teal-300">Mobile</div>
+        </div>
+        <div className="flex h-[78px] flex-col items-center justify-center rounded-lg bg-blue-50 dark:bg-gray-600">
+          <div className="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-sm font-medium text-blue-600 dark:bg-gray-500 dark:text-blue-300">64</div>
+          <div className="text-sm font-medium text-blue-600 dark:text-blue-300">Tablet</div>
+        </div>
+        <div className="flex h-[78px] flex-col items-center justify-center rounded-lg bg-pink-50 dark:bg-gray-600">
+          <div className="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-sm font-medium text-blue-600 dark:bg-gray-500 dark:text-blue-300">25</div>
+          <div className="text-sm font-medium text-blue-600 dark:text-blue-300">Other</div>
+        </div>
+      </div>
+      <div className="py-6">
+        {/*// @ts-ignore*/}
+        <Chart options={chartOptions?.options} series={chartOptions?.series} type="radialBar" height={380} />
+      </div>
     </div>
   );
 };

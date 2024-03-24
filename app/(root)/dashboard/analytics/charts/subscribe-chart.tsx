@@ -1,105 +1,69 @@
-import { CardBody, CardHeader, Typography } from "@material-tailwind/react";
-import Chart from "react-apexcharts";
-import { Lock } from "lucide-react";
+import React, { useEffect, useRef } from "react";
+import ApexCharts from "apexcharts";
 
-const chartConfig = {
-  type: "bar",
-  height: 240,
-  series: [
-    {
-      name: "Sales",
-      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-    },
-  ],
-  options: {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    title: {
-      show: "",
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    colors: ["#502374"],
-    plotOptions: {
-      bar: {
-        columnWidth: "40%",
-        borderRadius: 2,
-      },
-    },
-    xaxis: {
-      axisTicks: {
-        show: false,
-      },
-      axisBorder: {
-        show: false,
-      },
-      labels: {
-        style: {
-          colors: "#502374",
-          fontSize: "12px",
-          fontFamily: "inherit",
-          fontWeight: 400,
-        },
-      },
-      categories: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: "#502374",
-          fontSize: "12px",
-          fontFamily: "inherit",
-          fontWeight: 400,
-        },
-      },
-    },
-    grid: {
-      show: true,
-      borderColor: "#502374",
-      strokeDashArray: 5,
-      xaxis: {
-        lines: {
-          show: true,
-        },
-      },
-      padding: {
-        top: 5,
-        right: 20,
-      },
-    },
-    fill: {
-      opacity: 0.8,
-    },
-    tooltip: {
-      theme: "dark",
-    },
-  },
-};
+const SubscribeChart = () => {
+  const chartRef = useRef(null);
 
-export default function SubscribeChart() {
+  useEffect(() => {
+    const options = {
+      colors: ["#1A56DB", "#EB00EF"],
+      series: [
+        {
+          name: "Subscribers",
+          color: "#1A56DB",
+          data: [
+            { x: "Mon", y: 231 },
+            { x: "Tue", y: 122 },
+            { x: "Wed", y: 63 },
+            { x: "Thu", y: 421 },
+            { x: "Fri", y: 122 },
+            { x: "Sat", y: 323 },
+            { x: "Sun", y: 111 },
+          ],
+        },
+        {
+          name: "Notifications",
+          color: "#EB00EF",
+          data: [
+            { x: "Mon", y: 232 },
+            { x: "Tue", y: 113 },
+            { x: "Wed", y: 341 },
+            { x: "Thu", y: 224 },
+            { x: "Fri", y: 522 },
+            { x: "Sat", y: 411 },
+            { x: "Sun", y: 243 },
+          ],
+        },
+      ],
+      chart: {
+        type: "bar",
+        height: "320px",
+        fontFamily: "Inter, sans-serif",
+        toolbar: {
+          show: false,
+        },
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "70%",
+          borderRadiusApplication: "end",
+          borderRadius: 8,
+        },
+      },
+    };
+
+    if (chartRef.current) {
+      const chart = new ApexCharts(chartRef.current, options);
+      chart.render();
+    }
+  }, []);
+
   return (
-    <div className={"rounded-[25px] bg-white"}>
-      <CardHeader floated={false} shadow={false} color="transparent" className="flex flex-col gap-4 rounded-none p-6 md:flex-row md:items-center">
-        <div className="w-max rounded-lg bg-[#502374] p-5 text-white">
-          <Lock className="h-6 w-6" />
-        </div>
-        <div>
-          <Typography variant="h6" color="blue-gray">
-            Bar Chart
-          </Typography>
-          <Typography variant="small" color="gray" className="max-w-sm font-normal">
-            Visualize your data in a simple way using the @material-tailwind/react chart plugin.
-          </Typography>
-        </div>
-      </CardHeader>
-      <CardBody className="px-2 pb-0">
-        {/*// @ts-ignore*/}
-        <Chart {...chartConfig} />
-      </CardBody>
+    <div className="w-full rounded-[24px] bg-white p-6 shadow dark:bg-gray-800 md:p-6">
+      <div id="column-chart" ref={chartRef}></div>
     </div>
   );
-}
+};
+
+export default SubscribeChart;
