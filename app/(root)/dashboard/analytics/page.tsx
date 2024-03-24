@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 
 import { Check, Zap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import BarChart from "./charts/bar-chart";
-import DeviceChart from "./charts/device-chart";
-import SubscribeChart from "./charts/subscribe-chart";
+const BarChart = dynamic(() => import("./charts/bar-chart"), { ssr: false });
+const DeviceChart = dynamic(() => import("./charts/device-chart"), { ssr: false });
+const SubscribeChart = dynamic(() => import("./charts/subscribe-chart"), { ssr: false });
 
 const Analytic = () => {
   return (
