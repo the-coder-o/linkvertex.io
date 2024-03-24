@@ -6,9 +6,9 @@ import { Check, Zap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import BarChart from "@/app/(root)/dashboard/analytics/charts/bar-chart";
-import DeviceChart from "@/app/(root)/dashboard/analytics/charts/device-chart";
-import SubscribeChart from "@/app/(root)/dashboard/analytics/charts/subscribe-chart";
+import BarChart from "./charts/bar-chart";
+import DeviceChart from "./charts/device-chart";
+import SubscribeChart from "./charts/subscribe-chart";
 
 const Analytic = () => {
   return (
