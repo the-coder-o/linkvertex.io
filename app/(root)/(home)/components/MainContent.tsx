@@ -9,6 +9,7 @@ import { useUser } from "@clerk/nextjs";
 
 import { useOS } from "@/hooks/useOS";
 import Loader from "@/components/loader";
+import { useStore } from "@/store/use-modal";
 
 import { useTranslation } from "react-i18next";
 import { useInstallPrompt } from "@/hooks/useInstallPrompt";
@@ -17,9 +18,11 @@ import { Button } from "@/components/ui/button";
 import Animation from "@/components/animation/framer-animaion";
 
 import HeartIcon from "@/assets/images/heart-icon.png";
+import SponsorModal from "@/components/modals/sponsor-modal";
 
 const MainContent: React.FC = () => {
   const { isSignedIn } = useUser();
+  const { openModal } = useStore();
 
   const { t } = useTranslation("home_section");
 
@@ -35,21 +38,22 @@ const MainContent: React.FC = () => {
   const handleClick = async () => {
     if (installPrompt) {
       const choiceResult = await installPrompt.prompt();
-      console.log("Prompt result:", choiceResult); // Debugging
+      console.log("Prompt result:", choiceResult);
       if (choiceResult && choiceResult.outcome === "accepted") {
         console.log("User accepted the install prompt");
-        setIsAppInstalled(true); // Update state to reflect installation
-        localStorage.setItem("isAppInstalled", "true"); // Persist this change
+        setIsAppInstalled(true);
+        localStorage.setItem("isAppInstalled", "true");
       } else {
         console.log("User dismissed the install prompt or prompt failed");
       }
-      setInstallPrompt(null); // Reset prompt state
+      setInstallPrompt(null);
     }
   };
 
   if (isSignedIn) {
     return (
       <div className={"flex h-[100vh] flex-col items-center justify-center gap-[2.5rem]"}>
+        <SponsorModal />
         <Animation delay={0}>
           <h1 className={"main-text-animation w-[410px] text-center text-[3.80rem] font-[800] leading-[110%] max-md:w-[508px] max-md:text-[48px] max-sm:w-[450px] max-[530px]:w-full"}>{t("title")}</h1>
         </Animation>
@@ -61,7 +65,7 @@ const MainContent: React.FC = () => {
             {t("button")}
           </Link>
           {isAppInstalled ? (
-            <Button className={"flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
+            <Button onClick={openModal} className={"flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
               <Image src={HeartIcon} alt={"HeartIcon"} width={20} height={20} />
               Sponsor
             </Button>

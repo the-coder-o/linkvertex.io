@@ -504,3 +504,22 @@ body {
 .border-style {
   border-radius: 25px !important;
 }
+
+/*modal-animation*/
+.modal-enter {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.modal-enter-active {
+  opacity: 1;
+}
+
+.modal-exit {
+  opacity: 1;
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
