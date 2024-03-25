@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useUser } from "@clerk/nextjs";
 
@@ -15,27 +16,34 @@ import { useInstallPrompt } from "@/hooks/useInstallPrompt";
 import { Button } from "@/components/ui/button";
 import Animation from "@/components/animation/framer-animaion";
 
+import HeartIcon from "@/assets/images/heart-icon.png";
+
 const MainContent: React.FC = () => {
   const { isSignedIn } = useUser();
 
   const { t } = useTranslation("home_section");
 
   const os = useOS();
+  const [isAppInstalled, setIsAppInstalled] = useState(false);
   const [installPrompt, setInstallPrompt] = useInstallPrompt();
+
+  useEffect(() => {
+    const appInstalled = localStorage.getItem("isAppInstalled") === "true";
+    setIsAppInstalled(appInstalled);
+  }, []);
 
   const handleClick = async () => {
     if (installPrompt) {
       const choiceResult = await installPrompt.prompt();
-      if (choiceResult) {
-        if (choiceResult.outcome === "accepted") {
-          console.log("User accepted the install prompt");
-        } else {
-          console.log("User dismissed the install prompt");
-        }
+      console.log("Prompt result:", choiceResult); // Debugging
+      if (choiceResult && choiceResult.outcome === "accepted") {
+        console.log("User accepted the install prompt");
+        setIsAppInstalled(true); // Update state to reflect installation
+        localStorage.setItem("isAppInstalled", "true"); // Persist this change
       } else {
-        console.error("The install prompt could not be shown or user choice was not obtained.");
+        console.log("User dismissed the install prompt or prompt failed");
       }
-      setInstallPrompt(null);
+      setInstallPrompt(null); // Reset prompt state
     }
   };
 
@@ -52,26 +60,33 @@ const MainContent: React.FC = () => {
           <Link href={isSignedIn ? "/dashboard" : "/sign-in"} className={"rounded-[20px] bg-[#FCD28D] px-[24px] py-[12px] text-[18px] font-[600] transition-all hover:bg-[#EBB064]"}>
             {t("button")}
           </Link>
-          <Button onClick={handleClick} className={"flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
-            {os === "windows" ? (
-              <>
-                <i className="fa-brands fa-windows mt-[2px]"></i>
-                {t("download_btn")}
-              </>
-            ) : os === "macos" ? (
-              <>
-                <i className="fa-solid fa-tv mt-[2px]"></i>
-                {t("download_btn")}
-              </>
-            ) : os === "android" ? (
-              <>
-                <i className="fa-brands fa-android mt-[2px]"></i>
-                {t("download_btn")}
-              </>
-            ) : (
-              "Download"
-            )}
-          </Button>
+          {isAppInstalled ? (
+            <Button className={"flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
+              <Image src={HeartIcon} alt={"HeartIcon"} width={20} height={20} />
+              Sponsor
+            </Button>
+          ) : (
+            <Button onClick={handleClick} className={"flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
+              {os === "windows" ? (
+                <>
+                  <i className="fa-brands fa-windows mt-[2px]"></i>
+                  {t("download_btn")}
+                </>
+              ) : os === "macos" ? (
+                <>
+                  <i className="fa-solid fa-tv mt-[2px]"></i>
+                  {t("download_btn")}
+                </>
+              ) : os === "android" ? (
+                <>
+                  <i className="fa-brands fa-android mt-[2px]"></i>
+                  {t("download_btn")}
+                </>
+              ) : (
+                "Download"
+              )}
+            </Button>
+          )}
         </Animation>
       </div>
     );

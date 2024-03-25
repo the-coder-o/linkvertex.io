@@ -23,7 +23,7 @@ const UnClockMessage = () => {
             <Check size={34} className={"text-white"} />
             Get the full picture with a year's worth of data
           </p>
-          <Button className={"flex items-center gap-2 rounded-[21px] !bg-[#fff] text-[18px] font-bold text-[#502374]"}>
+          <Button disabled={true} className={"flex items-center gap-2 rounded-[21px] !bg-[#fff] text-[18px] font-bold text-[#502374]"}>
             <Zap className={"h-4 w-4"} />
             Upgrade for free 100%
           </Button>

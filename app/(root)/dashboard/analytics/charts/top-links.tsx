@@ -40,7 +40,7 @@ const TopLinks = () => {
       intersect: false,
       y: {
         formatter: function (val: any) {
-          return "$" + val;
+          return val;
         },
       },
     },
