@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useStore } from "@/store/use-modal";
 
-import { AnimatedTooltip } from "@/components/animation/animated-tooltip";
 import { cn } from "@/utils/cn";
+import { AnimatedTooltip } from "@/components/animation/animated-tooltip";
 
 const SponsorModal = () => {
   const { isModalOpen, closeModal } = useStore();
@@ -48,24 +48,24 @@ const SponsorModal = () => {
             </div>
             <p className={"mt-3 text-lg font-[500] text-white"}>This sponsorship will go towards maintaining and improving some of my favorite and or popular open-source applications.</p>
             <div className={"mt-8 grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:items-center max-sm:justify-center"}>
-              <Link href={""} className={"flex items-center justify-center gap-2 rounded-[21px] bg-purple-600 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
-                Sponsoring from github
+              <Link href={"https://github.com/sponsors/the-coder-o"} className={"flex items-center justify-center gap-2 rounded-[21px] bg-purple-600 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
+                Sponsor from github
                 <i className="fa-brands fa-github text-white"></i>
               </Link>
-              <Link href={""} className={"flex items-center justify-center gap-2 rounded-[21px] bg-rose-500 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
-                Sponsoring for Project
+              <Link href={"https://t.me/the_coder_o"} className={"flex items-center justify-center gap-2 rounded-[21px] bg-rose-500 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
+                Sponsor for Project
                 <i className="fa-solid fa-diagram-project text-white"></i>
               </Link>
-              <Link href={""} className={"flex items-center justify-center gap-2 rounded-[21px] bg-blue-500 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
+              <Link href={"https://www.buymeacoffee.com/abdulbacit"} className={"flex items-center justify-center gap-2 rounded-[21px] bg-blue-500 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
                 Buy me a coffee
                 <i className="fa-solid fa-mug-hot text-white"></i>
               </Link>
-              <Link href={""} className={"flex items-center justify-center gap-2 rounded-[21px] bg-green-500 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
-                Sponsoring for database
+              <Link href={"https://t.me/the_coder_o"} className={"flex items-center justify-center gap-2 rounded-[21px] bg-green-500 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
+                Sponsor for database
                 <i className="fa-solid fa-server text-white"></i>
               </Link>
-              <Link href={""} className={"flex items-center justify-center gap-2 rounded-[21px] bg-orange-400 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
-                Sponsoring for domain
+              <Link href={"https://t.me/the_coder_o"} className={"flex items-center justify-center gap-2 rounded-[21px] bg-orange-400 py-3 text-[16px] font-bold text-white transition-all hover:scale-105"}>
+                Sponsor for domain
                 <i className="fa-solid fa-globe text-white"></i>
               </Link>
             </div>
