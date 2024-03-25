@@ -41,8 +41,9 @@ const Phone = () => {
       <div className={"max-md: h-[730px] overflow-auto rounded-[32px] border-8 border-[#ffffff10] bg-[#000] p-[1rem] max-md:h-[100vh] max-md:rounded-none max-md:border-none"}>
         <div className={"relative flex min-h-full w-[300px] items-center justify-center p-[1rem] max-md:w-auto"}>
           <div className={"grid grid-cols-1 gap-y-4 max-md:w-full max-md:items-center max-md:justify-center"}>
-            <div className={"flex items-center justify-center"}>
+            <div className={"relative flex items-center justify-center"}>
               <img src={imageUrl} alt="User profile" className={"h-[100px] w-[100px] rounded-full bg-cover"} />
+              <i className="fa-regular fa-pen-to-square absolute right-[85px] top-0 cursor-pointer text-[25px] !text-white"></i>
             </div>
             <div className={"flex flex-col items-center justify-center"}>
               <h2 className={"text-style flex items-center justify-center text-ellipsis whitespace-break-spaces text-center text-4xl font-bold text-white"}>{title}</h2>
