@@ -21,6 +21,7 @@ const Analytic = () => {
           <Animation delay={2}>
             <LifetimeAnalytics />
           </Animation>
+          <video autoPlay={true} loop={true} className={"mt-5 w-full rounded-[20px]"} src="https://mfe-billing.production.linktr.ee/images/analytics-free-trial-modal-banner.8569631e7d79cf7ff080.mp4"></video>
           <Animation delay={3}>
             <UnClockMessage />
           </Animation>
