@@ -31,7 +31,7 @@ const DashboardButtons = () => {
 
   return (
     <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-      <div className="ease rounded-[24px] border border-[#fff]/50 p-[20px] duration-200 hover:scale-105 max-[450px]:p-[15px]">
+      <div className="page-bg ease rounded-[24px] border border-[#fff]/50 p-[20px] duration-200 hover:!shadow-none max-[450px]:p-[15px]">
         <div className="flex flex-col gap-[35px] max-sm:w-full max-sm:flex-row max-sm:justify-between">
           <Link href={`/${profile?.id}`} className="flex h-full w-full items-center justify-between">
             <h2 className="ml-2 text-xl font-bold text-[#fff] max-[450px]:text-[20px]">Your Page</h2>

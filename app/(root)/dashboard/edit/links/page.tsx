@@ -165,14 +165,14 @@ const Page = () => {
                   </Draggable>
                 ))}
                 {provided.placeholder}
-                <Button onClick={addLink} className="flex w-full items-center justify-center rounded-[20px] bg-[#90CDF4] px-[16px] text-[16px] !font-bold text-black hover:bg-[#90CDF4]/90">
+                <Button onClick={addLink} className="sp flex w-full items-center justify-center rounded-[20px] bg-[#90CDF4] px-[16px] text-[16px] !font-bold text-black hover:bg-[#90CDF4]/90">
                   {t("add_link_btn")}
                 </Button>
               </div>
             )}
           </Droppable>
         </DragDropContext>
-        <Button className="flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#9AE6B4] px-[16px] py-6 text-[16px] !font-bold text-black hover:bg-[#9AE6B4]/90"> {t("save_btn")}</Button>
+        <Button className="save-bg flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#9AE6B4] px-[16px] py-5 text-[16px] !font-bold text-black hover:bg-[#9AE6B4]/90"> {t("save_btn")}</Button>
       </div>
     </>
   );

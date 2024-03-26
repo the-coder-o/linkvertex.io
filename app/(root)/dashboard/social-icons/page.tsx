@@ -49,7 +49,7 @@ const SocialIcons = () => {
               </div>
               <div className={"mb-[100px] grid grid-cols-1 space-y-[2rem]"}>
                 <SocialLinks input={input} handleChange={handleChange} isValid={isValid} />
-                <Button disabled={isSaveDisabled} className={"text-md rounded-[20px] bg-[#9ae6b4] font-semibold text-black hover:bg-[#9ae6c9]"}>
+                <Button disabled={isSaveDisabled} className={"text-md save-bg rounded-[20px] bg-[#9ae6b4] font-semibold text-black hover:bg-[#9ae6c9]"}>
                   {t("save_btn")}
                 </Button>
               </div>

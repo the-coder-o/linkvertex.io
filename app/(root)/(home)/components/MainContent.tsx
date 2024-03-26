@@ -61,11 +61,11 @@ const MainContent: React.FC = () => {
           <p className={"ml-auto mr-auto w-[410px] text-center font-[600] leading-[1.5rem] text-white max-sm:w-[85%]"}>{t("subtitle")}</p>
         </Animation>
         <Animation delay={2} className={"flex items-center gap-2.5"}>
-          <Link href={isSignedIn ? "/dashboard" : "/sign-in"} className={"rounded-[20px] bg-[#FCD28D] px-[24px] py-[12px] text-[18px] font-[600] transition-all hover:bg-[#EBB064]"}>
+          <Link href={isSignedIn ? "/dashboard" : "/sign-in"} className={"ps rounded-[20px] bg-[#FCD28D] px-[24px] py-[12px] text-[18px] font-[600] transition-all hover:bg-[#EBB064] hover:shadow-none"}>
             {t("button")}
           </Link>
           {isAppInstalled ? (
-            <Button onClick={openModal} className={"flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
+            <Button onClick={openModal} className={"sp flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
               <Image src={HeartIcon} alt={"HeartIcon"} width={20} height={20} />
               Sponsor
             </Button>

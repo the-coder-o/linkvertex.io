@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/*global-css*/
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -34,7 +34,7 @@
 
     --radius: 0.5rem;
   }
-
+  /*theme-css*/
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -65,20 +65,20 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
-
+/*global-styles*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
 }
-
+/*container*/
 .container {
   max-width: 750px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
+/*scroll-styles*/
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -94,7 +94,7 @@
 body {
   background-color: black;
 }
-
+/*text-animation*/
 .main-text-animation {
   color: transparent;
   background-image: linear-gradient(to right, rgba(255, 0, 0, 1) 0%, rgba(238, 100, 10, 1) 7%, rgba(210, 169, 39, 1) 14%, rgba(234, 252, 62, 1) 21%, rgba(134, 248, 82, 1) 28%, rgba(99, 245, 156, 1) 35%, rgba(87, 241, 215, 1) 42%, rgba(75, 216, 237, 1) 49%, rgba(66, 158, 239, 1) 56%, rgba(57, 74, 241, 1) 63%, rgba(126, 45, 244, 1) 70%, rgba(162, 84, 247, 1) 77%, rgba(229, 117, 249, 1) 84%, rgba(251, 103, 164, 1) 91%, rgba(253, 127, 190, 1) 97%, rgba(255, 0, 191, 1) 100%);
@@ -118,7 +118,7 @@ body {
 .main-text-animation:hover {
   animation: animate 5s infinite linear;
 }
-
+/*bg-star-animation*/
 .main {
   position: fixed;
   top: 50%;
@@ -392,7 +392,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+/*loader-styles*/
 .loader {
   display: flex;
   flex-direction: column;
@@ -457,7 +457,6 @@ body {
   height: 20px !important;
 }
 /*loading*/
-/* code #3 */
 .loading03 span {
   margin: 0 -0.075em;
   animation: loading03 0.7s infinite alternate;
@@ -522,4 +521,76 @@ body {
 .modal-exit-active {
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
+}
+/*btn-animation*/
+.sp {
+  box-shadow: rgba(123, 180, 228, 0.78) 3px 3px 0px;
+}
+
+.sp:hover {
+  box-shadow: none !important;
+}
+
+.ps {
+  box-shadow: rgba(252, 210, 141, 0.78) 3px 3px 0px;
+}
+
+.github-bg {
+  box-shadow: rgba(147, 52, 233, 0.5) 3px 3px 0px;
+}
+
+.github-bg:hover {
+  box-shadow: none !important;
+}
+
+.project-bg {
+  box-shadow: rgba(244, 63, 95, 0.5) 3px 3px 0px;
+}
+
+.project-bg:hover {
+  box-shadow: none !important;
+}
+
+.coffee-bg {
+  box-shadow: rgba(60, 130, 246, 0.5) 3px 3px 0px;
+}
+
+.coffee-bg:hover {
+  box-shadow: none !important;
+}
+
+.database-bg {
+  box-shadow: rgba(34, 197, 93, 0.5) 3px 3px 0px;
+}
+
+.database-bg:hover {
+  box-shadow: none !important;
+}
+
+.domain-bg {
+  box-shadow: rgba(251, 146, 60, 0.5) 3px 3px 0px;
+}
+
+.domain-bg:hover {
+  box-shadow: none !important;
+}
+
+.logout-bg:hover {
+  box-shadow: rgba(123, 180, 228, 0.78) 3px 3px 0px;
+}
+
+.logout-bg:active {
+  box-shadow: none !important;
+}
+
+.page-bg {
+  box-shadow: rgba(255, 255, 255, 0.7) 4px 4px 0px !important;
+}
+
+.save-bg {
+  box-shadow: rgba(154, 230, 180, 0.6) 3px 3px 0px;
+}
+
+.save-bg:hover {
+  box-shadow: none;
 }
