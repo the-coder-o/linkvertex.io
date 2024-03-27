@@ -7,6 +7,8 @@ import { Toaster } from "sonner";
 
 import { dark } from "@clerk/themes";
 import { ClerkProvider } from "@clerk/nextjs";
+
+import { InstallPromptProvider } from "@/hooks/useInstallPrompt";
 import { Client, HydrationProvider } from "react-hydration-provider";
 
 import { I18nextProvider } from "react-i18next";
@@ -22,7 +24,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <HydrationProvider>
         <I18nextProvider i18n={i18n}>
           <Client>
-            {children}
+            <InstallPromptProvider>{children}</InstallPromptProvider>
             <Header />
             <Analytics />
             <WavyBackground />

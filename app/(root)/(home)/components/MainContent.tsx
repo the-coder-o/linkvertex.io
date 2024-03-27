@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -20,6 +20,11 @@ import Animation from "@/components/animation/framer-animaion";
 import HeartIcon from "@/assets/images/heart-icon.png";
 import SponsorModal from "@/components/modals/sponsor-modal";
 
+interface InstallPromptEvent extends Event {
+  prompt: () => Promise<{ outcome: "accepted" | "rejected" }>;
+  userChoice: Promise<{ outcome: "accepted" | "rejected" }>;
+}
+
 const MainContent: React.FC = () => {
   const { isSignedIn } = useUser();
   const { openModal } = useStore();
@@ -27,26 +32,23 @@ const MainContent: React.FC = () => {
   const { t } = useTranslation("home_section");
 
   const os = useOS();
-  const [isAppInstalled, setIsAppInstalled] = useState(false);
-  const [installPrompt, setInstallPrompt] = useInstallPrompt();
+  const { installPrompt, isAppInstalled, setIsAppInstalled } = useInstallPrompt();
 
   useEffect(() => {
-    const appInstalled = localStorage.getItem("isAppInstalled") === "true";
-    setIsAppInstalled(appInstalled);
+    setIsAppInstalled(localStorage.getItem("isAppInstalled") === "true");
   }, []);
 
   const handleClick = async () => {
-    if (installPrompt) {
-      const choiceResult = await installPrompt.prompt();
-      console.log("Prompt result:", choiceResult);
-      if (choiceResult && choiceResult.outcome === "accepted") {
-        console.log("User accepted the install prompt");
+    const promptEvent = installPrompt as unknown as InstallPromptEvent;
+    if (promptEvent) {
+      promptEvent.preventDefault(); // This line may not be necessary. It depends on how you've set up the install prompt event handling.
+      const choiceResult = await promptEvent.prompt();
+      if (choiceResult.outcome === "accepted") {
         setIsAppInstalled(true);
         localStorage.setItem("isAppInstalled", "true");
       } else {
         console.log("User dismissed the install prompt or prompt failed");
       }
-      setInstallPrompt(null);
     }
   };
 
@@ -70,7 +72,7 @@ const MainContent: React.FC = () => {
               Sponsor
             </Button>
           ) : (
-            <Button onClick={handleClick} className={"flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
+            <Button onClick={handleClick} className={"sp flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
               {os === "windows" ? (
                 <>
                   <i className="fa-brands fa-windows mt-[2px]"></i>
