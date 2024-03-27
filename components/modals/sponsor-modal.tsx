@@ -3,12 +3,16 @@
 import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
+
 import { useStore } from "@/store/use-modal";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/utils/cn";
 import { AnimatedTooltip } from "@/components/animation/animated-tooltip";
 
 const SponsorModal = () => {
+  const { t } = useTranslation("sponsor_modal");
+
   const { isModalOpen, closeModal } = useStore();
   const [modalClassName, setModalClassName] = useState("modal-enter");
 
@@ -42,11 +46,11 @@ const SponsorModal = () => {
           <div>
             <div className={"relative mt-5 flex items-center justify-between"}>
               <h2 className={"text-2xl font-bold text-white max-sm:text-xl"}>
-                Become a sponsor of <span className={"main-text-animation !font-[900]"}>linkvertex.io</span>
+                {t("title")} <span className={"main-text-animation !font-[900]"}>linkvertex.io</span>
               </h2>
               <i onClick={closeModal} className="fa-solid fa-xmark cursor-pointer text-[20px] text-white"></i>
             </div>
-            <p className={"mt-3 text-lg font-[500] text-white"}>This sponsorship will go towards maintaining and improving some of my favorite and or popular open-source applications.</p>
+            <p className={"mt-3 text-lg font-[500] text-white"}>{t("description")}</p>
             <div className={"mt-8 grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:items-center max-sm:justify-center"}>
               <Link href={"https://github.com/sponsors/the-coder-o"} className={"github-bg flex items-center justify-center gap-2 rounded-[21px] bg-purple-600 py-3 text-[16px] font-bold text-white"}>
                 Sponsor from github
@@ -71,7 +75,7 @@ const SponsorModal = () => {
             </div>
           </div>
           <div className="flex w-full flex-row items-center gap-2 pb-6">
-            <p className={"main-text-animation text-2xl font-[900] text-white"}>Our Sponsors:</p>
+            <p className={"main-text-animation text-2xl font-[900] text-white"}>{t("our_sponsors")}</p>
             <AnimatedTooltip items={people} />
           </div>
         </div>

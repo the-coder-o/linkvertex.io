@@ -69,7 +69,7 @@ const MainContent: React.FC = () => {
           {isAppInstalled ? (
             <Button onClick={openModal} className={"sp flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>
               <Image src={HeartIcon} alt={"HeartIcon"} width={20} height={20} />
-              Sponsor
+              {t("sponsor_btn")}
             </Button>
           ) : (
             <Button onClick={handleClick} className={"sp flex !h-[51px] items-center gap-2 rounded-[20px] bg-[#90CDF4] px-[24px] !text-[18px] font-[600] text-black transition-all hover:bg-[#90CDF4]/80"}>

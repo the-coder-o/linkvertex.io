@@ -9,7 +9,8 @@
     "title": "Ein Ort für alle Links",
     "subtitle": "Ein Link, um sie alle zu beherrschen. Platzieren Sie Ihre Links ganz einfach auf einer schönen Einzelseite.",
     "button": "Loslegen",
-    "download_btn": "Herunterladen"
+    "download_btn": "Herunterladen",
+    "sponsor_btn": "Sponsor"
   },
   "dashboard": {
     "title": "Willkommen",
@@ -98,5 +99,10 @@
     "about_description_3": "Linkvertex.io geht es nicht nur darum, Ihre Online-Präsenz zu vereinfachen; es geht darum, Ihre Reichweite zu verstärken. Ob Sie ein Schöpfer sind, der seine Arbeit präsentieren möchte, ein Fachmann, der alle seine Qualifikationen verbinden möchte, oder ein Unternehmen, das Engagement über mehrere Kanäle fördern möchte, unsere Plattform ist Ihr Startpunkt.",
     "about_title_4": "Intuitiv, Robust und Sicher",
     "about_description_4": "Unsere intuitive Schnittstelle ist sowohl für den digitalen Neuling als auch für den Experten konzipiert und stellt sicher, dass Sie Ihre Links mit Leichtigkeit und Effizienz verwalten können. Sicherheit ist kein nachträglicher Gedanke; sie ist in das sehr Gewebe unserer Plattform eingewoben. Wir entwickeln uns kontinuierlich weiter, um robuste Sicherheitsmaßnahmen zu implementieren, die Ihre Informationen und Ihre Seelenruhe schützen."
+  },
+  "sponsor_modal": {
+    "title": "Werden Sie ein Sponsor von",
+    "description": "Dieses Sponsoring wird zur Wartung und Verbesserung einiger meiner Lieblings- und/oder beliebter Open-Source-Anwendungen beitragen.",
+    "our_sponsors": "Unsere Sponsoren:"
   }
 }

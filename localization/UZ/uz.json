@@ -9,7 +9,8 @@
     "title": "Barcha linklar bitta joyda",
     "subtitle": "Barcha linklarni boshqarish uchun bitta joy. O'zingizning havolalaringizni chiroyli sahifaga joylashtiring.",
     "button": "Boshlash",
-    "download_btn": "Yuklab olish"
+    "download_btn": "Yuklab olish",
+    "sponsor_btn": "Homiy"
   },
   "dashboard": {
     "title": "Xush kelibsiz",
@@ -98,5 +99,10 @@
     "about_description_3": "Linkvertex.io faqat sizning onlayn mavjudligingizni soddalashtirish haqida emas; bu sizning yetib borishingizni kuchaytirish haqida. Siz ishingizni namoyish etmoqchi bo'lgan yaratuvchi, barcha malakalaringizni bog'lamoqchi bo'lgan professional yoki bir nechta kanallar orqali jalb qilishni xohlaydigan biznes bo'lsangiz, bizning platformamiz sizning uchuv punktingizdir.",
     "about_title_4": "Intuitiv, Mustahkam va Xavfsiz",
     "about_description_4": "Bizning intuitiv interfeysimiz raqamli yangi boshlanuvchilar va mutaxassislar uchun mo'ljallangan, sizga havolalaringizni osonlik va samaradorlik bilan boshqarish imkonini beradi. Xavfsizlik keyingi o'ylash emas; bu bizning platformamizning asosiy qismiga to'qilgan. Biz doimiy ravishda ma'lumotlaringiz va tinchligingizni himoya qiladigan mustahkam xavfsizlik choralarini amalga oshirish uchun rivojlanamiz."
+  },
+  "sponsor_modal": {
+    "title": "Homiymiz bo'ling",
+    "description": "Ushbu homiylik sevimli va/yoki ommabop ochiq manba dasturlarini saqlab turish va yaxshilashga yo'naltiriladi.",
+    "our_sponsors": "Bizning homiylarimiz:"
   }
 }

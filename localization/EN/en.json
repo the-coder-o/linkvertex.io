@@ -9,7 +9,8 @@
     "title": "One Place for All Your Links",
     "subtitle": "One link to rule them all. Easily place your links in a beautiful single page.",
     "button": "Get Started",
-    "download_btn": "Download"
+    "download_btn": "Download",
+    "sponsor_btn": "Sponsor"
   },
   "dashboard": {
     "title": "Welcome",
@@ -98,5 +99,10 @@
     "about_description_3": "Linkvertex.io isn't just about simplifying your online presence; it's about amplifying your reach. Whether you're a creator looking to showcase your work, a professional aiming to connect all your credentials, or a business wanting to drive engagement across multiple channels, our platform is your launchpad.\n\n",
     "about_title_4": "Intuitive, Robust, and Secure\n",
     "about_description_4": "Our intuitive interface is designed for the digital novice and expert alike, ensuring you can manage your links with ease and efficiency. Security is not an afterthought; it's woven into the very fabric of our platform. We continuously evolve to implement robust security measures that protect your information and your peace of mind.\n\n"
+  },
+  "sponsor_modal": {
+    "title": "Become a sponsor of",
+    "description": "This sponsorship will go towards maintaining and improving some of my favorite and or popular open-source applications.,",
+    "our_sponsors": "Our Sponsors:"
   }
 }
