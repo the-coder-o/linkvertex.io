@@ -1,11 +1,7 @@
 "use client";
 
-import React, { ReactNode, useEffect, useState } from "react";
-
-interface ScrollDetectorProps {
-  children: (hasScrolled: boolean) => ReactNode;
-  scrollThreshold?: number; // Make scrollThreshold optional with a default value
-}
+import React, { useEffect, useState } from "react";
+import { ScrollDetectorProps } from "@/interfaces/context/use-scroll.interface";
 
 const ScrollDetector: React.FC<ScrollDetectorProps> = ({ children, scrollThreshold = 100 }) => {
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);

@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={cn("'w-full fixed left-0 right-0 top-0 z-[999999] flex h-[4rem] items-center justify-center", hasScrolled ? "bg-black/40 backdrop-blur-sm" : "bg-transparent backdrop-blur-none")}>
+    <header className={cn("'w-full fixed left-0 right-0 top-0 z-[500] flex h-[4rem] items-center justify-center", hasScrolled ? "bg-black/40 backdrop-blur-sm" : "bg-transparent backdrop-blur-none")}>
       <div className={"container flex items-center justify-between"}>
         <h1 className={"main-text-animation text-[1.25rem] font-bold text-white"}>
           <Link href={"/"} className={"flex items-center gap-1"}>

@@ -1,17 +1,7 @@
 "use client";
 
-import React, { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
-
-interface InstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-}
-
-interface InstallPromptContextState {
-  installPrompt: InstallPromptEvent | null;
-  setInstallPrompt: Dispatch<SetStateAction<InstallPromptEvent | null>>;
-  isAppInstalled: boolean;
-  setIsAppInstalled: Dispatch<SetStateAction<boolean>>;
-}
+import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { InstallPromptContextState, InstallPromptEvent } from "@/interfaces/context/use-install-promt.interface";
 
 const InstallPromptContext = createContext<InstallPromptContextState | undefined>(undefined);
 
